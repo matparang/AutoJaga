@@ -1,0 +1,201 @@
+"""Recovery time estimation tool — time-to-recovery and recovery probability."""
+
+import json
+import math
+from typing import Any
+
+import numpy as np
+
+from jagabot.agent.tools.base import Tool
+from jagabot.agent.tools.dynamics import simulate as dynamics_simulate
+
+
+def estimate_recovery(
+    current_price: float,
+    target_price: float,
+    annual_return: float = 0.15,
+    annual_volatility: float = 0.25,
+    confidence: float = 0.50,
+) -> dict:
+    """Estimate time to recover from current price to target price.
+
+    Uses both deterministic compound growth and stochastic GBM estimates.
+
+    Args:
+        current_price: Current (depressed) asset price.
+        target_price: Recovery target price (e.g. original purchase price).
+        annual_return: Expected annual return (default 15% market average).
+        annual_volatility: Annual volatility (default 25%).
+        confidence: Confidence level for stochastic estimate.
+
+    Returns:
+        dict with deterministic_days, stochastic_days, required_return_pct.
+    """
+    if current_price <= 0 or target_price <= 0:
+        return {"error": "prices must be positive"}
+    if current_price >= target_price:
+        return {
+            "already_recovered": True,
+            "current_price": current_price,
+            "target_price": target_price,
+            "deterministic_days": 0,
+        }
+
+    required_return = (target_price / current_price) - 1
+    # Annual compounding (matches Colab formula)
+    if annual_return <= 0:
+        deterministic_days = float("inf")
+    else:
+        deterministic_years = math.log(target_price / current_price) / math.log(1 + annual_return)
+        deterministic_days = int(math.ceil(deterministic_years * 252))
+
+    daily_return = annual_return / 252
+    daily_vol = annual_volatility / math.sqrt(252)
+    drift = daily_return - 0.5 * daily_vol ** 2
+    if drift <= 0:
+        stochastic_median_days = None
+    else:
+        log_ratio = math.log(target_price / current_price)
+        stochastic_median_days = int(math.ceil(log_ratio / drift))
+
+    deterministic_months = round(deterministic_days / 21, 1) if deterministic_days != float("inf") else None
+    stochastic_months = round(stochastic_median_days / 21, 1) if stochastic_median_days else None
+
+    return {
+        "current_price": current_price,
+        "target_price": target_price,
+        "required_return_pct": round(required_return * 100, 2),
+        "deterministic_days": deterministic_days if deterministic_days != float("inf") else None,
+        "deterministic_months": deterministic_months,
+        "stochastic_median_days": stochastic_median_days,
+        "stochastic_months": stochastic_months,
+        "annual_return_assumed": annual_return,
+        "annual_volatility_assumed": annual_volatility,
+        "already_recovered": False,
+    }
+
+
+def recovery_probability(
+    current_price: float,
+    target_price: float,
+    vix: float = 25.0,
+    days: int = 252,
+    annual_return: float = 0.15,
+    n_simulations: int = 10000,
+    seed: int = 42,
+) -> dict:
+    """Monte Carlo probability of recovery within a time horizon.
+
+    Args:
+        current_price: Current price.
+        target_price: Recovery target.
+        vix: VIX for volatility.
+        days: Time horizon in trading days.
+        annual_return: Expected annual return.
+        n_simulations: Number of MC paths.
+        seed: Random seed.
+
+    Returns:
+        dict with recovery_probability, avg_recovery_day, percentiles.
+    """
+    if current_price <= 0 or target_price <= 0:
+        return {"error": "prices must be positive"}
+    if current_price >= target_price:
+        return {"recovery_probability": 100.0, "already_recovered": True}
+
+    np.random.seed(seed)
+    daily_vol = (vix / 100.0) / np.sqrt(252)
+    daily_mu = annual_return / 252
+
+    z = np.random.standard_normal((n_simulations, days))
+    log_returns = (daily_mu - 0.5 * daily_vol ** 2) + daily_vol * z
+    cum_log = np.cumsum(log_returns, axis=1)
+    price_paths = current_price * np.exp(cum_log)
+
+    recovered_mask = np.any(price_paths >= target_price, axis=1)
+    n_recovered = int(np.sum(recovered_mask))
+    probability = round(n_recovered / n_simulations * 100, 2)
+
+    recovery_days = []
+    for i in np.where(recovered_mask)[0]:
+        hit_idx = np.argmax(price_paths[i] >= target_price)
+        recovery_days.append(int(hit_idx) + 1)
+
+    avg_days = round(float(np.mean(recovery_days)), 1) if recovery_days else None
+    percentiles = {}
+    if recovery_days:
+        arr = np.array(recovery_days)
+        for p in [25, 50, 75, 90]:
+            percentiles[f"p{p}"] = int(np.percentile(arr, p))
+
+    return {
+        "recovery_probability": probability,
+        "n_recovered": n_recovered,
+        "n_simulations": n_simulations,
+        "horizon_days": days,
+        "avg_recovery_days": avg_days,
+        "avg_recovery_months": round(avg_days / 21, 1) if avg_days else None,
+        "percentiles_days": percentiles,
+        "current_price": current_price,
+        "target_price": target_price,
+        "vix": vix,
+        "annual_return_assumed": annual_return,
+        "already_recovered": False,
+    }
+
+
+class RecoveryTimeTool(Tool):
+    """Time-to-recovery estimation tool."""
+
+    name = "recovery_time"
+    description = (
+        "Recovery time estimation — how long to recover from a loss. "
+        "CALL THIS TOOL when asked 'how long to recover?', 'will it bounce back?', "
+        "or after a crisis/drawdown scenario.\n\n"
+        "Methods:\n"
+        "- estimate_recovery: Deterministic + stochastic time estimate to reach target price\n"
+        "- recovery_probability: Monte Carlo probability of recovery within a given time horizon\n\n"
+        "Chain: Use after monte_carlo or stress_test to assess recovery prospects. "
+        "Feed into decision engine (Buffet perspective weighs recovery time heavily)."
+    )
+    parameters = {
+        "type": "object",
+        "properties": {
+            "method": {
+                "type": "string",
+                "enum": ["estimate_recovery", "recovery_probability"],
+                "description": (
+                    "estimate_recovery: needs {current_price, target_price, annual_return?, annual_volatility?}. "
+                    "recovery_probability: needs {current_price, target_price, vix?, days?, annual_return?}."
+                ),
+            },
+            "params": {
+                "type": "object",
+                "description": (
+                    "Keyword arguments. Examples:\n"
+                    "estimate_recovery: {\"current_price\": 120, \"target_price\": 150, "
+                    "\"annual_return\": 0.08}\n"
+                    "recovery_probability: {\"current_price\": 120, \"target_price\": 150, "
+                    "\"vix\": 30, \"days\": 252}"
+                ),
+            },
+        },
+        "required": ["method", "params"],
+    }
+
+    _DISPATCH = {
+        "estimate_recovery": estimate_recovery,
+        "recovery_probability": recovery_probability,
+    }
+
+    async def execute(self, **kwargs: Any) -> str:
+        method = kwargs.get("method", "")
+        params = kwargs.get("params", {})
+        fn = self._DISPATCH.get(method)
+        if fn is None:
+            return json.dumps({"error": f"Unknown method: {method}"})
+        try:
+            result = fn(**params)
+            return json.dumps(result)
+        except Exception as e:
+            return json.dumps({"error": str(e)})

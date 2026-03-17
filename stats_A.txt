@@ -1,0 +1,4 @@
+Pool A:
+Mean: -1.92
+Median: -9.0
+StdDev: 54.99

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  jagabot:
+    build: .
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - REDIS_HOST=redis
+      - JAGABOT_HOME=/data
+    volumes:
+      - jagabot_data:/data
+    stdin_open: true
+    tty: true
+    command: jagabot swarm analyze "oil crisis risk analysis"
+
+volumes:
+  redis_data:
+  jagabot_data:

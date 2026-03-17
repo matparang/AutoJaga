@@ -1,0 +1,319 @@
+"""Portfolio Analyzer tool — deterministic finance pipeline with cross-check.
+
+v2.4: Composes existing engine functions (calculate_equity, check_margin_call,
+standard_monte_carlo) into a single verified pipeline. Adds stress testing
+and analytical probability via scipy.stats.norm.cdf.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+from typing import Any
+
+import numpy as np
+from scipy.stats import norm
+
+from jagabot.agent.tools.base import Tool
+from jagabot.agent.tools.financial_cv import (
+    calculate_equity,
+    check_margin_call,
+)
+from jagabot.agent.tools.monte_carlo import standard_monte_carlo
+
+
+# ---------------------------------------------------------------------------
+# Engine functions (pure, stateless)
+# ---------------------------------------------------------------------------
+
+
+def analyze_portfolio(
+    capital: float,
+    leverage: float,
+    positions: list[dict],
+    cash: float = 0.0,
+) -> dict:
+    """Full deterministic pipeline: units → P/L → equity → margin → cross-check.
+
+    Uses existing calculate_equity() and check_margin_call() — no duplicate math.
+    """
+    total_exposure = capital * leverage
+
+    # 1. Compute per-position units, P/L
+    enriched = []
+    total_pnl = 0.0
+    total_value = 0.0
+
+    for pos in positions:
+        qty = pos.get("quantity", 0.0)
+        weight = pos.get("weight", 0.0)
+        entry = pos.get("entry_price", 0.0)
+        current = pos.get("current_price", 0.0)
+        symbol = pos.get("symbol", "UNKNOWN")
+
+        # If quantity not given but weight is, derive from exposure
+        if qty == 0 and weight > 0 and entry > 0:
+            notional = total_exposure * weight
+            qty = notional / entry
+
+        value = qty * current
+        pnl = qty * (current - entry)
+        pnl_pct = ((current - entry) / entry * 100) if entry > 0 else 0.0
+        total_pnl += pnl
+        total_value += value
+
+        enriched.append({
+            "symbol": symbol,
+            "units": round(qty, 2),
+            "entry_price": round(entry, 2),
+            "current_price": round(current, 2),
+            "value": round(value, 2),
+            "pnl": round(pnl, 2),
+            "pnl_pct": round(pnl_pct, 2),
+            "weight": round(weight, 4),
+        })
+
+    # 2. Equity — CORRECT formula: equity = capital + total_pnl
+    # (Ref: Colab ground truth — equity = MODAL + total_pnl)
+    # NOT capital + position_value + cash (double-counts capital for leveraged portfolios)
+    current_equity = capital + total_pnl
+    loan = capital * (leverage - 1) if leverage > 1 else 0.0
+
+    # Position details via existing engine (for breakdown reporting only)
+    equity_data = calculate_equity(
+        capital=capital,
+        positions=[
+            {
+                "symbol": p["symbol"],
+                "quantity": p["units"],
+                "current_price": p["current_price"],
+                "entry_price": p["entry_price"],
+            }
+            for p in enriched
+        ],
+        cash=cash,
+    )
+    # Override with correct equity
+    equity_data["current"] = round(current_equity, 2)
+    equity_data["loan"] = round(loan, 2)
+
+    # 3. Margin via existing engine
+    margin_data = check_margin_call(
+        equity=current_equity,
+        pos_value=total_exposure,
+        rate=1.0 / leverage if leverage > 1 else 0.25,
+    )
+
+    # 4. Cross-check: capital + total_pnl ≈ total_value + cash + undeployed - loan
+    total_entry_cost = sum(p["units"] * p["entry_price"] for p in enriched)
+    deployed = total_entry_cost + cash
+    undeployed = max(0.0, total_exposure - deployed)
+    equity_alt = total_value + cash + undeployed - loan
+    cross_check_delta = abs(current_equity - equity_alt)
+    cross_check_ok = cross_check_delta < 1.0
+
+    return {
+        "positions": enriched,
+        "total_exposure": round(total_exposure, 2),
+        "total_pnl": round(total_pnl, 2),
+        "current_equity": round(current_equity, 2),
+        "equity_details": equity_data,
+        "margin": margin_data,
+        "leverage": leverage,
+        "cross_check": {
+            "expected_equity": round(equity_alt, 2),
+            "actual_equity": round(current_equity, 2),
+            "delta": round(cross_check_delta, 2),
+            "passed": cross_check_ok,
+        },
+    }
+
+
+def stress_test_portfolio(
+    capital: float,
+    leverage: float,
+    positions: list[dict],
+    target_prices: dict[str, float],
+    cash: float = 0.0,
+) -> dict:
+    """Scenario analysis: what happens to equity at target prices?"""
+    total_exposure = capital * leverage
+    scenarios = {}
+
+    for symbol, target in target_prices.items():
+        # Find the position
+        pos = next((p for p in positions if p.get("symbol") == symbol), None)
+        if pos is None:
+            scenarios[symbol] = {"error": f"Position {symbol} not found"}
+            continue
+
+        qty = pos.get("quantity", 0.0)
+        weight = pos.get("weight", 0.0)
+        entry = pos.get("entry_price", 0.0)
+        current = pos.get("current_price", 0.0)
+
+        if qty == 0 and weight > 0 and entry > 0:
+            qty = (total_exposure * weight) / entry
+
+        current_pnl = qty * (current - entry)
+        stress_pnl = qty * (target - entry)
+        impact = stress_pnl - current_pnl
+
+        scenarios[symbol] = {
+            "current_price": round(current, 2),
+            "target_price": round(target, 2),
+            "units": round(qty, 2),
+            "current_pnl": round(current_pnl, 2),
+            "stress_pnl": round(stress_pnl, 2),
+            "impact": round(impact, 2),
+            "impact_pct": round(impact / capital * 100, 2) if capital > 0 else 0.0,
+        }
+
+    # Overall impact on equity (correct formula: capital + total_pnl)
+    total_impact = sum(
+        s.get("impact", 0) for s in scenarios.values() if "error" not in s
+    )
+    # Derive units from weights (same logic as per-symbol loop above)
+    base_pnl = 0.0
+    for pos in positions:
+        qty = pos.get("quantity", 0.0)
+        weight = pos.get("weight", 0.0)
+        entry = pos.get("entry_price", 0.0)
+        current = pos.get("current_price", 0.0)
+        if qty == 0 and weight > 0 and entry > 0:
+            qty = (total_exposure * weight) / entry
+        base_pnl += qty * (current - entry)
+    current_equity = capital + base_pnl
+    stressed_equity = current_equity + total_impact
+
+    return {
+        "scenarios": scenarios,
+        "total_impact": round(total_impact, 2),
+        "current_equity": round(current_equity, 2),
+        "stressed_equity": round(stressed_equity, 2),
+        "equity_change_pct": round(total_impact / current_equity * 100, 2) if current_equity > 0 else 0.0,
+    }
+
+
+def analytical_probability(
+    current_price: float,
+    target_price: float,
+    daily_returns: list[float],
+    days: int = 30,
+) -> dict:
+    """Analytical probability using log-normal model + scipy.stats.norm.cdf.
+
+    Complementary to Monte Carlo — faster closed-form for quick estimates.
+    """
+    if len(daily_returns) < 2:
+        return {"error": "Need at least 2 daily returns for volatility estimation"}
+
+    # Defensive guard: daily returns should be decimal (e.g. 0.02 = 2%).
+    # If any entry has abs() > 1.0, assume percentage form and scale down.
+    if any(abs(r) > 1.0 for r in daily_returns):
+        daily_returns = [r / 100.0 for r in daily_returns]
+
+    daily_vol = float(np.std(daily_returns, ddof=1))
+    period_vol = daily_vol * math.sqrt(days)
+    daily_mean = float(np.mean(daily_returns))
+    period_drift = daily_mean * days
+
+    # Log return to target
+    if current_price <= 0 or target_price <= 0:
+        return {"error": "Prices must be positive"}
+
+    log_return_target = math.log(target_price / current_price)
+
+    # P(S_T < target) = Φ((log(target/current) - drift) / vol)
+    if period_vol == 0:
+        # Zero volatility means price stays at current; P(S_T < target) is 0 or 100
+        prob = 0.0 if current_price >= target_price else 100.0
+    else:
+        z_score = (log_return_target - period_drift) / period_vol
+        prob = float(norm.cdf(z_score)) * 100
+
+    return {
+        "current_price": round(current_price, 2),
+        "target_price": round(target_price, 2),
+        "days": days,
+        "daily_vol": round(daily_vol, 6),
+        "period_vol": round(period_vol, 6),
+        "daily_mean": round(daily_mean, 6),
+        "period_drift": round(period_drift, 6),
+        "log_return_target": round(log_return_target, 6),
+        "probability_below": round(prob, 2),
+        "probability_above": round(100.0 - prob, 2),
+        "method": "analytical_norm_cdf",
+    }
+
+
+# ---------------------------------------------------------------------------
+# Tool class
+# ---------------------------------------------------------------------------
+
+
+class PortfolioAnalyzerTool(Tool):
+    """Deterministic portfolio analysis with cross-check verification."""
+
+    name = "portfolio_analyzer"
+    description = (
+        "Deterministic portfolio analysis tool — CALL THIS for any portfolio "
+        "equity, P/L, margin call, stress test, or probability question.\n\n"
+        "Methods:\n"
+        "- analyze: Full pipeline (units → P/L → equity → margin → cross-check). "
+        "Feed capital, leverage, positions list, cash.\n"
+        "- stress_test: Scenario impact — pass target_prices dict to see equity "
+        "impact if prices move to specified levels.\n"
+        "- probability: Analytical norm.cdf probability of price below target "
+        "over N days using daily returns.\n\n"
+        "Chain: Use after financial_cv for CV analysis → portfolio_analyzer for "
+        "equity/margin → then feed results into visualization.\n"
+        "ALWAYS use this tool instead of manual math — it cross-checks equity = "
+        "capital + total_pnl (Colab ground truth formula)."
+    )
+    parameters = {
+        "type": "object",
+        "properties": {
+            "method": {
+                "type": "string",
+                "enum": ["analyze", "stress_test", "probability"],
+                "description": (
+                    "analyze: needs {capital, leverage, positions: [{symbol, entry_price, "
+                    "current_price, quantity, weight}], cash}.\n"
+                    "stress_test: needs {capital, leverage, positions, target_prices: "
+                    "{symbol: price}}.\n"
+                    "probability: needs {current_price, target_price, daily_returns, days}."
+                ),
+            },
+            "params": {
+                "type": "object",
+                "description": (
+                    "Keyword arguments for the chosen method. Examples:\n"
+                    "analyze: {\"capital\": 500000, \"leverage\": 2, \"positions\": "
+                    "[{\"symbol\": \"WTI\", \"entry_price\": 85, \"current_price\": 72.5, "
+                    "\"quantity\": 0, \"weight\": 0.6}], \"cash\": 0}\n"
+                    "stress_test: {\"capital\": 500000, \"leverage\": 2, \"positions\": [...], "
+                    "\"target_prices\": {\"WTI\": 60}}\n"
+                    "probability: {\"current_price\": 72.5, \"target_price\": 60, "
+                    "\"daily_returns\": [0.02, -0.01, ...], \"days\": 30}"
+                ),
+            },
+        },
+        "required": ["method", "params"],
+    }
+
+    _DISPATCH = {
+        "analyze": analyze_portfolio,
+        "stress_test": stress_test_portfolio,
+        "probability": analytical_probability,
+    }
+
+    async def execute(self, method: str = "", params: dict | None = None, **kw: Any) -> str:
+        fn = self._DISPATCH.get(method)
+        if fn is None:
+            return json.dumps({"error": f"Unknown method: {method}. Use: analyze, stress_test, probability"})
+        try:
+            result = fn(**(params or {}))
+            return json.dumps(result, default=str)
+        except Exception as e:
+            return json.dumps({"error": str(e)})

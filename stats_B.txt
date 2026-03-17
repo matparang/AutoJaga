@@ -1,0 +1,4 @@
+Pool B:
+Mean: -2.7
+Median: 3.0
+StdDev: 61.9

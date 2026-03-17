@@ -1,0 +1,1 @@
+This is a test file to demonstrate the write_file function.

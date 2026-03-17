@@ -1,0 +1,4 @@
+Pool C:
+Mean: -2.9
+Median: -4.0
+StdDev: 58.5

@@ -1,0 +1,12 @@
+domains:
+  finance:
+    debate_prompts: finance_prompts.json
+    metrics: ["volatility", "roi", "risk"]
+    
+  technology:
+    debate_prompts: tech_prompts.json
+    metrics: ["adoption", "innovation", "scalability"]
+    
+  science:
+    debate_prompts: science_prompts.json
+    metrics: ["reproducibility", "significance", "impact"]

@@ -1,0 +1,31 @@
+{
+  "methodology": "comparative analysis",
+  "topic": "/root/nanojaga/jagabot/workspace/organized/research/proposal_20260315_005620.md",
+  "steps": [
+    {
+      "action": "collect_data",
+      "sources": [
+        "web_search",
+        "financial_data"
+      ]
+    },
+    {
+      "action": "analyze",
+      "metrics": [
+        "volatility",
+        "roi",
+        "risk"
+      ]
+    },
+    {
+      "action": "validate",
+      "method": "cross_check"
+    }
+  ],
+  "success_criteria": [
+    "accuracy > 0.95",
+    "files_exist",
+    "validation_passed"
+  ],
+  "timestamp": "2026-03-15T00:56:20.818354"
+}

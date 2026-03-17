@@ -1,0 +1,171 @@
+# AutoJaga Configuration for TOAD TUI
+
+# Agent Configuration
+agent:
+  name: "AutoJaga"
+  version: "5.0.0"
+  description: "Financial research AI assistant with 45+ tools and multi-agent swarms"
+  
+  # ACP Configuration
+  acp:
+    enabled: true
+    protocol_version: "1.0"
+    
+    # Tool categories exposed to TOAD
+    tool_categories:
+      - name: "Financial Analysis"
+        tools:
+          - financial_cv
+          - monte_carlo
+          - var
+          - cvar
+          - stress_test
+          - correlation
+          - recovery_time
+          - portfolio_analyzer
+      
+      - name: "Reasoning Kernels"
+        tools:
+          - k1_bayesian
+          - k3_perspective
+          - evaluate_result
+          - decision_engine
+          - bayesian_reasoner
+        
+      - name: "Research"
+        tools:
+          - researcher
+          - web_search
+          - web_fetch
+          - copywriter
+          - debate
+        
+      - name: "Multi-Agent"
+        tools:
+          - tri_agent
+          - quad_agent
+          - offline_swarm
+          - spawn
+        
+      - name: "Memory & Learning"
+        tools:
+          - memory_fleet
+          - knowledge_graph
+          - meta_learning
+          - evolution
+          - self_improver
+        
+      - name: "Utilities"
+        tools:
+          - read_file
+          - write_file
+          - edit_file
+          - list_dir
+          - shell
+          - message
+
+# Workspace Configuration
+workspace:
+  root: "/root/.jagabot/workspace"
+  research_dir: "/root/.jagabot/workspace/organized/research"
+  data_dir: "/root/.jagabot/workspace/data"
+  logs_dir: "/root/.jagabot/logs"
+  
+  # Auto-create directories
+  auto_create: true
+
+# Research Skill Configuration
+research:
+  enabled: true
+  
+  # Research pipeline phases
+  phases:
+    phase1:
+      name: "Idea Exploration"
+      enabled: true
+      agent: "tri_agent"
+    
+    phase2:
+      name: "Experiment Planning"
+      enabled: true
+      agent: "main_agent"
+    
+    phase3:
+      name: "Quad-Agent Execution"
+      enabled: true
+      agent: "quad_agent"
+    
+    phase4:
+      name: "Synthesis"
+      enabled: true
+      agent: "tri_agent"
+  
+  # Default research domains
+  domains:
+    - finance
+    - technology
+    - science
+    - healthcare
+    - energy
+  
+  default_domain: "finance"
+
+# TOAD UI Configuration
+toad_ui:
+  # Theme
+  theme: "monokai"
+  
+  # Keybindings
+  keybindings:
+    help: "f1"
+    agents: "ctrl+s"
+    resume: "ctrl+r"
+    quit: "ctrl+q"
+    file_picker: "ctrl+p"
+    shell: "ctrl+x"
+  
+  # Editor settings
+  editor:
+    syntax_highlighting: true
+    line_numbers: true
+    word_wrap: false
+    markdown_preview: true
+  
+  # Shell integration
+  shell:
+    persist_env: true
+    persist_cd: true
+    history_size: 1000
+    allowed_commands:
+      - cd
+      - ls
+      - cat
+      - mkdir
+      - rm
+      - cp
+      - mv
+      - echo
+      - grep
+      - find
+  
+  # File picker
+  file_picker:
+    fuzzy_threshold: 60
+    max_results: 10
+    show_hidden: false
+    root: "/root/.jagabot/workspace"
+  
+  # Progress display
+  progress:
+    show_bar: true
+    show_eta: true
+    show_phase: true
+    style: "rich"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "/root/.jagabot/logs/toad_integration.log"
+  max_size_mb: 100
+  backup_count: 5
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"

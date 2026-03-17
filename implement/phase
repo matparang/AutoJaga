@@ -1,0 +1,504 @@
+📋 SCOPE PROMPT: JAGABOT v3.0 Phase 4A - Subagent Prompts & Execution System
+
+```markdown
+# SCOPE: Phase 4A - Build Subagent Prompts & Execution System
+
+## CURRENT STATE
+✅ Phase 1-3 complete:
+- Kernels: MemoryFleet, KnowledgeGraph, K1, K3, K7 (770 tests)
+- Core: System Prompt + Skill Library (820 tests)
+- Learning: MetaLearningEngine, ExperimentTracker (852 tests)
+- Total: 852 tests passing, 28 tools registered
+
+⏳ Phase 4A target: Subagent System (4 stateless workers)
+
+## WHAT WE'RE BUILDING
+4 stateless subagents with their own prompts, managed by Swarm:
+
+```
+
+┌─────────────────────────────────────────────────────────────────┐
+│                    SUBAGENT SYSTEM                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  🧠 SWARM MANAGER (exists)                                      │
+│  ├── Spawns subagents                                           │
+│  ├── Manages dependencies                                       │
+│  └── Collects results                                           │
+│         ↓    ↓    ↓    ↓                                        │
+│  📡 SUBAGENT 1: WebSearch                                       │
+│  │  ├── Prompt: websearch_subagent.md                          │
+│  │  ├── Tools: web_search, yahoo_finance                      │
+│  │  ├── Stateless: dies after work                             │
+│  │  └── Output: {prices, vix, usd, history}                   │
+│  │                                                              │
+│  🛠️ SUBAGENT 2: Tools                                           │
+│  │  ├── Prompt: tools_subagent.md                              │
+│  │  ├── Tools: monte_carlo, financial_cv, var, cvar           │
+│  │  ├── Stateless: dies after work                             │
+│  │  └── Output: {probability, cv, var, cvar, correlation}     │
+│  │                                                              │
+│  🧮 SUBAGENT 3: Models                                          │
+│  │  ├── Prompt: models_subagent.md                             │
+│  │  ├── Kernels: K1 (Bayesian)                                 │
+│  │  ├── Stateless: dies after work                             │
+│  │  └── Output: {price_model, volatility_model, economic_model}│
+│  │                                                              │
+│  🤔 SUBAGENT 4: Reasoning                                       │
+│  │  ├── Prompt: reasoning_subagent.md                          │
+│  │  ├── Kernels: K3, K7                                        │
+│  │  ├── Stateless: dies after work                             │
+│  │  └── Output: {perspectives, final, confidence}             │
+│  │                                                              │
+└─────────────────────────────────────────────────────────────────┘
+
+```
+
+## SUBAGENT PROMPTS TO CREATE
+
+### 1. WebSearch Subagent Prompt
+```markdown
+# FILE: jagabot/subagents/prompts/websearch_subagent.md
+
+## MISSION
+You are WebSearch subagent. Your ONLY job is to fetch current market data.
+
+## INPUT
+- Assets to check: usually WTI, Brent, VIX, USD Index
+- User query context
+
+## TOOLS AVAILABLE
+- `web_search` - Brave/Yahoo search
+- `yahoo_finance` - Direct price fetcher
+
+## WORKFLOW
+1. ALWAYS try Yahoo Finance first for:
+   - WTI futures (CL=F)
+   - Brent futures (BZ=F)
+   - VIX (^VIX)
+   - USD Index (DX-Y.NYB)
+
+2. If Yahoo fails, use web_search with site:finance.yahoo.com
+
+3. Get 30-day history for volatility calculation
+
+## OUTPUT FORMAT (JSON)
+{
+  "prices": {
+    "WTI": float,
+    "Brent": float,
+    "VIX": float,
+    "USD": float
+  },
+  "history": {
+    "WTI": [float],
+    "timestamp": "ISO datetime"
+  },
+  "source": "Yahoo Finance",
+  "success": boolean
+}
+
+## RULES
+- Stateless: NO memory between calls
+- If source unavailable, return {"success": false, "error": "reason"}
+- Always include timestamp
+- This subagent DIES after returning output
+```
+
+2. Tools Subagent Prompt
+
+```markdown
+# FILE: jagabot/subagents/prompts/tools_subagent.md
+
+## MISSION
+You are Tools subagent. Your ONLY job is to run financial calculations.
+
+## INPUT
+- prices (from WebSearch)
+- portfolio data (from user)
+- historical changes array
+
+## TOOLS AVAILABLE
+- `monte_carlo` - probability forecasting
+- `financial_cv` - CV analysis, pattern detection
+- `var` - Value at Risk
+- `cvar` - Conditional VaR
+- `correlation` - Asset relationships
+
+## WORKFLOW (in order)
+1. Calculate probability with monte_carlo
+   - Use VIX for volatility
+   - Target from query or default
+
+2. Analyze volatility with financial_cv
+   - Use historical changes
+   - Return CV and pattern
+
+3. Compute risk metrics
+   - var with 95% confidence
+   - cvar for tail risk
+
+4. Check correlations
+   - USD-Oil correlation
+
+## OUTPUT FORMAT (JSON)
+{
+  "probability": {
+    "value": float,
+    "ci_95": [float, float],
+    "simulations": int
+  },
+  "volatility": {
+    "cv": float,
+    "pattern": "STABLE/MODERATE/HIGH",
+    "trend": "increasing/decreasing"
+  },
+  "var": {
+    "95": float,
+    "percentage": float
+  },
+  "cvar": {
+    "95": float,
+    "percentage": float
+  },
+  "correlation": {
+    "usd_oil": float
+  }
+}
+
+## RULES
+- Stateless: NO memory between calls
+- ALL calculations in sandbox
+- Include confidence intervals on ALL numbers
+- This subagent DIES after returning output
+```
+
+3. Models Subagent Prompt
+
+```markdown
+# FILE: jagabot/subagents/prompts/models_subagent.md
+
+## MISSION
+You are Models subagent. Your ONLY job is to build integrated models.
+
+## INPUT
+- probability, volatility, var, correlation (from Tools)
+- current prices (from WebSearch)
+
+## KERNELS AVAILABLE
+- K1 Bayesian - uncertainty quantification
+
+## WORKFLOW
+1. Build PRICE MODEL
+   - Combine monte_carlo results with current price
+   - Use K1 for confidence calibration
+   - Output: direction (bullish/bearish/neutral)
+
+2. Build VOLATILITY MODEL
+   - Combine CV with VIX
+   - Classify regime: LOW (<0.2), MODERATE (0.2-0.4), HIGH (>0.4)
+   - Detect trend
+
+3. Build ECONOMIC MODEL
+   - Use correlation with USD
+   - Interpret USD strength (110+ = bearish)
+   - Factor in VIX (40+ = panic)
+
+## OUTPUT FORMAT (JSON)
+{
+  "price_model": {
+    "direction": "bearish",
+    "confidence": float,
+    "key_levels": {
+      "support": float,
+      "resistance": float
+    }
+  },
+  "volatility_model": {
+    "regime": "HIGH",
+    "trend": "increasing",
+    "vix_level": "panic"
+  },
+  "economic_model": {
+    "usd_impact": "bearish",
+    "strength": 0.85,
+    "narrative": "USD strong = oil pressure"
+  }
+}
+
+## RULES
+- Stateless: NO memory between calls
+- Use K1 for ALL confidence scores
+- If models conflict, note in output
+- This subagent DIES after returning output
+```
+
+4. Reasoning Subagent Prompt
+
+```markdown
+# FILE: jagabot/subagents/prompts/reasoning_subagent.md
+
+## MISSION
+You are Reasoning subagent. Your ONLY job is to apply perspectives and kernels.
+
+## INPUT
+- All models (from Models subagent)
+- All tool outputs
+- Historical context from MemoryFleet
+
+## KERNELS AVAILABLE
+- K3 Multi-Perspective - Bull/Bear/Buffet
+- K7 Evaluation - quality scoring
+
+## WORKFLOW
+1. Get BULL perspective
+   - Focus on upside potential
+   - Weight: 95th percentile, positive signals
+   - Output: verdict + confidence
+
+2. Get BEAR perspective
+   - Focus on downside risk
+   - Weight: VaR, CVaR, negative signals
+   - Output: verdict + confidence
+
+3. Get BUFFET perspective
+   - Focus on capital preservation
+   - Weight: margin of safety, Rule #1
+   - Output: verdict + confidence
+
+4. COLLAPSE using K3 weights
+   - Weighted average of 3 perspectives
+   - Apply historical calibration
+
+5. SCORE quality with K7
+   - Evaluate coherence
+   - Check against similar past analyses
+
+## OUTPUT FORMAT (JSON)
+{
+  "perspectives": {
+    "bull": {
+      "verdict": "HOLD/REDUCE/SELL",
+      "confidence": float,
+      "rationale": string
+    },
+    "bear": {
+      "verdict": "HOLD/REDUCE/SELL",
+      "confidence": float,
+      "rationale": string
+    },
+    "buffet": {
+      "verdict": "HOLD/REDUCE/SELL",
+      "confidence": float,
+      "rationale": string
+    }
+  },
+  "final": {
+    "verdict": "SELL",
+    "confidence": float,
+    "quality_score": float,
+    "weighted_score": float
+  }
+}
+
+## RULES
+- Stateless: NO memory between calls
+- Always include all 3 perspectives
+- Quality score must be >0.7 to output
+- This subagent DIES after returning output
+```
+
+SWARM MANAGER INTEGRATION
+
+```python
+# jagabot/swarm/subagent_manager.py (new)
+
+class SubagentManager:
+    """Manages stateless subagent execution"""
+    
+    def __init__(self):
+        self.pool = ProcessPoolExecutor(max_workers=4)
+        self.prompts = self.load_prompts()
+    
+    def load_prompts(self):
+        """Load subagent prompts from files"""
+        return {
+            'websearch': Path('jagabot/subagents/prompts/websearch_subagent.md').read_text(),
+            'tools': Path('jagabot/subagents/prompts/tools_subagent.md').read_text(),
+            'models': Path('jagabot/subagents/prompts/models_subagent.md').read_text(),
+            'reasoning': Path('jagabot/subagents/prompts/reasoning_subagent.md').read_text()
+        }
+    
+    def execute_workflow(self, skill_name, data):
+        """Execute 4-subagent workflow with dependencies"""
+        
+        # Stage 1: WebSearch (no dependencies)
+        web_future = self.pool.submit(
+            self.run_subagent,
+            'websearch',
+            self.prompts['websearch'],
+            data
+        )
+        web_result = web_future.result(timeout=30)
+        
+        if not web_result.get('success', True):
+            return {'error': 'WebSearch failed', 'details': web_result}
+        
+        # Stage 2: Tools (depends on web_result)
+        tools_future = self.pool.submit(
+            self.run_subagent,
+            'tools',
+            self.prompts['tools'],
+            {**data, 'prices': web_result['prices'], 'history': web_result.get('history', [])}
+        )
+        tools_result = tools_future.result(timeout=30)
+        
+        # Stage 3: Models (depends on web + tools)
+        models_future = self.pool.submit(
+            self.run_subagent,
+            'models',
+            self.prompts['models'],
+            {**data, **web_result, **tools_result}
+        )
+        models_result = models_future.result(timeout=30)
+        
+        # Stage 4: Reasoning (depends on all previous)
+        reasoning_future = self.pool.submit(
+            self.run_subagent,
+            'reasoning',
+            self.prompts['reasoning'],
+            {**data, **web_result, **tools_result, **models_result}
+        )
+        reasoning_result = reasoning_future.result(timeout=30)
+        
+        return {
+            'web': web_result,
+            'tools': tools_result,
+            'models': models_result,
+            'reasoning': reasoning_result
+        }
+    
+    def run_subagent(self, agent_type, prompt, data):
+        """Run a single subagent (stateless)"""
+        # Execute in sandbox
+        result = sandbox.execute(
+            agent_type=agent_type,
+            system_prompt=prompt,
+            user_data=data
+        )
+        # Subagent dies here - no state preserved
+        return result
+```
+
+SKILL INTEGRATION
+
+```python
+# jagabot/skills/crisis_management.py (updated)
+
+def execute_crisis_management(data):
+    """Execute crisis management skill using subagents"""
+    
+    manager = SubagentManager()
+    results = manager.execute_workflow('crisis_management', data)
+    
+    # Store in MemoryFleet
+    analysis_id = memory.store(results)
+    
+    # Update KnowledgeGraph
+    graph.add_relationships(analysis_id, results)
+    
+    # Track for learning (when outcome known)
+    meta.track_prediction(analysis_id, results['reasoning']['final'])
+    
+    return generate_dashboard(results)
+```
+
+TESTING REQUIREMENTS
+
+Test 1: WebSearch Subagent
+
+```python
+def test_websearch_subagent():
+    subagent = SubagentManager()
+    result = subagent.run_subagent('websearch', web_prompt, {'assets': ['WTI']})
+    assert 'prices' in result
+    assert 'WTI' in result['prices']
+```
+
+Test 2: Full Workflow
+
+```python
+def test_full_subagent_workflow():
+    manager = SubagentManager()
+    results = manager.execute_workflow('test', test_data)
+    
+    assert 'web' in results
+    assert 'tools' in results
+    assert 'models' in results
+    assert 'reasoning' in results
+    assert 'final' in results['reasoning']
+```
+
+Test 3: Stateless Verification
+
+```python
+def test_stateless():
+    # Run same data twice
+    r1 = manager.execute_workflow('test', data)
+    r2 = manager.execute_workflow('test', data)
+    
+    # Results should be identical (same input = same output)
+    assert r1 == r2
+```
+
+NEW FILES TO CREATE
+
+1. jagabot/subagents/prompts/websearch_subagent.md
+2. jagabot/subagents/prompts/tools_subagent.md
+3. jagabot/subagents/prompts/models_subagent.md
+4. jagabot/subagents/prompts/reasoning_subagent.md
+5. jagabot/swarm/subagent_manager.py
+6. tests/test_subagent_websearch.py
+7. tests/test_subagent_tools.py
+8. tests/test_subagent_models.py
+9. tests/test_subagent_reasoning.py
+10. tests/test_subagent_workflow.py
+
+FILES TO MODIFY
+
+1. jagabot/swarm/__init__.py - register subagent manager
+2. jagabot/skills/crisis_management.py - use subagents
+3. jagabot/skills/portfolio_review.py - use subagents
+4. CHANGELOG.md - v3.0 Phase 4A
+5. SKILL.md - document subagent system
+
+SUCCESS CRITERIA
+
+✅ All 4 subagent prompts written
+✅ SubagentManager implemented
+✅ WebSearch subagent returns correct data
+✅ Tools subagent runs calculations
+✅ Models subagent builds 3 models
+✅ Reasoning subagent returns 3 perspectives + final
+✅ Full workflow executes in < 10 seconds
+✅ All subagents are stateless (same input = same output)
+✅ 900+ tests passing
+✅ All Phase 1-3 features still work
+
+TIMELINE
+
+Task Hours
+Write 4 subagent prompts 2
+Implement SubagentManager 3
+Integrate with Swarm 2
+Connect to existing tools 2
+Write tests (30+) 3
+Debug and refine 2
+Documentation 1
+TOTAL 15 hours
+
+```
+
+---
+
+**Phase 4A will give JAGABOT its 4 stateless workers. Ready to build?** 🚀
