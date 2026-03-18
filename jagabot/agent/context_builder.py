@@ -74,6 +74,12 @@ TOOL_RELEVANCE = {
         "web_search", "researcher", "tri_agent",
         "accountability", "education",
     ],
+    "spawn": [
+        "spawn", "subagent",
+    ],
+    "parallel": [
+        "spawn", "subagent",
+    ],
 }
 
 # Maps query signals to topics
