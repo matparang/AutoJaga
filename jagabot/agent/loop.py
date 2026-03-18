@@ -116,6 +116,19 @@ class AgentLoop:
         if checkpoint:
             logger.info(f"Found checkpoint from turn {checkpoint['turn']} - use /resume to restore")
         
+        # ParallelRunner — real multi-agent execution
+        try:
+            from jagabot.swarm.parallel_runner import ParallelRunner
+            self.parallel_runner = ParallelRunner(
+                provider=provider,
+                workspace=workspace,
+                brier_scorer=None,  # wired after brier init below
+            )
+            logger.info("ParallelRunner initialized")
+        except Exception as _pr_err:
+            logger.warning(f"ParallelRunner init failed: {_pr_err}")
+            self.parallel_runner = None
+
         # CognitiveStack — two-tier model architecture (M1 classifies, M2 plans, M1 executes)
         try:
             from jagabot.core.cognitive_stack import CognitiveStack
@@ -189,6 +202,10 @@ class AgentLoop:
         if self.cognitive_stack and hasattr(self, 'brier'):
             self.cognitive_stack.brier = self.brier
             logger.info("CognitiveStack ← BrierScorer wired")
+
+        if self.parallel_runner and hasattr(self, 'brier'):
+            self.parallel_runner.brier_scorer = self.brier
+            logger.info("ParallelRunner ← BrierScorer wired")
 
         # System Health Monitor (unified health scoring)
         from jagabot.core.system_health_monitor import SystemHealthMonitor
