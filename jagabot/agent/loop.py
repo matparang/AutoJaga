@@ -501,7 +501,7 @@ class AgentLoop:
             else:
                 self.cognitive_stack.calibration_mode = False
                 logger.debug(f"CognitiveStack: trust ({_trust or 'n/a'}) on '{_topic}' → normal mode")
-            self._last_confidence = _trust
+            self._last_confidence = _trust if _trust is not None else 1.0  # Default to 1.0 if no data
 
         # Reset repetition guard for new user turn
         self.rep_guard.reset_for_new_turn()
