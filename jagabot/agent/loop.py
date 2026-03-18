@@ -940,6 +940,7 @@ class AgentLoop:
             tools_used=tools_used,
             session_key=session.key,
             auditor_approved=auditor_approved,
+            anomaly_count=len(self.behavior_monitor.check_anomalies()),
         )
 
         # ── ProactiveWrapper: ensure response has interpretation ────

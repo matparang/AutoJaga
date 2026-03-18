@@ -301,6 +301,30 @@ class SelfModelEngine:
             f"quality={quality:.2f} tools={len(tools_used)}"
         )
 
+    def get_knowledge_gaps(self, domain: str) -> list[str]:
+        """Return known weak areas for a domain."""
+        gaps = []
+        stats = self.domain_stats.get(domain, {})
+        if not stats:
+            gaps.append(f"No data collected for domain '{domain}' yet")
+            return gaps
+        quality = stats.get("avg_quality", 1.0)
+        if quality < 0.5:
+            gaps.append(f"Low quality in '{domain}' (avg={quality:.2f})")
+        if stats.get("total_turns", 0) < 5:
+            gaps.append(f"Insufficient experience in '{domain}' (<5 turns)")
+        return gaps if gaps else [f"No significant gaps detected in '{domain}'"]
+
+    def update_domain_reliability(self, domain: str, quality: float) -> None:
+        """Update reliability score for a domain."""
+        if domain not in self.domain_stats:
+            self.domain_stats[domain] = {"avg_quality": quality, "total_turns": 1}
+        else:
+            s = self.domain_stats[domain]
+            n = s.get("total_turns", 1)
+            s["avg_quality"] = (s.get("avg_quality", quality) * n + quality) / (n + 1)
+            s["total_turns"] = n + 1
+
     def record_verified_outcome(
         self,
         topic:    str,

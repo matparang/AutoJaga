@@ -203,12 +203,18 @@ class SessionWriter:
 
         # Step 1 — score quality (user_verified overrides low scores)
         _user_verified = kwargs.get("user_verified", False)
+        _anomalies = kwargs.get("anomaly_count", 0)
         quality = self.scorer.score(
             content=content,
             tools_used=tools_used,
             auditor_approved=auditor_approved,
             user_verified=_user_verified,
         )
+        # Penalize quality when behavior anomalies detected
+        if _anomalies > 0 and not _user_verified:
+            penalty = min(0.3, _anomalies * 0.10)
+            quality = max(0.0, quality - penalty)
+            logger.debug(f"Quality penalized by {penalty:.2f} ({_anomalies} anomalies) → {quality:.2f}")
         label = (
             "excellent" if quality >= HIGH_QUALITY_THRESHOLD
             else "good" if quality >= AUTO_RECORD_THRESHOLD
