@@ -242,6 +242,16 @@ class SubagentManager:
         """Announce the subagent result to the main agent via the message bus."""
         status_text = "completed successfully" if status == "ok" else "failed"
         
+        # Direct CLI output — don't wait for main agent loop
+        if origin.get("channel") == "cli":
+            from rich.console import Console
+            _console = Console()
+            _console.print(f"\n[bold green]✅ Subagent '{label}' {status_text}[/bold green]")
+            _console.print(f"[dim]Task:[/dim] {task[:80]}")
+            _console.print(f"[dim]Result:[/dim] {result[:500]}")
+            _console.print()
+            return  # Don't inject into main agent loop for CLI
+        
         announce_content = f"""[Subagent '{label}' {status_text}]
 
 Task: {task}
