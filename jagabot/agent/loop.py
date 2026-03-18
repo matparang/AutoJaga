@@ -630,7 +630,8 @@ class AgentLoop:
             for kw in ["outcome:", "verdict:", "correct", "wrong", "partial", "skip outcomes", "inconclusive"]
         )
         pending = self.outcome_tracker.get_pending_reminder()
-        if pending and not _is_verdict:
+        if pending and not _is_verdict and not self._session_reminded:
+            self._session_reminded = True  # never show again this session
             logger.info("📌 Pending outcomes reminder shown")
             return OutboundMessage(
                 channel=msg.channel,
