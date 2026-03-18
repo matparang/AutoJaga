@@ -457,15 +457,17 @@ class ModelSwitchboard:
 
         return ModelConfig(
             preset_id    = preset_id,
-            model_id     = preset["model_id"],
+            model_id     = preset.get("model_id") or preset.get("modelId"),
             provider     = preset.get("provider", "openai"),
             name         = preset["name"],
-            max_tokens   = preset.get("max_tokens", 2000),
+            max_tokens   = preset.get("max_tokens") or preset.get("maxTokens", 2000),
             cost_input   = preset.get(
-                "token_cost_per_1k_input", 0.00015
+                "token_cost_per_1k_input",
+                preset.get("tokenCostPer1KInput", 0.00015)
             ),
             cost_output  = preset.get(
-                "token_cost_per_1k_output", 0.00060
+                "token_cost_per_1k_output",
+                preset.get("tokenCostPer1KOutput", 0.00060)
             ),
             reason       = reason,
             auto_selected= not bool(self._manual),
