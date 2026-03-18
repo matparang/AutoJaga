@@ -1,4 +1,0 @@
-pool_A: mean=50.46, median=54, std=29.09
-pool_B: mean=41.12, median=34, std=30.96
-pool_C: mean=50.02, median=48, std=28.72
-Completed at 2026-03-14 05:56:55
