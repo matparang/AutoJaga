@@ -627,7 +627,11 @@ class AgentLoop:
         # Skip reminder if user is currently submitting an outcome verdict
         _is_verdict = any(
             kw in msg.content.lower()
-            for kw in ["outcome:", "verdict:", "correct", "wrong", "partial", "skip outcomes", "inconclusive"]
+            for kw in [
+                "outcome:", "verdict:", "correct", "wrong", "partial",
+                "skip outcomes", "inconclusive", "spawn", "subagent",
+                "run all agents", "parallel", "multi-agent",
+            ]
         )
         pending = self.outcome_tracker.get_pending_reminder()
         if pending and not _is_verdict and not self._session_reminded:
