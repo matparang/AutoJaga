@@ -622,16 +622,18 @@ class AgentLoop:
                 )
             except Exception as _pr_err:
                 logger.warning(f"ParallelRunner failed, falling back to single agent: {_pr_err}")
-
+                # Falls through to normal processing
+        
+        # Pending outcomes reminder
         pending = self.outcome_tracker.get_pending_reminder()
-            if pending:
-                logger.info(f"📌 Pending outcomes reminder shown")
-                return OutboundMessage(
-                    channel=msg.channel,
-                    chat_id=msg.chat_id,
-                    content=pending,
-                    metadata=msg.metadata or {},
-                )
+        if pending:
+            logger.info(f"📌 Pending outcomes reminder shown")
+            return OutboundMessage(
+                channel=msg.channel,
+                chat_id=msg.chat_id,
+                content=pending,
+                metadata=msg.metadata or {},
+            )
 
         # ── Check if user is providing outcome feedback ─────────────
         feedback = self.outcome_tracker.record_outcome_by_context(msg.content)
