@@ -241,17 +241,18 @@ class SubagentManager:
     ) -> None:
         """Announce the subagent result to the main agent via the message bus."""
         status_text = "completed successfully" if status == "ok" else "failed"
-        
-        # Direct CLI output — don't wait for main agent loop
+
+        # Direct CLI output — print immediately without waiting
         if origin.get("channel") == "cli":
             from rich.console import Console
             _console = Console()
             _console.print(f"\n[bold green]✅ Subagent '{label}' {status_text}[/bold green]")
-            _console.print(f"[dim]Task:[/dim] {task[:80]}")
             _console.print(f"[dim]Result:[/dim] {result[:500]}")
             _console.print()
-            return  # Don't inject into main agent loop for CLI
-        
+            # Still notify main agent with a brief summary (not full result)
+            # so it knows the task is done without re-processing
+            announce_content = f"[Subagent '{label}' {status_text}] Task complete. Result has been shown to user direct."
+
         announce_content = f"""[Subagent '{label}' {status_text}]
 
 Task: {task}
@@ -260,7 +261,7 @@ Result:
 {result}
 
 Summarize this naturally for the user. Keep it brief (1-2 sentences). Do not mention technical details like "subagent" or task IDs."""
-        
+
         # Inject as system message to trigger main agent
         msg = InboundMessage(
             channel="system",
