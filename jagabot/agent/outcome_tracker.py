@@ -206,6 +206,18 @@ class LoopConnector:
 
         self._call_meta_learning(outcome, success, fitness)
         self._call_k1_bayesian(outcome, success)
+        
+        # Boost quality score when outcome verified correct
+        try:
+            writer = self._get("session_writer") if hasattr(self, '_get') else None
+            if not writer and hasattr(self, 'writer'):
+                writer = self.writer
+            if writer and success:
+                logger.info("OutcomeTracker: verified correct → boosting quality for solidification")
+                writer._last_user_verified = True
+        except Exception as e:
+            logger.debug(f"Quality boost skipped: {e}")
+        
         logger.info(
             f"✅ Loop closed: [{outcome.conclusion_type}] "
             f"'{outcome.conclusion[:50]}...' → {result}"

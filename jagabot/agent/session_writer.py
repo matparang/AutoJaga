@@ -79,6 +79,7 @@ class QualityScorer:
         content: str,
         tools_used: list | None,
         auditor_approved: bool = True,
+        user_verified: bool = False,
     ) -> float:
         score = 0.0
 
@@ -103,7 +104,13 @@ class QualityScorer:
         if auditor_approved:
             score += 0.20
 
-        return round(score, 2)
+        total = round(score, 2)
+
+        # User verified correct → boost quality above threshold
+        if user_verified:
+            total = max(total, 0.85)
+
+        return total
 
 
 class MetaLearningConnector:
@@ -193,6 +200,7 @@ class SessionWriter:
         tools_used: list | None = None,
         session_key: str = "unknown",
         auditor_approved: bool = True,
+        **kwargs,
     ) -> Path:
         """
         Save output to disk. Auto-record to MetaLearning
@@ -201,11 +209,13 @@ class SessionWriter:
         """
         timestamp = datetime.now()
 
-        # Step 1 — score quality
+        # Step 1 — score quality (user_verified overrides low scores)
+        _user_verified = kwargs.get("user_verified", False)
         quality = self.scorer.score(
             content=content,
             tools_used=tools_used,
             auditor_approved=auditor_approved,
+            user_verified=_user_verified,
         )
         label = (
             "excellent" if quality >= HIGH_QUALITY_THRESHOLD
