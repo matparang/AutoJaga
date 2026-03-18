@@ -1,7 +1,28 @@
+# Virtual environments
 .venv/
+venv/
+env/
+**/venv/
+**/.venv/
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+
+# Environment and secrets
 .env
+*.env
+
+# Logs
 *.log
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Large data/model files
+*.pkl
+*.bin
+*.h5

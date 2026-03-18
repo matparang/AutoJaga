@@ -1,0 +1,555 @@
+[
+  {
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R",
+    "timestamp": "2026-02-22T13:49:59.156167",
+    "session": "cli_direct.jsonl",
+    "line": 18,
+    "content_preview": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 0 6..."
+  },
+  {
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R",
+    "timestamp": "2026-02-22T14:07:21.566827",
+    "session": "cli_direct.jsonl",
+    "line": 23,
+    "content_preview": "You've highlighted some crucial strategic ideas for Black in certain lines of the Evans Gambit, part..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T15:10:06.472315",
+    "session": "cli_direct.jsonl",
+    "line": 30,
+    "content_preview": "1. The London System (The \"Safety First\" Shield)\n\u200bLogic: A \"System\" opening where White builds an un..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T15:10:06.472325",
+    "session": "cli_direct.jsonl",
+    "line": 31,
+    "content_preview": "Okay, I see the FEN for a typical London System position.\n\n**FEN:** `rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T15:16:23.349910",
+    "session": "cli_direct.jsonl",
+    "line": 33,
+    "content_preview": "You are absolutely correct. My apologies for the oversight in not fully decoding the FEN and explici..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T15:25:14.409744",
+    "session": "cli_direct.jsonl",
+    "line": 49,
+    "content_preview": "You are absolutely right. My apologies for the over-generic advice. It indicates a lack of deep cont..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:30:04.974826",
+    "session": "cli_direct.jsonl",
+    "line": 54,
+    "content_preview": "ok let continue the lesson : 2. The Caro-Kann Defense (The \"Iron Wall\")\n\u200bLogic: Black\u2019s ultimate sol..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:30:04.974834",
+    "session": "cli_direct.jsonl",
+    "line": 55,
+    "content_preview": "Understood. We are moving on to the Caro-Kann Defense.\n\n**FEN:** `rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:33:26.522233",
+    "session": "cli_direct.jsonl",
+    "line": 56,
+    "content_preview": "CRITICAL GAP 1 \u2014 Catastrophic Turn Error: Says \"Black to move\"\nFEN:\n\nrn1qkbnr/pp2pppp/2p5/3p1b2/3PP3..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:33:26.522248",
+    "session": "cli_direct.jsonl",
+    "line": 57,
+    "content_preview": "You are absolutely right. This is a critical error, and I sincerely apologize. My failure to correct..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:49:42.231703",
+    "session": "cli_direct.jsonl",
+    "line": 59,
+    "content_preview": "You are absolutely correct, and I apologize for this second critical error. My reconstruction of the..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:52:22.852833",
+    "session": "cli_direct.jsonl",
+    "line": 63,
+    "content_preview": "You are absolutely correct. This is another critical error, and I apologize profusely. My analysis c..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:53:35.496980",
+    "session": "cli_direct.jsonl",
+    "line": 65,
+    "content_preview": "You are absolutely correct. This is another critical error on my part, and I sincerely apologize. My..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T15:54:47.287207",
+    "session": "cli_direct.jsonl",
+    "line": 67,
+    "content_preview": "You are absolutely correct. My analysis completely missed the most important immediate tactical and ..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:01:49.098691",
+    "session": "cli_direct.jsonl",
+    "line": 76,
+    "content_preview": "ok 3. The Minority Attack (The \"Structural Drill\")\n\u200bLogic: Using 2 pawns to destroy a 3-pawn chain.\n..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:01:49.098704",
+    "session": "cli_direct.jsonl",
+    "line": 77,
+    "content_preview": "Understood. We are moving on to the concept of the Minority Attack.\n\n**FEN:** `r1rq2k1/1p2bppp/2p1pn..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:07:51.186927",
+    "session": "cli_direct.jsonl",
+    "line": 80,
+    "content_preview": "lets try again = \u200b3. The Minority Attack (The \"Structural Drill\")\n\u200bLogic: Using 2 pawns to destroy a..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:07:51.186940",
+    "session": "cli_direct.jsonl",
+    "line": 81,
+    "content_preview": "Okay, let's re-evaluate the position with the Minority Attack strategy in mind.\n\n**FEN:** `r1rq2k1/1..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:10:42.863587",
+    "session": "cli_direct.jsonl",
+    "line": 84,
+    "content_preview": "lets try agaim = 3. The Minority Attack (The \"Structural Drill\")\n\u200bLogic: Using 2 pawns to destroy a ..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:10:42.863596",
+    "session": "cli_direct.jsonl",
+    "line": 85,
+    "content_preview": "Okay, let's analyze this position again using the structured five-step process you've provided.\n\n**F..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:14:30.529056",
+    "session": "cli_direct.jsonl",
+    "line": 87,
+    "content_preview": "Understood. I will strictly adhere to the FEN provided, extract all pieces and their coordinates, co..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:15:51.312243",
+    "session": "cli_direct.jsonl",
+    "line": 88,
+    "content_preview": "4. The Sicilian Taimanov (The \"Counter-Attack\")\n\u200bLogic: Flexible, low-risk, high-reward counter-play..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:15:51.312253",
+    "session": "cli_direct.jsonl",
+    "line": 89,
+    "content_preview": "Understood. We are moving on to the Sicilian Taimanov, also known as the \"Counter-Attack.\"\n\n**FEN:**..."
+  },
+  {
+    "fen": "r1b1k2r/1pq1bppp/p1n1pn2/3p4/3NP3/2N1B3/PPPQ1PPP/2KR1B1R",
+    "timestamp": "2026-02-22T16:18:46.120689",
+    "session": "cli_direct.jsonl",
+    "line": 91,
+    "content_preview": "You've transitioned into a very dynamic and complex phase of the game! Let's analyze the shift in \"p..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:22:21.878221",
+    "session": "cli_direct.jsonl",
+    "line": 92,
+    "content_preview": "5. The King\u2019s Indian Defense (The \"Elastic Spring\")\n\u200bLogic: Giving up the center early to launch a d..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:22:21.878236",
+    "session": "cli_direct.jsonl",
+    "line": 93,
+    "content_preview": "Understood. We are moving on to the King's Indian Defense (KID), the \"Elastic Spring.\"\n\n**FEN:** `rn..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:24:38.541688",
+    "session": "cli_direct.jsonl",
+    "line": 94,
+    "content_preview": "3. The Minority Attack (The \"Structural Drill\")\n\u200bLogic: Using 2 pawns to destroy a 3-pawn chain.\n\u200bOp..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:24:38.541702",
+    "session": "cli_direct.jsonl",
+    "line": 95,
+    "content_preview": "I apologize, but I encountered an error when trying to search the web. It seems my access to the sea..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:28:14.009143",
+    "session": "cli_direct.jsonl",
+    "line": 96,
+    "content_preview": "Game 1 \u2014 London System (FEN: rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R b KQkq - 0 5)\nBla..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:28:14.009153",
+    "session": "cli_direct.jsonl",
+    "line": 97,
+    "content_preview": "Okay, let's analyze Game 1 with the London System FEN.\n\n**FEN:** `rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:28:56.281750",
+    "session": "cli_direct.jsonl",
+    "line": 98,
+    "content_preview": "Game 2 \u2014 Caro-Kann Defense (FEN: rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4)\n..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:28:56.281759",
+    "session": "cli_direct.jsonl",
+    "line": 99,
+    "content_preview": "Let's analyze Game 2, the Caro-Kann Defense, using the provided FEN and solution.\n\n**FEN:** `rn1qkbn..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:29:22.964898",
+    "session": "cli_direct.jsonl",
+    "line": 100,
+    "content_preview": "Game 3 \u2014 Minority Attack (FEN: r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1 b - - 0 14)\nB..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:29:22.964906",
+    "session": "cli_direct.jsonl",
+    "line": 101,
+    "content_preview": "Let's analyze Game 3, the Minority Attack, using the provided FEN and solution.\n\n**FEN:** `r1rq2k1/1..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:29:52.611669",
+    "session": "cli_direct.jsonl",
+    "line": 102,
+    "content_preview": "Game 4 \u2014 Sicilian Taimanov (FEN: r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5)\nWhi..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:29:52.611678",
+    "session": "cli_direct.jsonl",
+    "line": 103,
+    "content_preview": "Let's analyze Game 4, the Sicilian Taimanov, using the provided FEN and solution.\n\n**FEN:** `r1bqkbn..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:30:28.477429",
+    "session": "cli_direct.jsonl",
+    "line": 104,
+    "content_preview": "Game 5 \u2014 King\u2019s Indian Defense (FEN: rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 ..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:30:28.477440",
+    "session": "cli_direct.jsonl",
+    "line": 105,
+    "content_preview": "Let's analyze Game 5, the King's Indian Defense (KID), using the provided FEN and solution.\n\n**FEN:*..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:38:13.303058",
+    "session": "cli_direct.jsonl",
+    "line": 106,
+    "content_preview": "{\n  \"games\": [\n    {\n      \"game\": 1,\n      \"name\": \"London System\",\n      \"fen\": \"rnbqk2r/ppp2ppp/4..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:39:11.255266",
+    "session": "cli_direct.jsonl",
+    "line": 108,
+    "content_preview": "{\n  \"game\": 1,\n  \"name\": \"London System\",\n  \"fen\": \"rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:39:11.255275",
+    "session": "cli_direct.jsonl",
+    "line": 109,
+    "content_preview": "This is a great summary of the London System position! It correctly identifies the key elements:\n\n* ..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:39:46.508973",
+    "session": "cli_direct.jsonl",
+    "line": 110,
+    "content_preview": "{\n  \"game\": 2,\n  \"name\": \"Caro-Kann Defense\",\n  \"fen\": \"rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:39:46.509017",
+    "session": "cli_direct.jsonl",
+    "line": 111,
+    "content_preview": "This is a very accurate and concise summary for the Caro-Kann Defense position!\n\n*   **Game:** Caro-..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:40:19.005023",
+    "session": "cli_direct.jsonl",
+    "line": 112,
+    "content_preview": "{\n  \"game\": 3,\n  \"name\": \"Minority Attack\",\n  \"fen\": \"r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1B..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:40:19.005031",
+    "session": "cli_direct.jsonl",
+    "line": 113,
+    "content_preview": "This is an excellent summary of the Minority Attack position!\n\n*   **Game:** Minority Attack\n*   **F..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:40:55.829461",
+    "session": "cli_direct.jsonl",
+    "line": 114,
+    "content_preview": "{\n  \"game\": 4,\n  \"name\": \"Sicilian Taimanov\",\n  \"fen\": \"r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNB..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:40:55.829471",
+    "session": "cli_direct.jsonl",
+    "line": 115,
+    "content_preview": "This is a fantastic summary of the Sicilian Taimanov position!\n\n*   **Game:** Sicilian Taimanov\n*   ..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:41:22.586866",
+    "session": "cli_direct.jsonl",
+    "line": 116,
+    "content_preview": "{\n  \"game\": 5,\n  \"name\": \"King's Indian Defense\",\n  \"fen\": \"rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3P..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:41:22.586874",
+    "session": "cli_direct.jsonl",
+    "line": 117,
+    "content_preview": "This is a superb summary of the King's Indian Defense position!\n\n*   **Game:** King's Indian Defense..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:43:05.980142",
+    "session": "cli_direct.jsonl",
+    "line": 118,
+    "content_preview": "question = Game 1 \u2013 London System vs Black Counterplay\nFEN: rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:43:05.980151",
+    "session": "cli_direct.jsonl",
+    "line": 119,
+    "content_preview": "The best move for Black to challenge White's central \"pyramid\" in the London System, given the FEN `..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:43:50.015943",
+    "session": "cli_direct.jsonl",
+    "line": 120,
+    "content_preview": "Game 2 \u2013 Caro-Kann Classical\nFEN: rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4\n..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:43:50.015952",
+    "session": "cli_direct.jsonl",
+    "line": 121,
+    "content_preview": "The most natural move for White to consolidate and continue development while preparing for kingside..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:44:08.166238",
+    "session": "cli_direct.jsonl",
+    "line": 122,
+    "content_preview": "Game 3 \u2013 Minority Attack\nFEN: r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1 b - - 0 14\nQue..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:44:08.166253",
+    "session": "cli_direct.jsonl",
+    "line": 123,
+    "content_preview": "The prophylactic move Black should play to prevent a backward pawn on c6, given the FEN `r1rq2k1/1p2..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:44:35.004902",
+    "session": "cli_direct.jsonl",
+    "line": 124,
+    "content_preview": "Game 4 \u2013 Sicilian Taimanov\nFEN: r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5\nQuest..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:44:35.004910",
+    "session": "cli_direct.jsonl",
+    "line": 125,
+    "content_preview": "The most effective move for White to continue development and support the center in this Sicilian Ta..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:44:51.872210",
+    "session": "cli_direct.jsonl",
+    "line": 126,
+    "content_preview": "Game 5 \u2013 King's Indian Defense\nFEN: rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 5..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:44:51.872229",
+    "session": "cli_direct.jsonl",
+    "line": 127,
+    "content_preview": "The best move for White to develop safely, prepare castling, and maintain central control in this Ki..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:52:33.747681",
+    "session": "cli_direct.jsonl",
+    "line": 128,
+    "content_preview": "{\n  \"game\": 1,\n  \"opening\": \"London System\",\n  \"FEN\": \"rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/..."
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+    "timestamp": "2026-02-22T16:52:33.747689",
+    "session": "cli_direct.jsonl",
+    "line": 129,
+    "content_preview": "This is an excellent and detailed breakdown of the London System position!\n\n*   **Opening:** London ..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:53:33.503305",
+    "session": "cli_direct.jsonl",
+    "line": 130,
+    "content_preview": "{\n  \"game\": 2,\n  \"opening\": \"Caro-Kann Defense\",\n  \"FEN\": \"rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2P..."
+  },
+  {
+    "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:53:33.503316",
+    "session": "cli_direct.jsonl",
+    "line": 131,
+    "content_preview": "This is an excellent and comprehensive analysis of the Caro-Kann Classical position!\n\n*   **Game:** ..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:54:16.611749",
+    "session": "cli_direct.jsonl",
+    "line": 132,
+    "content_preview": "{\n  \"game\": 3,\n  \"opening\": \"Minority Attack (Queenside Pawn Majority)\",\n  \"FEN\": \"r1rq2k1/1p2bppp/2..."
+  },
+  {
+    "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+    "timestamp": "2026-02-22T16:54:16.611757",
+    "session": "cli_direct.jsonl",
+    "line": 133,
+    "content_preview": "This is an excellent and comprehensive analysis of the Minority Attack position!\n\n*   **Game:** Mino..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:55:13.692545",
+    "session": "cli_direct.jsonl",
+    "line": 134,
+    "content_preview": "{\n  \"game\": 4,\n  \"opening\": \"Sicilian Defense \u2013 Taimanov Variation\",\n  \"FEN\": \"r1bqkbnr/pp1p1ppp/2n1..."
+  },
+  {
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+    "timestamp": "2026-02-22T16:55:13.692559",
+    "session": "cli_direct.jsonl",
+    "line": 135,
+    "content_preview": "This is an excellent and thorough analysis of the Sicilian Taimanov position!\n\n*   **Game:** Sicilia..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:55:56.989806",
+    "session": "cli_direct.jsonl",
+    "line": 136,
+    "content_preview": "{\n  \"game\": 5,\n  \"opening\": \"King's Indian Defense\",\n  \"FEN\": \"rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/P..."
+  },
+  {
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+    "timestamp": "2026-02-22T16:55:56.989820",
+    "session": "cli_direct.jsonl",
+    "line": 137,
+    "content_preview": "This is an excellent and comprehensive analysis of the King's Indian Defense position!\n\n*   **Game:*..."
+  },
+  {
+    "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R",
+    "timestamp": "2026-02-22T16:58:22.093565",
+    "session": "cli_direct.jsonl",
+    "line": 138,
+    "content_preview": "{\n  \"opening_name\": \"Ruy Lopez (Spanish Opening)\",\n  \"archetype\": \"Classical / Positional Pressure\",..."
+  },
+  {
+    "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R",
+    "timestamp": "2026-02-22T16:58:22.093575",
+    "session": "cli_direct.jsonl",
+    "line": 139,
+    "content_preview": "This is an excellent and well-structured analysis of the Ruy Lopez!\n\n*   **Opening Name:** Ruy Lopez..."
+  },
+  {
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR",
+    "timestamp": "2026-02-22T16:59:18.093551",
+    "session": "cli_direct.jsonl",
+    "line": 140,
+    "content_preview": "{\n  \"opening_name\": \"Queen's Gambit\",\n  \"archetype\": \"Central Domination / Positional\",\n  \"fen_posit..."
+  },
+  {
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR",
+    "timestamp": "2026-02-22T16:59:18.093560",
+    "session": "cli_direct.jsonl",
+    "line": 141,
+    "content_preview": "This is an excellent and detailed analysis of the Queen's Gambit!\n\n*   **Opening Name:** Queen's Gam..."
+  },
+  {
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR",
+    "timestamp": "2026-02-22T17:00:26.026458",
+    "session": "cli_direct.jsonl",
+    "line": 142,
+    "content_preview": "{\n  \"opening_name\": \"French Defense\",\n  \"archetype\": \"Structural Counter-Attack / Closed Center\",\n  ..."
+  },
+  {
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR",
+    "timestamp": "2026-02-22T17:00:26.026477",
+    "session": "cli_direct.jsonl",
+    "line": 143,
+    "content_preview": "This is an excellent and well-structured analysis of the French Defense!\n\n*   **Opening Name:** Fren..."
+  },
+  {
+    "fen": "rnbqkbnr/pppppppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR",
+    "timestamp": "2026-02-22T17:01:05.160398",
+    "session": "cli_direct.jsonl",
+    "line": 144,
+    "content_preview": "{\n  \"opening_name\": \"Scandinavian Defense\",\n  \"archetype\": \"Simplification / Immediate Center Challe..."
+  },
+  {
+    "fen": "rnbqkbnr/pppppppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR",
+    "timestamp": "2026-02-22T17:01:05.160406",
+    "session": "cli_direct.jsonl",
+    "line": 145,
+    "content_preview": "This is an excellent and well-structured analysis of the Scandinavian Defense!\n\n*   **Opening Name:*..."
+  },
+  {
+    "fen": "rnbqkbnr/pppppppp/8/8/3P1P2/8/PPP1P1PP/RNBQKBNR",
+    "timestamp": "2026-02-22T17:01:47.982611",
+    "session": "cli_direct.jsonl",
+    "line": 146,
+    "content_preview": "{\n  \"opening_name\": \"Dutch Defense\",\n  \"archetype\": \"Aggressive Imbalance / Flank Control\",\n  \"fen_p..."
+  },
+  {
+    "fen": "rnbqkbnr/pppppppp/8/8/3P1P2/8/PPP1P1PP/RNBQKBNR",
+    "timestamp": "2026-02-22T17:01:47.982620",
+    "session": "cli_direct.jsonl",
+    "line": 147,
+    "content_preview": "This is an excellent and well-structured analysis of the Dutch Defense!\n\n*   **Opening Name:** Dutch..."
+  }
+]

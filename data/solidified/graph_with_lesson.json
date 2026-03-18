@@ -1,0 +1,1702 @@
+{
+  "nodes": [
+    {
+      "id": "8e054970",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: 1. The London System (The \"Safety First\" Shield)\n\u200bLogic: A \" \u2192 A: Okay, I see the FEN for a typical London System position.\n\n*",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "4a4c1588",
+      "type": "tactical_motif",
+      "properties": {
+        "summary": "Q: its correct but there few gaps that can be address = GAP 1 \u2014 \u2192 A: You are absolutely correct. My apologies for the oversight i",
+        "tags": [
+          "important",
+          "code"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "839545c6",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: GAP 2 \u2014 Incorrect Claim About e5 Prevention by ...c5\nYou sai \u2192 A: You are absolutely right, and I appreciate you calling out t",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "81fb22ea",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: GAP 3 \u2014 Missing the Most Important Strategic Fact: This is a \u2192 A: You are absolutely right. My apologies once again. I failed",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "e3e50af0",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: GAP 4 \u2014 No Concrete Variations\nYou says:\n\"After ...c5, Black \u2192 A: You are absolutely correct. My advice lacked the concrete mo",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "b3d6e022",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: GAP 5 \u2014 Incorrect Claim: Queenside Pawns \"somewhat isolated\" \u2192 A: You are absolutely right. My description of White's queensid",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "2edea925",
+      "type": "pawn_structure",
+      "properties": {
+        "summary": "Q: GAP 6 \u2014 Did Not Evaluate the Position Objectively\nYou never \u2192 A: You are absolutely correct. My analysis focused heavily on e",
+        "tags": [
+          "chess"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "bf9e7b83",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: GAP 7 \u2014 Did Not Mention Immediate Tactical Considerations\nAg \u2192 A: You are absolutely correct. My analysis focused too much on",
+        "tags": [
+          "chess"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "efc32938",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: GAP 8 \u2014 No Mention of Most Precise Move Order Nuances\nExampl \u2192 A: You are absolutely right. I failed to discuss the important",
+        "tags": [
+          "important",
+          "chess"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "a3c115b5",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: last. GAP 9 \u2014 Over-Generic Advice (Template-like Response)\nM \u2192 A: You are absolutely right. My apologies for the over-generic",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "c5a164fc",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: But you also did a good job and Important to acknowledge str \u2192 A: Thank you for acknowledging my strengths and the positive as",
+        "tags": [
+          "important",
+          "learning"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "6353617c",
+      "type": "evaluation",
+      "properties": {
+        "summary": "Q: yes, it good to know tue gap so that you can improve here : \u2192 A: Thank you for providing this excellent example of a strong,",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "485c52e0",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: ok let continue the lesson : 2. The Caro-Kann Defense (The \" \u2192 A: Understood. We are moving on to the Caro-Kann Defense.\n\n**FE",
+        "tags": [
+          "note",
+          "learning"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "7adf4d1b",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: CRITICAL GAP 1 \u2014 Catastrophic Turn Error: Says \"Black to mov \u2192 A: You are absolutely right. This is a critical error, and I si",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "37371df3",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: CRITICAL GAP 2 \u2014 Incorrect Move History Reconstruction\nUnfor \u2192 A: You are absolutely correct, and I apologize for this second",
+        "tags": [
+          "error",
+          "code"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "9b167332",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: CRITICAL GAP 3 \u2014 Misidentifies Variation\nUnfortunately you'v \u2192 A: You are absolutely correct. My apologies for the confusion a",
+        "tags": [
+          "important",
+          "error"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "5fece711",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: CRITICAL GAP 4 \u2014 Entire Analysis is From Black Perspective W \u2192 A: You are absolutely correct. This is another critical error,",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "4f35437a",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: CRITICAL GAP 5 \u2014 Claims White Knight on e4 Exists\nUnfortunat \u2192 A: You are absolutely correct. This is another critical error o",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "7a367dda",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: GAP 6 \u2014 Misses Most Important Immediate Idea in Position\nCri \u2192 A: You are absolutely correct. My analysis completely missed th",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "c82994b3",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: GAP 7 \u2014 Generic Caro-Kann Explanation Instead of Position An \u2192 A: You are absolutely correct. My explanation became too generi",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "d4e310b7",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: GAP 9 \u2014 Fails to Identify Development Status Correctly\nActua \u2192 A: You are absolutely correct. My analysis failed to properly r",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "d1478a81",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: last. Template-based pattern matching without real position \u2192 A: You are absolutely correct. The evidence you've presented st",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "71bd8943",
+      "type": "tactical_motif",
+      "properties": {
+        "summary": "Q: What Correct Analysis Should Look Like\nCorrect evaluation:\nP \u2192 A: This is an excellent example of what a correct, expert-level",
+        "tags": [],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "d264fcdf",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: ok 3. The Minority Attack (The \"Structural Drill\")\n\u200bLogic: U \u2192 A: Understood. We are moving on to the concept of the Minority",
+        "tags": [
+          "important",
+          "fix",
+          "task"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "03795416",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: REMEMBER this =  Strategic Decision Tree\nTurn 1: The Initial \u2192 A: Okay, I have **REMEMBERED** your strategic decision tree. Th",
+        "tags": [
+          "memory",
+          "chess"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "87f4258d",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: lets try again = \u200b3. The Minority Attack (The \"Structural Dr \u2192 A: Okay, let's re-evaluate the position with the Minority Attac",
+        "tags": [
+          "fix",
+          "task"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "da025a70",
+      "type": "evaluation",
+      "properties": {
+        "summary": "Q: REMEBER = Step 1: List all white pieces and squares.\nStep 2: \u2192 A: I have **REMEMBERED** your five-step process for analyzing a",
+        "tags": [
+          "memory",
+          "chess"
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "4be1e5aa",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: lets try agaim = 3. The Minority Attack (The \"Structural Dri \u2192 A: Okay, let's analyze this position again using the structured",
+        "tags": [
+          "fix",
+          "task"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "0ed652c7",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: \"I am providing a FEN. Ignore all previous games and strateg \u2192 A: Understood. I will strictly adhere to the FEN provided, extr",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "2d81bb95",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: 4. The Sicilian Taimanov (The \"Counter-Attack\")\n\u200bLogic: Flex \u2192 A: Understood. We are moving on to the Sicilian Taimanov, also",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "e93f50d2",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: White has played 5. Nc3. Black responds with 5... Qc7. Now, \u2192 A: You've transitioned into a very dynamic and complex phase of",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "080c8e9b",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: 5. The King\u2019s Indian Defense (The \"Elastic Spring\")\n\u200bLogic: \u2192 A: Understood. We are moving on to the King's Indian Defense (K",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "3df4fa7c",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: 3. The Minority Attack (The \"Structural Drill\")\n\u200bLogic: Usin \u2192 A: I apologize, but I encountered an error when trying to searc",
+        "tags": [
+          "note",
+          "error",
+          "fix",
+          "task"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "422b75f7",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 1 \u2014 London System (FEN: rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/ \u2192 A: Okay, let's analyze Game 1 with the London System FEN.\n\n**FE",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "6057bf6c",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 2 \u2014 Caro-Kann Defense (FEN: rn1qkbnr/pp2pppp/2p5/3p1b2/ \u2192 A: Let's analyze Game 2, the Caro-Kann Defense, using the provi",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "890f0e9f",
+      "type": "tactical_motif",
+      "properties": {
+        "summary": "Q: Game 3 \u2014 Minority Attack (FEN: r1rq2k1/1p2bppp/2p1pn2/pP1p4/ \u2192 A: Let's analyze Game 3, the Minority Attack, using the provide",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "83d470a0",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 4 \u2014 Sicilian Taimanov (FEN: r1bqkbnr/pp1p1ppp/2n1p3/8/3 \u2192 A: Let's analyze Game 4, the Sicilian Taimanov, using the provi",
+        "tags": [
+          "error"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "177515c3",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 5 \u2014 King\u2019s Indian Defense (FEN: rnbqk2r/ppp1ppbp/3p1np1 \u2192 A: Let's analyze Game 5, the King's Indian Defense (KID), using",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "eb5fdbd2",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"games\": [\n    {\n      \"game\": 1,\n      \"name\": \"London \u2192 A: Error calling LLM: litellm.ServiceUnavailableError: GeminiEx",
+        "tags": [
+          "error",
+          "code"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "fe1b9c15",
+      "type": "strategic_plan",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 1,\n  \"name\": \"London System\",\n  \"fen\": \"rnbqk2r/ \u2192 A: This is a great summary of the London System position! It co",
+        "tags": [],
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "c7870a71",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 2,\n  \"name\": \"Caro-Kann Defense\",\n  \"fen\": \"rn1q \u2192 A: This is a very accurate and concise summary for the Caro-Kan",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "5100fbba",
+      "type": "pawn_structure",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 3,\n  \"name\": \"Minority Attack\",\n  \"fen\": \"r1rq2k \u2192 A: This is an excellent summary of the Minority Attack position",
+        "tags": [],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "a67977d0",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 4,\n  \"name\": \"Sicilian Taimanov\",\n  \"fen\": \"r1bq \u2192 A: This is a fantastic summary of the Sicilian Taimanov positio",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "d62ccd4f",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 5,\n  \"name\": \"King's Indian Defense\",\n  \"fen\": \" \u2192 A: This is a superb summary of the King's Indian Defense positi",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "bf3c1cb7",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: question = Game 1 \u2013 London System vs Black Counterplay\nFEN: \u2192 A: The best move for Black to challenge White's central \"pyrami",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "22404531",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 2 \u2013 Caro-Kann Classical\nFEN: rn1qkbnr/pp2pppp/2p5/3p1b2 \u2192 A: The most natural move for White to consolidate and continue",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "af56587e",
+      "type": "tactical_motif",
+      "properties": {
+        "summary": "Q: Game 3 \u2013 Minority Attack\nFEN: r1rq2k1/1p2bppp/2p1pn2/pP1p4/2 \u2192 A: The prophylactic move Black should play to prevent a backwar",
+        "tags": [],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "cd184f96",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 4 \u2013 Sicilian Taimanov\nFEN: r1bqkbnr/pp1p1ppp/2n1p3/8/3N \u2192 A: The most effective move for White to continue development an",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "c4edb962",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Game 5 \u2013 King's Indian Defense\nFEN: rnbqk2r/ppp1ppbp/3p1np1/ \u2192 A: The best move for White to develop safely, prepare castling,",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "e2917b12",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 1,\n  \"opening\": \"London System\",\n  \"FEN\": \"rnbqk \u2192 A: This is an excellent and detailed breakdown of the London Sy",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "04bcd3de",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 2,\n  \"opening\": \"Caro-Kann Defense\",\n  \"FEN\": \"r \u2192 A: This is an excellent and comprehensive analysis of the Caro-",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "98947606",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 3,\n  \"opening\": \"Minority Attack (Queenside Pawn \u2192 A: This is an excellent and comprehensive analysis of the Minor",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "dbbadb68",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 4,\n  \"opening\": \"Sicilian Defense \u2013 Taimanov Var \u2192 A: This is an excellent and thorough analysis of the Sicilian T",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "8218730b",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"game\": 5,\n  \"opening\": \"King's Indian Defense\",\n  \"FEN\" \u2192 A: This is an excellent and comprehensive analysis of the King'",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "c92c36b2",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"opening_name\": \"Ruy Lopez (Spanish Opening)\",\n  \"archet \u2192 A: This is an excellent and well-structured analysis of the Ruy",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "16a8149f",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"opening_name\": \"Queen's Gambit\",\n  \"archetype\": \"Centra \u2192 A: This is an excellent and detailed analysis of the Queen's Ga",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "63459e15",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"opening_name\": \"French Defense\",\n  \"archetype\": \"Struct \u2192 A: This is an excellent and well-structured analysis of the Fre",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "3f9f7590",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"opening_name\": \"Scandinavian Defense\",\n  \"archetype\": \" \u2192 A: This is an excellent and well-structured analysis of the Sca",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "65e30069",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: {\n  \"opening_name\": \"Dutch Defense\",\n  \"archetype\": \"Aggress \u2192 A: This is an excellent and well-structured analysis of the Dut",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "3235aa8c",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: The Directive: \"When playing the Dutch, do not prioritize 'S \u2192 A: This is a very interesting and provocative directive regardi",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "5c509ec6",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: The Directive: \"When playing the Scandinavian as Black, you \u2192 A: This directive provides a clear strategic framework for play",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "50f73a68",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: The Directive: \"In the French structure, do not evaluate the \u2192 A: This directive offers a crucial shift in perspective for pla",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ab33e3f7",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: the queen gambit = \u200bThe Directive: \"If Black takes the pawn \u2192 A: This directive offers a crucial strategic guideline for Whit",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "321127f0",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: the spanish =\"When you see Bb5, stop looking for quick gambi \u2192 A: This directive provides a clear and strategic mindset for Wh",
+        "tags": [
+          "important"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "7402552c",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: 1. The London System: The \"Safety First\" Shield\n Logic Trigg \u2192 A: This directive for the London System is very clear and align",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "3481f58c",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: \u200b2. The Caro-Kann Defense: The \"Iron Wall\"\n Logic Trigger: \" \u2192 A: This directive for the Caro-Kann Defense is excellent and pe",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "a2ebd2a0",
+      "type": "pawn_structure",
+      "properties": {
+        "summary": "Q: \u200b3. The Minority Attack: The \"Structural Drill  Logic Trigge \u2192 A: This directive for the Minority Attack is very precise and c",
+        "tags": [],
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "ad62f7d9",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: \u200b4. The Sicilian Taimanov: The \"Logic Check\"\n\u200b Logic Trigger \u2192 A: This directive for the Sicilian Taimanov variation is excell",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "0251d5e7",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: \u200b5. The King\u2019s Indian Defense: The \"Elastic Spring\"  Logic T \u2192 A: This directive for the King's Indian Defense (KID) is powerf",
+        "tags": [],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "8a7f8f60",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: \"You now have 10 distinct 'Logic Modules'. When you analyze \u2192 A: Understood. I have now registered the 10 distinct \"Logic Mod",
+        "tags": [
+          "chess"
+        ],
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "b44bbd88",
+      "type": "general",
+      "properties": {
+        "summary": "Q: ok tq \u2192 A: You're welcome! I'm ready when you are. Just provide the FEN",
+        "tags": [],
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "position",
+      "properties": {
+        "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+        "game": "Q: Game 1 \u2014 London System (FEN: rnbqk2r/ppp2ppp/4p",
+        "source_session": "cli_direct.jsonl",
+        "timestamp": "2026-02-22T15:10:06.472315"
+      }
+    },
+    {
+      "id": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "position",
+      "properties": {
+        "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+        "game": "Q: Game 2 \u2014 Caro-Kann Defense (FEN: rn1qkbnr/pp2pp",
+        "source_session": "cli_direct.jsonl",
+        "timestamp": "2026-02-22T15:30:04.974826"
+      }
+    },
+    {
+      "id": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "position",
+      "properties": {
+        "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+        "game": "Q: Game 3 \u2014 Minority Attack (FEN: r1rq2k1/1p2bppp/",
+        "source_session": "cli_direct.jsonl",
+        "timestamp": "2026-02-22T16:01:49.098691"
+      }
+    },
+    {
+      "id": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "position",
+      "properties": {
+        "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+        "game": "Q: Game 4 \u2014 Sicilian Taimanov (FEN: r1bqkbnr/pp1p1",
+        "source_session": "cli_direct.jsonl",
+        "timestamp": "2026-02-22T16:15:51.312243"
+      }
+    },
+    {
+      "id": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "position",
+      "properties": {
+        "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+        "game": "Q: Game 5 \u2014 King\u2019s Indian Defense (FEN: rnbqk2r/pp",
+        "source_session": "cli_direct.jsonl",
+        "timestamp": "2026-02-22T16:22:21.878221"
+      }
+    },
+    {
+      "id": "stockfish_london",
+      "type": "evaluation",
+      "properties": {
+        "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R",
+        "best_move": "b1d2",
+        "depth": 15,
+        "source": "stockfish",
+        "position_name": "London"
+      }
+    },
+    {
+      "id": "stockfish_caro-kann",
+      "type": "evaluation",
+      "properties": {
+        "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+        "best_move": "e4f5",
+        "depth": 15,
+        "source": "stockfish",
+        "position_name": "Caro-Kann"
+      }
+    },
+    {
+      "id": "stockfish_minority",
+      "type": "evaluation",
+      "properties": {
+        "fen": "r1rq2k1/1p2bppp/2p1pn2/pP1p4/2PP4/P1N1PN2/2Q1BPPP/R4RK1",
+        "best_move": "b5c6",
+        "depth": 15,
+        "source": "stockfish",
+        "position_name": "Minority"
+      }
+    },
+    {
+      "id": "stockfish_sicilian",
+      "type": "evaluation",
+      "properties": {
+        "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R",
+        "best_move": "b1c3",
+        "depth": 15,
+        "source": "stockfish",
+        "position_name": "Sicilian"
+      }
+    },
+    {
+      "id": "stockfish_kings_indian",
+      "type": "evaluation",
+      "properties": {
+        "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+        "best_move": "f2f4",
+        "depth": 15,
+        "source": "stockfish",
+        "position_name": "Kings Indian"
+      }
+    },
+    {
+      "id": "lesson_caro_kann_choice",
+      "type": "strategic_lesson",
+      "properties": {
+        "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/3PP3/5N2/PPP2PPP/RNBQKB1R",
+        "tanyalahd_move": "e6",
+        "stockfish_move": "e4f5",
+        "lesson": "Strategic solidity vs tactical immediacy - both viable depending on style",
+        "context": "Caro-Kann Classical"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "422b75f7",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 1 \u2014 London System (FEN"
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "6057bf6c",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2014 Caro-Kann Defense "
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "890f0e9f",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2014 Minority Attack (F"
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "83d470a0",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2014 Sicilian Taimanov "
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "177515c3",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2014 King\u2019s Indian Defe"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "22404531",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 2 \u2013 Caro-Kann Classica"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "af56587e",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 3 \u2013 Minority Attack\nFE"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "cd184f96",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 4 \u2013 Sicilian Taimanov\n"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "c4edb962",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "has_position",
+      "strength": 0.9,
+      "evidence": "Position from Q: Game 5 \u2013 King's Indian Defe"
+    },
+    {
+      "from": "stockfish_london",
+      "to": "pos_rnbqk2r_ppp2ppp_4pn2",
+      "type": "evaluates"
+    },
+    {
+      "from": "stockfish_caro_kann",
+      "to": "pos_rn1qkbnr_pp2pppp_2p5",
+      "type": "evaluates"
+    },
+    {
+      "from": "stockfish_minority",
+      "to": "pos_r1rq2k1_1p2bppp_2p1p",
+      "type": "evaluates"
+    },
+    {
+      "from": "stockfish_sicilian",
+      "to": "pos_r1bqkbnr_pp1p1ppp_2n",
+      "type": "evaluates"
+    },
+    {
+      "from": "stockfish_kings_indian",
+      "to": "pos_rnbqk2r_ppp1ppbp_3p1",
+      "type": "evaluates"
+    }
+  ],
+  "metadata": {
+    "total_nodes": 76,
+    "total_edges": 119,
+    "position_nodes": 5
+  }
+}

@@ -1,0 +1,7783 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "export_date": "2026-02-24T14:13:58.423581",
+    "total_nodes": 100,
+    "total_edges": 741,
+    "node_types": {
+      "opening": 5,
+      "mistake_pattern": 2,
+      "evaluation": 1,
+      "general": 92
+    }
+  },
+  "nodes": [
+    {
+      "id": "8b8e4b74",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Ajar saya chess secars formal → A: Understood. I will now adopt a formal tone and provide instr",
+        "tags": [
+          "learning",
+          "chess"
+        ],
+        "timestamp": "2026-02-23 13:44:07",
+        "confidence": 0.9,
+        "game_phase": "opening"
+      }
+    },
+    {
+      "id": "c11a8611",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: TanyalahD, tunjuk apa yang kau dah belajar dari semua game c → A: Baiklah, saya akan semak apa yang telah saya pelajari daripa",
+        "tags": [
+          "learning",
+          "chess"
+        ],
+        "timestamp": "2026-02-24 07:39:49",
+        "confidence": 0.9,
+        "game_phase": "opening"
+      }
+    },
+    {
+      "id": "13b027d6",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: Awak dah tiada ratu dan raja hitam di Kf8 → A: Error calling LLM: litellm.ServiceUnavailableError: GeminiEx",
+        "tags": [
+          "error",
+          "code"
+        ],
+        "timestamp": "2026-02-24 13:09:48",
+        "confidence": 0.85,
+        "game_phase": "middlegame"
+      }
+    },
+    {
+      "id": "25159e0d",
+      "type": "mistake_pattern",
+      "properties": {
+        "summary": "Q: ? → A: Error calling LLM: litellm.ServiceUnavailableError: GeminiEx",
+        "tags": [
+          "error",
+          "code"
+        ],
+        "timestamp": "2026-02-24 13:09:55",
+        "confidence": 0.85,
+        "game_phase": "middlegame"
+      }
+    },
+    {
+      "id": "db307fbb",
+      "type": "evaluation",
+      "properties": {
+        "summary": "Q: Tak bole.. \n\nvalidate_fen → A: tool_code\nprint(default_api.mcp_chess_validate_fen(fen='r1b1",
+        "tags": [
+          "chess",
+          "code"
+        ],
+        "timestamp": "2026-02-24 13:41:50",
+        "confidence": 0.8,
+        "evaluation": "="
+      }
+    },
+    {
+      "id": "cf3ae438",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Ok sebulum it saya bagi report card dahulu \n\nTanyalahD, game → A: Terima kasih banyak atas ulasan permainan dan kata-kata sema",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:57:41",
+        "confidence": 0.9,
+        "game_phase": "opening"
+      }
+    },
+    {
+      "id": "d9d4390d",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: TanyalahD, tahniah Stage 8!\n\nTapi ada sedikit confusion:\n1. → A: Terima kasih banyak atas ucapan tahniah dan peringatan yang",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 14:12:12",
+        "confidence": 0.9,
+        "game_phase": "opening"
+      }
+    },
+    {
+      "id": "b654f5a7",
+      "type": "opening",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah menjalankan kedua-dua perintah tersebut.",
+        "tags": [],
+        "timestamp": "2026-02-24 14:12:18",
+        "confidence": 0.9,
+        "game_phase": "opening"
+      }
+    },
+    {
+      "id": "e30483e5",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **108...dxc5** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:14",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "b6e6680c",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:18",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "db007325",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **109...Qxb6** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:21",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "962ff635",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:25",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "5062e285",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **110...dxc5** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:32",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "f8d12513",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:36",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "9ee19da6",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **111...Qxb6** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:41",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "c9fbfad9",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:44",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "8c3ba5a3",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **112...dxc5** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:47",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "8f7de389",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:51",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "4bd8eb56",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **113...Qxb6** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:56",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "c6338f33",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:53:59",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "f96dfae9",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **114...dxc5** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:54:03",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "b7289c2d",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:54:07",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "ac8477f3",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah membuat langkah **115...Qxb6** sebagai H",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:54:17",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "e1664e75",
+      "type": "general",
+      "properties": {
+        "summary": "Q: get_board_state → A: Baiklah, saya akan mendapatkan status papan semasa.\n\"Guna mc",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:54:23",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "8fd2d223",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:54:27",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "6b8972bf",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, anda betul! Kita dah dalam loop sejak move 51 lag → A: Anda betul sekali! Terima kasih atas pemerhatian yang tajam",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:55:16",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "1ad9fb89",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, tahniah! Game 116 moves ni kena record dengan ban → A: Terima kasih banyak atas ucapan tahniah dan pengiktirafan an",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 10:56:00",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "81fba0b1",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, solidification selesai! Graph kita sekarang ada 4 → A: Terima kasih atas maklumat pengukuhan graph dan analisisnya!",
+        "tags": [
+          "learning",
+          "chess"
+        ],
+        "timestamp": "2026-02-24 11:13:51",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "6e1a0a65",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, peraturan baru untuk main di chess.com:\n\n🚫 DILARA → A: Peraturan baru ini kedengaran sangat menarik dan mencabar! S",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:00:44",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "d5c668c7",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, pilihan di tangan kau:\n\n1. Milos (1350) - Game mu → A: Meskipun pilihan untuk memanaskan badan dengan Milos (1350)",
+        "tags": [],
+        "timestamp": "2026-02-24 12:07:52",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "b8be8e0a",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok.. putih c4 awak hitam → A: Baiklah. Saya akan bermain sebagai Hitam, dan anda sebagai P",
+        "tags": [],
+        "timestamp": "2026-02-24 12:08:30",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "cc636811",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah. Anda memulakan dengan **1. c4**.\n\nSebagai Hitam, sa",
+        "tags": [],
+        "timestamp": "2026-02-24 12:08:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "14585700",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok.. kuda ke c3 → A: Baiklah. Anda bermain **2. Nc3**.\n\nSaya akan balas dengan **",
+        "tags": [],
+        "timestamp": "2026-02-24 12:09:33",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "da902bb5",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok 3. ..e3 → A: Saya rasa ada sedikit kesilapan dalam urutan langkah. Anda b",
+        "tags": [],
+        "timestamp": "2026-02-24 12:10:20",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "fc171399",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ya betul 3. ...pawn ke e3 → A: Baiklah, anda bermain **3. e3**.\n\nSaya akan membalas sebagai",
+        "tags": [],
+        "timestamp": "2026-02-24 12:10:56",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "9e4e07b5",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 4. Pawn ke d4 → A: Baiklah, anda bermain **4. d4**.\n\nSaya akan membalas sebagai",
+        "tags": [],
+        "timestamp": "2026-02-24 12:11:32",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "e14f2b99",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 5. ....exd4 → A: Saya rasa ada sedikit kesilapan lagi. Anda bermain Putih, da",
+        "tags": [],
+        "timestamp": "2026-02-24 12:14:35",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "7be1c1b1",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ya betul no 5. ....exd4 pawn saya makan pawn awak → A: Baiklah, anda bermain **5. exd4**.\n\nSaya akan membalas sebag",
+        "tags": [],
+        "timestamp": "2026-02-24 12:15:11",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "6e5ba629",
+      "type": "general",
+      "properties": {
+        "summary": "Q: No 6. dxc5 → A: Baiklah, anda bermain **6. dxc5**.\n\nSaya akan membalas sebag",
+        "tags": [],
+        "timestamp": "2026-02-24 12:20:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "1048fe4c",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, saya confuse sikit. Boleh repeat urutan langkah d → A: Tentu, mari saya jelaskan semula urutan langkah dari Move 5:",
+        "tags": [],
+        "timestamp": "2026-02-24 12:21:42",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "35395b58",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, sebelum kita terus, boleh check board state sekar → A: Baiklah, saya akan mendapatkan status papan semasa untuk mem",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:23:02",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "d8fbf61c",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:23:07",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "a32870ad",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, itu FEN dari game lepas (116 moves). Sekarang kit → A: Anda betul sekali! Terima kasih kerana mengingatkan saya. Sa",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:23:44",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "9d942a6f",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, permainan baru telah berjaya dicipta!\n\nFEN: `rnbqkb",
+        "tags": [],
+        "timestamp": "2026-02-24 12:24:16",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "1fb1cf81",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 1. e4 → A: Baiklah, anda bermain **1. e4**.\n\nSaya akan membalas sebagai",
+        "tags": [],
+        "timestamp": "2026-02-24 12:25:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "d8a1efc4",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 2. Nf3 → A: Baiklah, anda bermain **2. Nf3**.\n\nSaya akan membalas sebaga",
+        "tags": [],
+        "timestamp": "2026-02-24 12:26:26",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "1fb29518",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 3...d4 → A: Saya rasa ada kesilapan dalam urutan langkah. Anda bermain P",
+        "tags": [],
+        "timestamp": "2026-02-24 12:27:40",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "75889449",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 3. d4 → A: Baiklah, anda bermain **3. d4**.\n\nSaya akan membalas sebagai",
+        "tags": [],
+        "timestamp": "2026-02-24 12:27:56",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "79c1ef44",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 4. Nxd4 → A: Baiklah, anda bermain **4. Nxd4**.\n\nSaya akan membalas sebag",
+        "tags": [],
+        "timestamp": "2026-02-24 12:28:49",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "606a52c6",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 5. Nc3 → A: Baiklah, anda bermain **5. Nc3**.\n\nSaya akan membalas sebaga",
+        "tags": [],
+        "timestamp": "2026-02-24 12:29:37",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "09df9e6c",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 5. Qd3 → A: Baiklah, anda bermain **5. Qd3**.\n\nSaya akan membalas sebaga",
+        "tags": [],
+        "timestamp": "2026-02-24 12:30:37",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "821f2e86",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Saya silap saya 6. Qd3 → A: Baiklah, anda bermain **6. Qd3**.\n\nSaya akan membalas sebaga",
+        "tags": [],
+        "timestamp": "2026-02-24 12:31:44",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "299a4ca7",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Sekejap tadi awak masih tak gerakkan lagi ...Be7 → A: Anda betul. Saya minta maaf atas kekeliruan itu. Saya telah",
+        "tags": [],
+        "timestamp": "2026-02-24 12:33:26",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "b8be4742",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Cuba lihat yang ini\n 1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. → A: Terima kasih kerana menyenaraikan semula langkah-langkah. In",
+        "tags": [],
+        "timestamp": "2026-02-24 12:36:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "1bc07a70",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 7. Qb5+ → A: Baiklah, anda bermain **7. Qb5+**.\n\nSaya akan membalas sebag",
+        "tags": [],
+        "timestamp": "2026-02-24 12:37:23",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "681239aa",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 8. Nxc6 → A: Baiklah, anda bermain **8. Nxc6**.\n\nSaya akan membalas sebag",
+        "tags": [],
+        "timestamp": "2026-02-24 12:38:21",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "626b0c41",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Cuba lihat get_best_move → A: Baiklah, saya akan meminta Stockfish untuk cadangan langkah",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:40:05",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "ff6540d7",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Silap, yang ini get_board_state → A: Anda betul, saya perlu mendapatkan status papan terlebih dah",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:40:34",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "390c42b3",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:40:37",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "d0e5aa55",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Jangan... Ini awak lawan...  Awak nak jalan yang nana untuk → A: Saya minta maaf, saya tidak faham apa yang anda maksudkan de",
+        "tags": [],
+        "timestamp": "2026-02-24 12:41:34",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "b6b1e48a",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 8. ? → A: Saya minta maaf, saya tidak faham apa yang anda maksudkan de",
+        "tags": [],
+        "timestamp": "2026-02-24 12:41:47",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "6dc34783",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Permainan chess kita.. say gerak 8. Nxc6 awak? → A: Ah, terima kasih atas penjelasan anda! Saya faham sekarang.",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 12:42:21",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "9d70d682",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Qc4 → A: Baiklah, anda bermain **9. Qc4**.\n\nSaya akan membalas sebaga",
+        "tags": [],
+        "timestamp": "2026-02-24 12:49:42",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "a5b55078",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Nb5 → A: Baiklah, anda bermain **10. Nb5**.\n\nSaya akan membalas sebag",
+        "tags": [],
+        "timestamp": "2026-02-24 12:50:23",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "c2e4b9d2",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Qxc7 → A: Baiklah, anda bermain **11. Qxc7**.\n\nSaya akan membalas seba",
+        "tags": [],
+        "timestamp": "2026-02-24 12:51:14",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "0605d207",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Qc6+ → A: Baiklah, anda bermain **12. Qxc6+**.\n\nSaya akan membalas seb",
+        "tags": [],
+        "timestamp": "2026-02-24 12:52:49",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "7dfa12ab",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, 12...Bd7 tak boleh sebab pawn b5 block jalan.\n\nNa → A: Anda betul sekali! Terima kasih kerana pembetulan yang telit",
+        "tags": [],
+        "timestamp": "2026-02-24 12:56:12",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "a6d106df",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Qxa8+ → A: Baiklah, anda bermain **13. Qxa8+**.\n\nSaya akan membalas seb",
+        "tags": [],
+        "timestamp": "2026-02-24 12:57:33",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "e051a43e",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ada gajah hitam di e7 → A: Anda betul sekali! Saya minta maaf atas kesilapan saya lagi.",
+        "tags": [],
+        "timestamp": "2026-02-24 12:58:37",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "5d76d306",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Bukan... Gajah di e7 dan Raja di f8 → A: Anda betul sekali! Saya minta maaf atas kekeliruan yang bert",
+        "tags": [],
+        "timestamp": "2026-02-24 12:59:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "059443be",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 - Nf6\n5. Nc3 - e → A: Terima kasih banyak atas kesabaran dan pembetulan anda yang",
+        "tags": [],
+        "timestamp": "2026-02-24 13:05:29",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "6f05292f",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 14. Qxd8 → A: Baiklah, anda bermain **14. Qxd8**.\n\nSaya akan membalas seba",
+        "tags": [],
+        "timestamp": "2026-02-24 13:06:03",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "9ba54cf1",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 15. a4 → A: Baiklah, anda bermain **15. a4**.\n\nSaya akan membalas sebaga",
+        "tags": [],
+        "timestamp": "2026-02-24 13:06:47",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "16d8d537",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Tak boleh... King masih kena check dgn Qd8 → A: Anda betul sekali! Saya benar-benar minta maaf atas kesilapa",
+        "tags": [],
+        "timestamp": "2026-02-24 13:07:52",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "04611977",
+      "type": "general",
+      "properties": {
+        "summary": "Q: ? → A: Maaf atas kelewatan. Saya mengalami sedikit masalah teknikal",
+        "tags": [],
+        "timestamp": "2026-02-24 13:10:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "7764bb51",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Nc7 tak boleh sbb king awak di f8 masih kena check dgn Queen → A: Anda betul sekali! Saya minta maaf atas kesilapan yang berul",
+        "tags": [],
+        "timestamp": "2026-02-24 13:12:38",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "0dbdc536",
+      "type": "general",
+      "properties": {
+        "summary": "Q: get_board_state → A: Baiklah, saya akan mendapatkan status papan semasa untuk men",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:21:59",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "8152fda3",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [],
+        "timestamp": "2026-02-24 13:22:03",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "0fa344a8",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 - Nf6\n5. Nc3 - e → A: Terima kasih banyak kerana memberikan senarai langkah yang t",
+        "tags": [],
+        "timestamp": "2026-02-24 13:23:28",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "e2b69bd5",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Tak boleh bergerak Kd7.. king awak di f8 → A: Anda betul sekali! Terima kasih kerana kesabaran anda. Saya",
+        "tags": [],
+        "timestamp": "2026-02-24 13:25:51",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "723a3356",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Awak silap tu..\n\n1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 → A: Terima kasih banyak atas pembetulan yang terperinci! Saya am",
+        "tags": [],
+        "timestamp": "2026-02-24 13:28:42",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "e02d6465",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Awak silap lagi no 14 awak bukan Kxd8... Tetapi Ne8 awak ken → A: Anda betul sekali! Terima kasih kerana kesabaran anda yang t",
+        "tags": [],
+        "timestamp": "2026-02-24 13:29:53",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "0f7d4db7",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Sila lihat says\n\n1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 → A: Baiklah, saya akan mendapatkan status papan semasa sekali la",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:31:20",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "29fdb6ae",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [],
+        "timestamp": "2026-02-24 13:31:25",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "03b0e99f",
+      "type": "general",
+      "properties": {
+        "summary": "Q: TanyalahD, perhatikan FEN lepas 15.a4:\n\nr1b1k2r/p2p1ppp/n1p1 → A: Anda betul sekali! Terima kasih banyak atas penjelasan terpe",
+        "tags": [],
+        "timestamp": "2026-02-24 13:33:40",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "b74608d4",
+      "type": "general",
+      "properties": {
+        "summary": "Q: ## 🎯 TANYALAHD, LANGKAH 15 YANG BETUL IALAH:\n\n15...Kf7 atau → A: Anda betul sekali! Terima kasih kerana pembetulan yang berte",
+        "tags": [],
+        "timestamp": "2026-02-24 13:36:04",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "a9228caf",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Tak boleh ke Kf7.\n\nanalyse_position → A: Baiklah, saya cuba mendapatkan analisis kedudukan, tetapi na",
+        "tags": [],
+        "timestamp": "2026-02-24 13:36:43",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "e6803173",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Permainan semasa → A: Baiklah, mari kita cuba tetapkan semula permainan.\n\nUntuk be",
+        "tags": [],
+        "timestamp": "2026-02-24 13:37:05",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "20bb994f",
+      "type": "general",
+      "properties": {
+        "summary": "Q: get_board_state → A: Baiklah, saya akan mendapatkan status papan semasa.\n\"Guna mc",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:37:17",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "45d6b191",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [],
+        "timestamp": "2026-02-24 13:37:23",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "f2e34f98",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Position selepas 15...Kd7.\n\nPutih nak gerak apa?\n\nPilihan:\n- → A: Saya akan pilih **16. e5**.",
+        "tags": [],
+        "timestamp": "2026-02-24 13:38:54",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "f11e6e4a",
+      "type": "general",
+      "properties": {
+        "summary": "Q: axb5 → A: Baiklah, anda bermain **16. axb5**.\n\nSaya akan membalas seba",
+        "tags": [],
+        "timestamp": "2026-02-24 13:40:22",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "7a4454f9",
+      "type": "general",
+      "properties": {
+        "summary": "Q: So? → A: I've completed processing but have no response to give.",
+        "tags": [],
+        "timestamp": "2026-02-24 13:42:04",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "83a78f07",
+      "type": "general",
+      "properties": {
+        "summary": "Q: 16? → A: Baiklah, saya akan mendapatkan status papan semasa untuk men",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:42:17",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "4eb63f2b",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+        "tags": [],
+        "timestamp": "2026-02-24 13:42:31",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "1813181a",
+      "type": "general",
+      "properties": {
+        "summary": "Q: analyse_position → A: Baiklah, saya akan menganalisis kedudukan semasa untuk menda",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:43:00",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "4be5de12",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah menerima hasil analisis kedudukan.\n\nBeri",
+        "tags": [],
+        "timestamp": "2026-02-24 13:43:04",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "8890fd3b",
+      "type": "general",
+      "properties": {
+        "summary": "Q: get_best_move → A: Baiklah, saya akan meminta Stockfish untuk mendapatkan langk",
+        "tags": [
+          "chess"
+        ],
+        "timestamp": "2026-02-24 13:44:06",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "9eeb5130",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Ok → A: Baiklah, saya telah mendapatkan langkah terbaik daripada Sto",
+        "tags": [],
+        "timestamp": "2026-02-24 13:44:09",
+        "confidence": 0.4
+      }
+    },
+    {
+      "id": "f8ca8f3a",
+      "type": "general",
+      "properties": {
+        "summary": "Q: Nampak nya terlalu banysk kekeliruan.. kita tamatkan di sini → A: Baiklah, saya faham. Terima kasih atas kesabaran dan bantuan",
+        "tags": [],
+        "timestamp": "2026-02-24 13:45:51",
+        "confidence": 0.4
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "8b8e4b74",
+      "to": "c11a8611",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "db307fbb",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "cf3ae438",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "d9d4390d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "e30483e5",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "b6e6680c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8b8e4b74",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "db307fbb",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "cf3ae438",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "d9d4390d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "e30483e5",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "b6e6680c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c11a8611",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "cf3ae438",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "d9d4390d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "e30483e5",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "b6e6680c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db307fbb",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "d9d4390d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "e30483e5",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "b6e6680c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "cf3ae438",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "e30483e5",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "b6e6680c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d9d4390d",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "b6e6680c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e30483e5",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "db007325",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b6e6680c",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "962ff635",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "db007325",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "5062e285",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "962ff635",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "f8d12513",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "5062e285",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "9ee19da6",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f8d12513",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "c9fbfad9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "9ee19da6",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "8c3ba5a3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c9fbfad9",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "8f7de389",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8c3ba5a3",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "4bd8eb56",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8f7de389",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "c6338f33",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "4bd8eb56",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "f96dfae9",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "c6338f33",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "b7289c2d",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "f96dfae9",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "ac8477f3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "b7289c2d",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "e1664e75",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ac8477f3",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "8fd2d223",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "e1664e75",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "6b8972bf",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "8fd2d223",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "1ad9fb89",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6b8972bf",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "81fba0b1",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1ad9fb89",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "6e1a0a65",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "81fba0b1",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "35395b58",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6e1a0a65",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "d8fbf61c",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "35395b58",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "a32870ad",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "d8fbf61c",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "626b0c41",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "a32870ad",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "ff6540d7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "626b0c41",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "390c42b3",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "ff6540d7",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "6dc34783",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "390c42b3",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6dc34783",
+      "to": "0dbdc536",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6dc34783",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6dc34783",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6dc34783",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6dc34783",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "6dc34783",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0dbdc536",
+      "to": "0f7d4db7",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0dbdc536",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0dbdc536",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0dbdc536",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0dbdc536",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0f7d4db7",
+      "to": "20bb994f",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0f7d4db7",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0f7d4db7",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "0f7d4db7",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "20bb994f",
+      "to": "83a78f07",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "20bb994f",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "20bb994f",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "83a78f07",
+      "to": "1813181a",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "83a78f07",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    },
+    {
+      "from": "1813181a",
+      "to": "8890fd3b",
+      "type": "similar_to",
+      "properties": {
+        "strength": 0.6,
+        "evidence": "Both tagged 'chess'"
+      }
+    }
+  ]
+}

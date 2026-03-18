@@ -1,0 +1,1090 @@
+{
+  "8b8e4b74": {
+    "id": "8b8e4b74",
+    "type": "opening",
+    "confidence": 0.9,
+    "summary": "Q: Ajar saya chess secars formal \u2192 A: Understood. I will now adopt a formal tone and provide instr",
+    "tags": [
+      "learning",
+      "chess"
+    ],
+    "timestamp": "2026-02-23 13:44:07",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "c11a8611": {
+    "id": "c11a8611",
+    "type": "opening",
+    "confidence": 0.9,
+    "summary": "Q: TanyalahD, tunjuk apa yang kau dah belajar dari semua game c \u2192 A: Baiklah, saya akan semak apa yang telah saya pelajari daripa",
+    "tags": [
+      "learning",
+      "chess"
+    ],
+    "timestamp": "2026-02-24 07:39:49",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "13b027d6": {
+    "id": "13b027d6",
+    "type": "mistake_pattern",
+    "confidence": 0.85,
+    "summary": "Q: Awak dah tiada ratu dan raja hitam di Kf8 \u2192 A: Error calling LLM: litellm.ServiceUnavailableError: GeminiEx",
+    "tags": [
+      "error",
+      "code"
+    ],
+    "timestamp": "2026-02-24 13:09:48",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "25159e0d": {
+    "id": "25159e0d",
+    "type": "mistake_pattern",
+    "confidence": 0.85,
+    "summary": "Q: ? \u2192 A: Error calling LLM: litellm.ServiceUnavailableError: GeminiEx",
+    "tags": [
+      "error",
+      "code"
+    ],
+    "timestamp": "2026-02-24 13:09:55",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "db307fbb": {
+    "id": "db307fbb",
+    "type": "evaluation",
+    "confidence": 0.8,
+    "summary": "Q: Tak bole.. \n\nvalidate_fen \u2192 A: tool_code\nprint(default_api.mcp_chess_validate_fen(fen='r1b1",
+    "tags": [
+      "chess",
+      "code"
+    ],
+    "timestamp": "2026-02-24 13:41:50",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "cf3ae438": {
+    "id": "cf3ae438",
+    "type": "opening",
+    "confidence": 0.9,
+    "summary": "Q: Ok sebulum it saya bagi report card dahulu \n\nTanyalahD, game \u2192 A: Terima kasih banyak atas ulasan permainan dan kata-kata sema",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:57:41",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "d9d4390d": {
+    "id": "d9d4390d",
+    "type": "opening",
+    "confidence": 0.9,
+    "summary": "Q: TanyalahD, tahniah Stage 8!\n\nTapi ada sedikit confusion:\n1. \u2192 A: Terima kasih banyak atas ucapan tahniah dan peringatan yang",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 14:12:12",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b654f5a7": {
+    "id": "b654f5a7",
+    "type": "opening",
+    "confidence": 0.9,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah menjalankan kedua-dua perintah tersebut.",
+    "tags": [],
+    "timestamp": "2026-02-24 14:12:18",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e30483e5": {
+    "id": "e30483e5",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **108...dxc5** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:14",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b6e6680c": {
+    "id": "b6e6680c",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:18",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "db007325": {
+    "id": "db007325",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **109...Qxb6** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:21",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "962ff635": {
+    "id": "962ff635",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:25",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "5062e285": {
+    "id": "5062e285",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **110...dxc5** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:32",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "f8d12513": {
+    "id": "f8d12513",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:36",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "9ee19da6": {
+    "id": "9ee19da6",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **111...Qxb6** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:41",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "c9fbfad9": {
+    "id": "c9fbfad9",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:44",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "8c3ba5a3": {
+    "id": "8c3ba5a3",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **112...dxc5** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:47",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "8f7de389": {
+    "id": "8f7de389",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:51",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "4bd8eb56": {
+    "id": "4bd8eb56",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **113...Qxb6** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:56",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "c6338f33": {
+    "id": "c6338f33",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:53:59",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "f96dfae9": {
+    "id": "f96dfae9",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **114...dxc5** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:54:03",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b7289c2d": {
+    "id": "b7289c2d",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Saya telah menerima respons daripada Stockfish.\n\nLangkah ter",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:54:07",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "ac8477f3": {
+    "id": "ac8477f3",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah membuat langkah **115...Qxb6** sebagai H",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:54:17",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e1664e75": {
+    "id": "e1664e75",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: get_board_state \u2192 A: Baiklah, saya akan mendapatkan status papan semasa.\n\"Guna mc",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:54:23",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "8fd2d223": {
+    "id": "8fd2d223",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:54:27",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "6b8972bf": {
+    "id": "6b8972bf",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, anda betul! Kita dah dalam loop sejak move 51 lag \u2192 A: Anda betul sekali! Terima kasih atas pemerhatian yang tajam",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:55:16",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "1ad9fb89": {
+    "id": "1ad9fb89",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, tahniah! Game 116 moves ni kena record dengan ban \u2192 A: Terima kasih banyak atas ucapan tahniah dan pengiktirafan an",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 10:56:00",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "81fba0b1": {
+    "id": "81fba0b1",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, solidification selesai! Graph kita sekarang ada 4 \u2192 A: Terima kasih atas maklumat pengukuhan graph dan analisisnya!",
+    "tags": [
+      "learning",
+      "chess"
+    ],
+    "timestamp": "2026-02-24 11:13:51",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "6e1a0a65": {
+    "id": "6e1a0a65",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, peraturan baru untuk main di chess.com:\n\n\ud83d\udeab DILARA \u2192 A: Peraturan baru ini kedengaran sangat menarik dan mencabar! S",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:00:44",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "d5c668c7": {
+    "id": "d5c668c7",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, pilihan di tangan kau:\n\n1. Milos (1350) - Game mu \u2192 A: Meskipun pilihan untuk memanaskan badan dengan Milos (1350)",
+    "tags": [],
+    "timestamp": "2026-02-24 12:07:52",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b8be8e0a": {
+    "id": "b8be8e0a",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok.. putih c4 awak hitam \u2192 A: Baiklah. Saya akan bermain sebagai Hitam, dan anda sebagai P",
+    "tags": [],
+    "timestamp": "2026-02-24 12:08:30",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "cc636811": {
+    "id": "cc636811",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah. Anda memulakan dengan **1. c4**.\n\nSebagai Hitam, sa",
+    "tags": [],
+    "timestamp": "2026-02-24 12:08:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "14585700": {
+    "id": "14585700",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok.. kuda ke c3 \u2192 A: Baiklah. Anda bermain **2. Nc3**.\n\nSaya akan balas dengan **",
+    "tags": [],
+    "timestamp": "2026-02-24 12:09:33",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "da902bb5": {
+    "id": "da902bb5",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok 3. ..e3 \u2192 A: Saya rasa ada sedikit kesilapan dalam urutan langkah. Anda b",
+    "tags": [],
+    "timestamp": "2026-02-24 12:10:20",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "fc171399": {
+    "id": "fc171399",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ya betul 3. ...pawn ke e3 \u2192 A: Baiklah, anda bermain **3. e3**.\n\nSaya akan membalas sebagai",
+    "tags": [],
+    "timestamp": "2026-02-24 12:10:56",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "9e4e07b5": {
+    "id": "9e4e07b5",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 4. Pawn ke d4 \u2192 A: Baiklah, anda bermain **4. d4**.\n\nSaya akan membalas sebagai",
+    "tags": [],
+    "timestamp": "2026-02-24 12:11:32",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e14f2b99": {
+    "id": "e14f2b99",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 5. ....exd4 \u2192 A: Saya rasa ada sedikit kesilapan lagi. Anda bermain Putih, da",
+    "tags": [],
+    "timestamp": "2026-02-24 12:14:35",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "7be1c1b1": {
+    "id": "7be1c1b1",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ya betul no 5. ....exd4 pawn saya makan pawn awak \u2192 A: Baiklah, anda bermain **5. exd4**.\n\nSaya akan membalas sebag",
+    "tags": [],
+    "timestamp": "2026-02-24 12:15:11",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "6e5ba629": {
+    "id": "6e5ba629",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: No 6. dxc5 \u2192 A: Baiklah, anda bermain **6. dxc5**.\n\nSaya akan membalas sebag",
+    "tags": [],
+    "timestamp": "2026-02-24 12:20:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "1048fe4c": {
+    "id": "1048fe4c",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, saya confuse sikit. Boleh repeat urutan langkah d \u2192 A: Tentu, mari saya jelaskan semula urutan langkah dari Move 5:",
+    "tags": [],
+    "timestamp": "2026-02-24 12:21:42",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "35395b58": {
+    "id": "35395b58",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, sebelum kita terus, boleh check board state sekar \u2192 A: Baiklah, saya akan mendapatkan status papan semasa untuk mem",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:23:02",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "d8fbf61c": {
+    "id": "d8fbf61c",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:23:07",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "a32870ad": {
+    "id": "a32870ad",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, itu FEN dari game lepas (116 moves). Sekarang kit \u2192 A: Anda betul sekali! Terima kasih kerana mengingatkan saya. Sa",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:23:44",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "9d942a6f": {
+    "id": "9d942a6f",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, permainan baru telah berjaya dicipta!\n\nFEN: `rnbqkb",
+    "tags": [],
+    "timestamp": "2026-02-24 12:24:16",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "1fb1cf81": {
+    "id": "1fb1cf81",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 1. e4 \u2192 A: Baiklah, anda bermain **1. e4**.\n\nSaya akan membalas sebagai",
+    "tags": [],
+    "timestamp": "2026-02-24 12:25:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "d8a1efc4": {
+    "id": "d8a1efc4",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 2. Nf3 \u2192 A: Baiklah, anda bermain **2. Nf3**.\n\nSaya akan membalas sebaga",
+    "tags": [],
+    "timestamp": "2026-02-24 12:26:26",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "1fb29518": {
+    "id": "1fb29518",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 3...d4 \u2192 A: Saya rasa ada kesilapan dalam urutan langkah. Anda bermain P",
+    "tags": [],
+    "timestamp": "2026-02-24 12:27:40",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "75889449": {
+    "id": "75889449",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 3. d4 \u2192 A: Baiklah, anda bermain **3. d4**.\n\nSaya akan membalas sebagai",
+    "tags": [],
+    "timestamp": "2026-02-24 12:27:56",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "79c1ef44": {
+    "id": "79c1ef44",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 4. Nxd4 \u2192 A: Baiklah, anda bermain **4. Nxd4**.\n\nSaya akan membalas sebag",
+    "tags": [],
+    "timestamp": "2026-02-24 12:28:49",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "606a52c6": {
+    "id": "606a52c6",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 5. Nc3 \u2192 A: Baiklah, anda bermain **5. Nc3**.\n\nSaya akan membalas sebaga",
+    "tags": [],
+    "timestamp": "2026-02-24 12:29:37",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "09df9e6c": {
+    "id": "09df9e6c",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 5. Qd3 \u2192 A: Baiklah, anda bermain **5. Qd3**.\n\nSaya akan membalas sebaga",
+    "tags": [],
+    "timestamp": "2026-02-24 12:30:37",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "821f2e86": {
+    "id": "821f2e86",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Saya silap saya 6. Qd3 \u2192 A: Baiklah, anda bermain **6. Qd3**.\n\nSaya akan membalas sebaga",
+    "tags": [],
+    "timestamp": "2026-02-24 12:31:44",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "299a4ca7": {
+    "id": "299a4ca7",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Sekejap tadi awak masih tak gerakkan lagi ...Be7 \u2192 A: Anda betul. Saya minta maaf atas kekeliruan itu. Saya telah",
+    "tags": [],
+    "timestamp": "2026-02-24 12:33:26",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b8be4742": {
+    "id": "b8be4742",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Cuba lihat yang ini\n 1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. \u2192 A: Terima kasih kerana menyenaraikan semula langkah-langkah. In",
+    "tags": [],
+    "timestamp": "2026-02-24 12:36:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "1bc07a70": {
+    "id": "1bc07a70",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 7. Qb5+ \u2192 A: Baiklah, anda bermain **7. Qb5+**.\n\nSaya akan membalas sebag",
+    "tags": [],
+    "timestamp": "2026-02-24 12:37:23",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "681239aa": {
+    "id": "681239aa",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 8. Nxc6 \u2192 A: Baiklah, anda bermain **8. Nxc6**.\n\nSaya akan membalas sebag",
+    "tags": [],
+    "timestamp": "2026-02-24 12:38:21",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "626b0c41": {
+    "id": "626b0c41",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Cuba lihat get_best_move \u2192 A: Baiklah, saya akan meminta Stockfish untuk cadangan langkah",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:40:05",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "ff6540d7": {
+    "id": "ff6540d7",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Silap, yang ini get_board_state \u2192 A: Anda betul, saya perlu mendapatkan status papan terlebih dah",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:40:34",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "390c42b3": {
+    "id": "390c42b3",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:40:37",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "d0e5aa55": {
+    "id": "d0e5aa55",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Jangan... Ini awak lawan...  Awak nak jalan yang nana untuk \u2192 A: Saya minta maaf, saya tidak faham apa yang anda maksudkan de",
+    "tags": [],
+    "timestamp": "2026-02-24 12:41:34",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b6b1e48a": {
+    "id": "b6b1e48a",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 8. ? \u2192 A: Saya minta maaf, saya tidak faham apa yang anda maksudkan de",
+    "tags": [],
+    "timestamp": "2026-02-24 12:41:47",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "6dc34783": {
+    "id": "6dc34783",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Permainan chess kita.. say gerak 8. Nxc6 awak? \u2192 A: Ah, terima kasih atas penjelasan anda! Saya faham sekarang.",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 12:42:21",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "9d70d682": {
+    "id": "9d70d682",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Qc4 \u2192 A: Baiklah, anda bermain **9. Qc4**.\n\nSaya akan membalas sebaga",
+    "tags": [],
+    "timestamp": "2026-02-24 12:49:42",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "a5b55078": {
+    "id": "a5b55078",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Nb5 \u2192 A: Baiklah, anda bermain **10. Nb5**.\n\nSaya akan membalas sebag",
+    "tags": [],
+    "timestamp": "2026-02-24 12:50:23",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "c2e4b9d2": {
+    "id": "c2e4b9d2",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Qxc7 \u2192 A: Baiklah, anda bermain **11. Qxc7**.\n\nSaya akan membalas seba",
+    "tags": [],
+    "timestamp": "2026-02-24 12:51:14",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "0605d207": {
+    "id": "0605d207",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Qc6+ \u2192 A: Baiklah, anda bermain **12. Qxc6+**.\n\nSaya akan membalas seb",
+    "tags": [],
+    "timestamp": "2026-02-24 12:52:49",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "7dfa12ab": {
+    "id": "7dfa12ab",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, 12...Bd7 tak boleh sebab pawn b5 block jalan.\n\nNa \u2192 A: Anda betul sekali! Terima kasih kerana pembetulan yang telit",
+    "tags": [],
+    "timestamp": "2026-02-24 12:56:12",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "a6d106df": {
+    "id": "a6d106df",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Qxa8+ \u2192 A: Baiklah, anda bermain **13. Qxa8+**.\n\nSaya akan membalas seb",
+    "tags": [],
+    "timestamp": "2026-02-24 12:57:33",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e051a43e": {
+    "id": "e051a43e",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ada gajah hitam di e7 \u2192 A: Anda betul sekali! Saya minta maaf atas kesilapan saya lagi.",
+    "tags": [],
+    "timestamp": "2026-02-24 12:58:37",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "5d76d306": {
+    "id": "5d76d306",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Bukan... Gajah di e7 dan Raja di f8 \u2192 A: Anda betul sekali! Saya minta maaf atas kekeliruan yang bert",
+    "tags": [],
+    "timestamp": "2026-02-24 12:59:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "059443be": {
+    "id": "059443be",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 - Nf6\n5. Nc3 - e \u2192 A: Terima kasih banyak atas kesabaran dan pembetulan anda yang",
+    "tags": [],
+    "timestamp": "2026-02-24 13:05:29",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "6f05292f": {
+    "id": "6f05292f",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 14. Qxd8 \u2192 A: Baiklah, anda bermain **14. Qxd8**.\n\nSaya akan membalas seba",
+    "tags": [],
+    "timestamp": "2026-02-24 13:06:03",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "9ba54cf1": {
+    "id": "9ba54cf1",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 15. a4 \u2192 A: Baiklah, anda bermain **15. a4**.\n\nSaya akan membalas sebaga",
+    "tags": [],
+    "timestamp": "2026-02-24 13:06:47",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "16d8d537": {
+    "id": "16d8d537",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Tak boleh... King masih kena check dgn Qd8 \u2192 A: Anda betul sekali! Saya benar-benar minta maaf atas kesilapa",
+    "tags": [],
+    "timestamp": "2026-02-24 13:07:52",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "04611977": {
+    "id": "04611977",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: ? \u2192 A: Maaf atas kelewatan. Saya mengalami sedikit masalah teknikal",
+    "tags": [],
+    "timestamp": "2026-02-24 13:10:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "7764bb51": {
+    "id": "7764bb51",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Nc7 tak boleh sbb king awak di f8 masih kena check dgn Queen \u2192 A: Anda betul sekali! Saya minta maaf atas kesilapan yang berul",
+    "tags": [],
+    "timestamp": "2026-02-24 13:12:38",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "0dbdc536": {
+    "id": "0dbdc536",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: get_board_state \u2192 A: Baiklah, saya akan mendapatkan status papan semasa untuk men",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:21:59",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "8152fda3": {
+    "id": "8152fda3",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [],
+    "timestamp": "2026-02-24 13:22:03",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "0fa344a8": {
+    "id": "0fa344a8",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 - Nf6\n5. Nc3 - e \u2192 A: Terima kasih banyak kerana memberikan senarai langkah yang t",
+    "tags": [],
+    "timestamp": "2026-02-24 13:23:28",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e2b69bd5": {
+    "id": "e2b69bd5",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Tak boleh bergerak Kd7.. king awak di f8 \u2192 A: Anda betul sekali! Terima kasih kerana kesabaran anda. Saya",
+    "tags": [],
+    "timestamp": "2026-02-24 13:25:51",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "723a3356": {
+    "id": "723a3356",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Awak silap tu..\n\n1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 \u2192 A: Terima kasih banyak atas pembetulan yang terperinci! Saya am",
+    "tags": [],
+    "timestamp": "2026-02-24 13:28:42",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e02d6465": {
+    "id": "e02d6465",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Awak silap lagi no 14 awak bukan Kxd8... Tetapi Ne8 awak ken \u2192 A: Anda betul sekali! Terima kasih kerana kesabaran anda yang t",
+    "tags": [],
+    "timestamp": "2026-02-24 13:29:53",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "0f7d4db7": {
+    "id": "0f7d4db7",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Sila lihat says\n\n1. e4 - c5\n2. Nf3 - d6\n3. d4 - cxd4\n4. Nxd4 \u2192 A: Baiklah, saya akan mendapatkan status papan semasa sekali la",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:31:20",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "29fdb6ae": {
+    "id": "29fdb6ae",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [],
+    "timestamp": "2026-02-24 13:31:25",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "03b0e99f": {
+    "id": "03b0e99f",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: TanyalahD, perhatikan FEN lepas 15.a4:\n\nr1b1k2r/p2p1ppp/n1p1 \u2192 A: Anda betul sekali! Terima kasih banyak atas penjelasan terpe",
+    "tags": [],
+    "timestamp": "2026-02-24 13:33:40",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "b74608d4": {
+    "id": "b74608d4",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: ## \ud83c\udfaf TANYALAHD, LANGKAH 15 YANG BETUL IALAH:\n\n15...Kf7 atau \u2192 A: Anda betul sekali! Terima kasih kerana pembetulan yang berte",
+    "tags": [],
+    "timestamp": "2026-02-24 13:36:04",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "a9228caf": {
+    "id": "a9228caf",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Tak boleh ke Kf7.\n\nanalyse_position \u2192 A: Baiklah, saya cuba mendapatkan analisis kedudukan, tetapi na",
+    "tags": [],
+    "timestamp": "2026-02-24 13:36:43",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "e6803173": {
+    "id": "e6803173",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Permainan semasa \u2192 A: Baiklah, mari kita cuba tetapkan semula permainan.\n\nUntuk be",
+    "tags": [],
+    "timestamp": "2026-02-24 13:37:05",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "20bb994f": {
+    "id": "20bb994f",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: get_board_state \u2192 A: Baiklah, saya akan mendapatkan status papan semasa.\n\"Guna mc",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:37:17",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "45d6b191": {
+    "id": "45d6b191",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [],
+    "timestamp": "2026-02-24 13:37:23",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "f2e34f98": {
+    "id": "f2e34f98",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Position selepas 15...Kd7.\n\nPutih nak gerak apa?\n\nPilihan:\n- \u2192 A: Saya akan pilih **16. e5**.",
+    "tags": [],
+    "timestamp": "2026-02-24 13:38:54",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "f11e6e4a": {
+    "id": "f11e6e4a",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: axb5 \u2192 A: Baiklah, anda bermain **16. axb5**.\n\nSaya akan membalas seba",
+    "tags": [],
+    "timestamp": "2026-02-24 13:40:22",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "7a4454f9": {
+    "id": "7a4454f9",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: So? \u2192 A: I've completed processing but have no response to give.",
+    "tags": [],
+    "timestamp": "2026-02-24 13:42:04",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "83a78f07": {
+    "id": "83a78f07",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: 16? \u2192 A: Baiklah, saya akan mendapatkan status papan semasa untuk men",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:42:17",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "4eb63f2b": {
+    "id": "4eb63f2b",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan status papan.\n\nBerikut adala",
+    "tags": [],
+    "timestamp": "2026-02-24 13:42:31",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "1813181a": {
+    "id": "1813181a",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: analyse_position \u2192 A: Baiklah, saya akan menganalisis kedudukan semasa untuk menda",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:43:00",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "4be5de12": {
+    "id": "4be5de12",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah menerima hasil analisis kedudukan.\n\nBeri",
+    "tags": [],
+    "timestamp": "2026-02-24 13:43:04",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "8890fd3b": {
+    "id": "8890fd3b",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: get_best_move \u2192 A: Baiklah, saya akan meminta Stockfish untuk mendapatkan langk",
+    "tags": [
+      "chess"
+    ],
+    "timestamp": "2026-02-24 13:44:06",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "9eeb5130": {
+    "id": "9eeb5130",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Ok \u2192 A: Baiklah, saya telah mendapatkan langkah terbaik daripada Sto",
+    "tags": [],
+    "timestamp": "2026-02-24 13:44:09",
+    "chess_metadata": {},
+    "source": "fractal"
+  },
+  "f8ca8f3a": {
+    "id": "f8ca8f3a",
+    "type": "general",
+    "confidence": 0.4,
+    "summary": "Q: Nampak nya terlalu banysk kekeliruan.. kita tamatkan di sini \u2192 A: Baiklah, saya faham. Terima kasih atas kesabaran dan bantuan",
+    "tags": [],
+    "timestamp": "2026-02-24 13:45:51",
+    "chess_metadata": {},
+    "source": "fractal"
+  }
+}

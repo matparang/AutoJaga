@@ -1,8 +1,0 @@
-pyproject.toml
-setup.py
-quantalogic/__init__.py
-quantalogic/tools/__init__.py
-quantalogic_stub.egg-info/PKG-INFO
-quantalogic_stub.egg-info/SOURCES.txt
-quantalogic_stub.egg-info/dependency_links.txt
-quantalogic_stub.egg-info/top_level.txt

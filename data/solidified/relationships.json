@@ -1,0 +1,5189 @@
+[
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "c11a8611",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "db307fbb",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "cf3ae438",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "d9d4390d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "e30483e5",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "b6e6680c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8b8e4b74",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "db307fbb",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "cf3ae438",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "d9d4390d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "e30483e5",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "b6e6680c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c11a8611",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "cf3ae438",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "d9d4390d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "e30483e5",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "b6e6680c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db307fbb",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "d9d4390d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "e30483e5",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "b6e6680c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "cf3ae438",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "e30483e5",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "b6e6680c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d9d4390d",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "b6e6680c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e30483e5",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "db007325",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b6e6680c",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "962ff635",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "db007325",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "5062e285",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "962ff635",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "f8d12513",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "5062e285",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "9ee19da6",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f8d12513",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "c9fbfad9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "9ee19da6",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "8c3ba5a3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c9fbfad9",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "8f7de389",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8c3ba5a3",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "4bd8eb56",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8f7de389",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "c6338f33",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "4bd8eb56",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "f96dfae9",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "c6338f33",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "b7289c2d",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "f96dfae9",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "ac8477f3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "b7289c2d",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "e1664e75",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ac8477f3",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "8fd2d223",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "e1664e75",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "6b8972bf",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "8fd2d223",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "1ad9fb89",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6b8972bf",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "81fba0b1",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1ad9fb89",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "6e1a0a65",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "81fba0b1",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "35395b58",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6e1a0a65",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "d8fbf61c",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "35395b58",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "a32870ad",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "d8fbf61c",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "626b0c41",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "a32870ad",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "ff6540d7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "626b0c41",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "390c42b3",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "ff6540d7",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "6dc34783",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "390c42b3",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6dc34783",
+    "to_node": "0dbdc536",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6dc34783",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6dc34783",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6dc34783",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6dc34783",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "6dc34783",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0dbdc536",
+    "to_node": "0f7d4db7",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0dbdc536",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0dbdc536",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0dbdc536",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0dbdc536",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0f7d4db7",
+    "to_node": "20bb994f",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0f7d4db7",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0f7d4db7",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "0f7d4db7",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "20bb994f",
+    "to_node": "83a78f07",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "20bb994f",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "20bb994f",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "83a78f07",
+    "to_node": "1813181a",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "83a78f07",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  },
+  {
+    "from_node": "1813181a",
+    "to_node": "8890fd3b",
+    "type": "similar_to",
+    "strength": 0.6,
+    "evidence": "Both tagged 'chess'"
+  }
+]
