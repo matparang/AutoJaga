@@ -923,6 +923,36 @@ class MemoryManager:
                 return topic
         return "general"
 
+    def _detect_topic(self, text: str) -> str:
+        """Detect primary topic from query text."""
+        text_lower = text.lower()
+        scores = {}
+        signal_to_topic = {
+            "financial": ["stock", "portfolio", "var", "cvar", "margin",
+                          "equity", "monte carlo", "risk", "volatility",
+                          "vix", "price", "fund", "investment"],
+            "research":  ["research", "hypothesis", "study", "paper",
+                          "quantum", "literature", "experiment"],
+            "causal":    ["ipw", "causal", "confounder", "ate",
+                          "propensity", "regression"],
+            "healthcare":["hospital", "patient", "clinical", "hipaa",
+                          "counselor", "mental health", "therapy"],
+            "ideas":     ["idea", "brainstorm", "creative", "novel",
+                          "strategy", "innovative", "suggest"],
+            "code":      ["code", "script", "python", "function",
+                          "calculate", "compute", "run", "exec"],
+            "memory":    ["remember", "recall", "history", "past",
+                          "previous", "memory", "what did"],
+            "learning":  ["calibration", "accuracy", "improve",
+                          "self-improvement", "loop", "outcome"],
+        }
+        for topic, signals in signal_to_topic.items():
+            scores[topic] = sum(
+                1 for s in signals if s in text_lower
+            )
+        best = max(scores, key=scores.get)
+        return best if scores[best] > 0 else "general"
+
     def _extract_date_from_path(self, path: Path) -> str:
         """Extract date from file name or use mod time."""
         name = path.stem
