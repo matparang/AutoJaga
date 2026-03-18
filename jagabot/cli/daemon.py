@@ -77,12 +77,34 @@ def start_service(port: int = 18790, verbose: bool = False) -> int:
 
     log_fh = open(LOG_FILE, "a")  # noqa: SIM115 – kept open for child
 
+    # Build environment — inherit current env and ensure API keys are set
+    import json
+    _env = os.environ.copy()
+    try:
+        _config = json.loads((Path.home() / ".jagabot" / "config.json").read_text())
+        _providers = _config.get("providers", {})
+        for _name, _pdata in _providers.items():
+            _key = _pdata.get("apiKey", "")
+            if _key:
+                _env_map = {
+                    "deepseek": "DEEPSEEK_API_KEY",
+                    "openai": "OPENAI_API_KEY",
+                    "anthropic": "ANTHROPIC_API_KEY",
+                    "gemini": "GEMINI_API_KEY",
+                    "dashscope": "DASHSCOPE_API_KEY",
+                }
+                if _name in _env_map:
+                    _env.setdefault(_env_map[_name], _key)
+    except Exception:
+        pass  # Fall back to inherited env
+
     proc = subprocess.Popen(
         cmd,
         stdout=log_fh,
         stderr=subprocess.STDOUT,
         stdin=subprocess.DEVNULL,
         start_new_session=True,  # detach from controlling terminal
+        env=_env,
     )
 
     # Give the process a moment to fail fast (bad config, port conflict, …)
