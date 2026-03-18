@@ -145,7 +145,7 @@ class MetaLearningConnector:
             tool = self.tool_registry.get("meta_learning")
             if tool and hasattr(tool, 'engine'):
                 tool.engine.record_strategy_result(
-                    strategy=f"auto_{session_key}",
+                    strategy_name=f"auto_{session_key}",
                     success=quality_score >= AUTO_RECORD_THRESHOLD,
                     fitness_gain=quality_score,
                 )
