@@ -244,11 +244,9 @@ class SubagentManager:
 
         # Direct CLI output — print immediately without waiting
         if origin.get("channel") == "cli":
-            from rich.console import Console
-            _console = Console()
-            _console.print(f"\n[bold green]✅ Subagent '{label}' {status_text}[/bold green]")
-            _console.print(f"[dim]Result:[/dim] {result[:500]}")
-            _console.print()
+            print(f"\n✅ Subagent '{label}' {status_text}")
+            print(f"Result: {result[:500]}")
+            print()
             # Still notify main agent with a brief summary (not full result)
             # so it knows the task is done without re-processing
             announce_content = f"[Subagent '{label}' {status_text}] Task complete. Result shown to user."
