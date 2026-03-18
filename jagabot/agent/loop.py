@@ -185,6 +185,11 @@ class AgentLoop:
             tool_registry=self.tools,
         )
 
+        # WIRING: Feed BrierScorer trust into CognitiveStack
+        if self.cognitive_stack and hasattr(self, 'brier'):
+            self.cognitive_stack.brier = self.brier
+            logger.info("CognitiveStack ← BrierScorer wired")
+
         # System Health Monitor (unified health scoring)
         from jagabot.core.system_health_monitor import SystemHealthMonitor
         self.health_monitor = SystemHealthMonitor(workspace)
@@ -485,6 +490,18 @@ class AgentLoop:
         )
         logger.debug(f"ModelSwitchboard: {model_config.model_id} ({model_config.reason})")
         self._current_model_id = model_config.model_id
+
+        # WIRING: BrierScorer trust → CognitiveStack calibration mode
+        if self.cognitive_stack and hasattr(self, 'brier'):
+            _topic = locals().get('topic', 'general')
+            _trust = self.brier.trust_score("general", _topic)
+            if _trust and _trust < 0.5:
+                self.cognitive_stack.calibration_mode = True
+                logger.info(f"CognitiveStack: low trust ({_trust:.2f}) on '{_topic}' → CRITICAL mode")
+            else:
+                self.cognitive_stack.calibration_mode = False
+                logger.debug(f"CognitiveStack: trust ({_trust or 'n/a'}) on '{_topic}' → normal mode")
+            self._last_confidence = _trust
 
         # Reset repetition guard for new user turn
         self.rep_guard.reset_for_new_turn()
@@ -1056,6 +1073,19 @@ class AgentLoop:
             perspective = "general",  # Could detect from content
             domain      = topic,
         )
+
+        # WIRING: Auto-solidification — record calibration data point
+        try:
+            _topic = locals().get('topic', 'general')
+            self.brier.record(
+                perspective = "general",
+                domain      = _topic,
+                forecast    = getattr(self, '_last_confidence', 0.8),
+                actual      = 1.0,  # Will be updated by outcome_tracker on feedback
+            )
+            logger.debug(f"BrierScorer: recorded prediction for '{_topic}'")
+        except Exception as _brier_err:
+            logger.warning(f"BrierScorer record failed: {_brier_err}")
 
         return OutboundMessage(
             channel=msg.channel,
