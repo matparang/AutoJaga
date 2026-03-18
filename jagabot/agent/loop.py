@@ -1370,6 +1370,12 @@ class AgentLoop:
                     final_content = response.content
                     break
 
+                # If spawn tool was used this turn, don't retry — subagents are running
+                if "spawn" in tools_used:
+                    logger.info("Spawn tool used — skipping JSON plan retry, subagents running")
+                    final_content = response.content
+                    break
+
                 logger.info("Assistant returned plan-like text without tool_calls; requesting executable JSON plan")
 
                 plan_request = (
