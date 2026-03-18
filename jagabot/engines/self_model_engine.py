@@ -304,7 +304,7 @@ class SelfModelEngine:
     def get_knowledge_gaps(self, domain: str) -> list[str]:
         """Return known weak areas for a domain."""
         gaps = []
-        stats = self.domain_stats.get(domain, {})
+        stats = self._domain_cache.get(domain, {})
         if not stats:
             gaps.append(f"No data collected for domain '{domain}' yet")
             return gaps
@@ -317,10 +317,10 @@ class SelfModelEngine:
 
     def update_domain_reliability(self, domain: str, quality: float) -> None:
         """Update reliability score for a domain."""
-        if domain not in self.domain_stats:
-            self.domain_stats[domain] = {"avg_quality": quality, "total_turns": 1}
+        if domain not in self._domain_cache:
+            self._domain_cache[domain] = {"avg_quality": quality, "total_turns": 1}
         else:
-            s = self.domain_stats[domain]
+            s = self._domain_cache[domain]
             n = s.get("total_turns", 1)
             s["avg_quality"] = (s.get("avg_quality", quality) * n + quality) / (n + 1)
             s["total_turns"] = n + 1

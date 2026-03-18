@@ -579,16 +579,6 @@ class AgentLoop:
                     content=connections.format_for_user(),
                     metadata=msg.metadata or {},
                 )
-            # Session index reminder
-            reminder = self.session_index.get_startup_reminder()
-            if reminder:
-                logger.info(f"📚 Session reminder shown: {reminder[:80]}...")
-                return OutboundMessage(
-                    channel=msg.channel,
-                    chat_id=msg.chat_id,
-                    content=reminder,
-                    metadata=msg.metadata or {},
-                )
             # PARALLEL AGENT TRIGGER — route to real multi-agent execution
             _parallel_keywords = [
                 "run subagents", "run all agents", "parallel agents",
@@ -621,6 +611,17 @@ class AgentLoop:
                 except Exception as _pr_err:
                     logger.warning(f"ParallelRunner failed, falling back to single agent: {_pr_err}")
                     # Falls through to normal processing
+
+            # Session index reminder
+            reminder = self.session_index.get_startup_reminder()
+            if reminder:
+                logger.info(f"📚 Session reminder shown: {reminder[:80]}...")
+                return OutboundMessage(
+                    channel=msg.channel,
+                    chat_id=msg.chat_id,
+                    content=reminder,
+                    metadata=msg.metadata or {},
+                )
             
             # Pending outcomes reminder
             pending = self.outcome_tracker.get_pending_reminder()
