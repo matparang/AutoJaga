@@ -414,7 +414,7 @@ class ModelSwitchboard:
         try:
             config = json.loads(self.config_path.read_text())
             self._presets  = config.get(
-                "model_presets", DEFAULT_PRESETS
+                "modelPresets", DEFAULT_PRESETS
             )
             self._current  = str(
                 config.get("current_model", "1")
