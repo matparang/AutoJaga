@@ -149,6 +149,11 @@ class LiteLLMProvider(LLMProvider):
         if self.api_key:
             kwargs["api_key"] = self.api_key
         
+        # Force api_base for DeepSeek — prevents LiteLLM routing to OpenAI
+        model_str = kwargs.get("model", "")
+        if "deepseek" in model_str.lower():
+            kwargs.setdefault("api_base", "https://api.deepseek.com")
+        
         # Pass api_base for custom endpoints
         if self.api_base:
             kwargs["api_base"] = self.api_base
