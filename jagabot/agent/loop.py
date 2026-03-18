@@ -624,10 +624,14 @@ class AgentLoop:
                 logger.warning(f"ParallelRunner failed, falling back to single agent: {_pr_err}")
                 # Falls through to normal processing
         
-        # Pending outcomes reminder
+        # Skip reminder if user is currently submitting an outcome verdict
+        _is_verdict = any(
+            kw in msg.content.lower()
+            for kw in ["outcome:", "verdict:", "correct", "wrong", "partial", "skip outcomes", "inconclusive"]
+        )
         pending = self.outcome_tracker.get_pending_reminder()
-        if pending:
-            logger.info(f"📌 Pending outcomes reminder shown")
+        if pending and not _is_verdict:
+            logger.info("📌 Pending outcomes reminder shown")
             return OutboundMessage(
                 channel=msg.channel,
                 chat_id=msg.chat_id,
