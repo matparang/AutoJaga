@@ -14,7 +14,7 @@ from jagabot.providers.registry import find_by_model, find_gateway
 # Global OpenRouter compatibility: disable problematic LiteLLM features
 # OpenRouter doesn't accept certain parameters that LiteLLM tries to pass
 os.environ.setdefault("LITELLM_DROP_PARAMS", "True")
-os.environ.setdefault("LITELLM_ALLOW_NON_OPENAI_KEYS", "False")
+os.environ.setdefault("LITELLM_ALLOW_NON_OPENAI_KEYS", "True")
 
 # Force LiteLLM to drop unsupported params BEFORE the call
 import litellm
