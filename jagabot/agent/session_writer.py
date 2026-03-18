@@ -145,7 +145,6 @@ class MetaLearningConnector:
             tool = self.tool_registry.get("meta_learning")
             if tool:
                 import asyncio
-                import concurrent.futures
                 coro = tool.execute(
                     action="record_result",
                     strategy=f"auto_{session_key}",
@@ -158,14 +157,7 @@ class MetaLearningConnector:
                         "auto_recorded": True,
                     }
                 )
-                try:
-                    loop = asyncio.get_event_loop()
-                    if loop.is_running():
-                        asyncio.ensure_future(coro)
-                    else:
-                        loop.run_until_complete(coro)
-                except Exception:
-                    asyncio.run(coro)
+                asyncio.ensure_future(coro)
                 logger.info(
                     f"✅ Auto-recorded to MetaLearning "
                     f"(quality={quality_score:.2f})"
