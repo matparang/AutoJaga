@@ -736,11 +736,11 @@ class CognitiveStack:
             config = json.loads(
                 Path(self.config_path).read_text()
             )
-            presets = config.get("model_presets", {})
+            presets = config.get("modelPresets", config.get("model_presets", {}))
             if "1" in presets:
-                self.model1_id = presets["1"]["model_id"]
+                self.model1_id = presets["1"].get("modelId", presets["1"].get("model_id", "deepseek/deepseek-chat"))
             if "2" in presets:
-                self.model2_id = presets["2"]["model_id"]
+                self.model2_id = presets["2"].get("modelId", presets["2"].get("model_id", "deepseek/deepseek-reasoner"))
             logger.debug(
                 f"CognitiveStack: M1={self.model1_id} "
                 f"M2={self.model2_id}"

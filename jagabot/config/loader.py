@@ -88,8 +88,8 @@ def _migrate_config(data: dict) -> dict:
         data["model_presets"] = {
             "1": {
                 "name": "GPT-4o-mini (Fast)",
-                "model_id": "openai/gpt-4o-mini",
-                "provider": "openai",
+                "model_id": "deepseek/deepseek-chat",
+                "provider": "deepseek",
                 "purpose": "routine",
                 "max_tokens": 2000,
                 "token_cost_per_1k_input": 0.00015,
@@ -97,8 +97,8 @@ def _migrate_config(data: dict) -> dict:
             },
             "2": {
                 "name": "GPT-4o (Smart)",
-                "model_id": "openai/gpt-4o",
-                "provider": "openai",
+                "model_id": "deepseek/deepseek-reasoner",
+                "provider": "deepseek",
                 "purpose": "reasoning",
                 "max_tokens": 4000,
                 "token_cost_per_1k_input": 0.00250,
