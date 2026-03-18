@@ -219,8 +219,10 @@ class SubagentManager:
                     f"or use a more reliable agent configuration. Do NOT trust the subagent result."
                 )
                 status = "error"
+            else:
+                status = "ok"
 
-            logger.info(f"Subagent [{task_id}] completed successfully")
+            logger.info(f"Subagent [{task_id}] completed {'successfully' if status == 'ok' else 'with errors'}")
             await self._announce_result(task_id, label, task, final_result, origin, status)
             
         except Exception as e:
