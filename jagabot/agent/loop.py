@@ -589,6 +589,39 @@ class AgentLoop:
                     content=reminder,
                     metadata=msg.metadata or {},
                 )
+            # PARALLEL AGENT TRIGGER — route to real multi-agent execution
+            _parallel_keywords = [
+                "run subagents", "run all agents", "parallel agents",
+                "each subagent", "all perspectives", "bull bear buffet",
+                "run perspectives", "multi-agent analysis",
+            ]
+            _msg_lower = msg.content.lower()
+            if (
+                self.parallel_runner is not None
+                and any(kw in _msg_lower for kw in _parallel_keywords)
+            ):
+                logger.info(f"ParallelRunner: triggered for '{msg.content[:50]}'")
+                try:
+                    parallel_result = await self.parallel_runner.run(
+                        task=msg.content,
+                        agents=[
+                            {"role": "bull", "system": "You are an optimistic analyst. Find opportunities and upside. End with VERDICT/CONFIDENCE/EVIDENCE."},
+                            {"role": "bear", "system": "You are a skeptical analyst. Find risks and downside. End with VERDICT/CONFIDENCE/EVIDENCE."},
+                            {"role": "buffet", "system": "You are a value-focused analyst. Find long-term fundamentals. End with VERDICT/CONFIDENCE/EVIDENCE."},
+                        ],
+                        converge_via="arbitration",
+                    )
+                    final_content = getattr(parallel_result, 'converged_output', str(parallel_result))
+                    return OutboundMessage(
+                        channel=msg.channel,
+                        chat_id=msg.chat_id,
+                        content=final_content,
+                        metadata=msg.metadata or {},
+                    )
+                except Exception as _pr_err:
+                    logger.warning(f"ParallelRunner failed, falling back to single agent: {_pr_err}")
+                    # Falls through to normal processing
+            
             # Pending outcomes reminder
             pending = self.outcome_tracker.get_pending_reminder()
             if pending:
