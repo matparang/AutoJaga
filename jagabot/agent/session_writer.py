@@ -143,21 +143,12 @@ class MetaLearningConnector:
             return False
         try:
             tool = self.tool_registry.get("meta_learning")
-            if tool:
-                import asyncio
-                coro = tool.execute(
-                    action="record_result",
+            if tool and hasattr(tool, 'engine'):
+                tool.engine.record_strategy_result(
                     strategy=f"auto_{session_key}",
                     success=quality_score >= AUTO_RECORD_THRESHOLD,
                     fitness_gain=quality_score,
-                    context={
-                        "query": query[:100],
-                        "tools_used": tools_used,
-                        "output_folder": output_folder,
-                        "auto_recorded": True,
-                    }
                 )
-                asyncio.ensure_future(coro)
                 logger.info(
                     f"✅ Auto-recorded to MetaLearning "
                     f"(quality={quality_score:.2f})"
