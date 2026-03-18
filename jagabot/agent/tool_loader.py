@@ -109,6 +109,14 @@ def register_default_tools(
 
     # Spawn tool (subagents)
     registry.register(SpawnTool(manager=subagents))
+    
+    # Register spawn_subagent alias — DeepSeek sometimes calls spawn_subagent instead of spawn
+    from jagabot.agent.tools.spawn import SpawnTool as _SpawnTool
+    class _SpawnAlias(_SpawnTool):
+        @property
+        def name(self) -> str:
+            return "spawn_subagent"
+    registry.register(_SpawnAlias(manager=subagents))
 
     # Cron tool (scheduling)
     if cron_service:
