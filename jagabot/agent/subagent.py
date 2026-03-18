@@ -243,14 +243,16 @@ class SubagentManager:
         status_text = "completed successfully" if status == "ok" else "failed"
 
         # Direct CLI output — print immediately without waiting
-        if origin.get("channel") == "cli":
+        _channel = origin.get("channel", "cli")
+        if _channel == "cli":
             print(f"\n✅ Subagent '{label}' {status_text}")
             print(f"Result: {result[:500]}")
             print()
             # Still notify main agent with a brief summary (not full result)
             # so it knows the task is done without re-processing
-            announce_content = f"[Subagent '{label}' {status_text}] Task complete. Result shown to user."
+            announce_content = f"[Subagent '{label}' {status_text}] Task complete. Result shown to user directly."
         else:
+            # For Telegram, WhatsApp, etc — send result back through the bus
             announce_content = f"""[Subagent '{label}' {status_text}]
 
 Task: {task}
@@ -258,7 +260,8 @@ Task: {task}
 Result:
 {result}
 
-Summarize this naturally for the user. Keep it brief (1-2 sentences). Do not mention technical details like "subagent" or task IDs."""
+Summarize this naturally for the user. Keep it brief (1-2 sentences).
+Do not mention technical details like subagent or task IDs."""
 
         # Inject as system message to trigger main agent
         msg = InboundMessage(
