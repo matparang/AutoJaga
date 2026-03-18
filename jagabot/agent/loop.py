@@ -533,7 +533,7 @@ class AgentLoop:
         )
 
         # Phase 3 — Librarian: inject negative constraints
-        topic = self.memory_mgr._detect_topic(msg.content) if hasattr(self.memory_mgr, '_detect_topic') else "general"
+        topic = self.memory_mgr._detect_topic(msg.content)
         negative_constraints = self.librarian.get_constraints(topic=topic)
 
         # Self-Model Engine: inject self-knowledge into Layer 1
