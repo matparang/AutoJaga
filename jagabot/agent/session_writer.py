@@ -145,18 +145,24 @@ class MetaLearningConnector:
         try:
             tool = self.tool_registry.get("meta_learning")
             if tool:
-                tool.call({
-                    "action": "record_result",
-                    "strategy": f"auto_{session_key}",
-                    "success": quality_score >= AUTO_RECORD_THRESHOLD,
-                    "fitness_gain": quality_score,
-                    "context": {
-                        "query": query[:100],
-                        "tools_used": tools_used,
-                        "output_folder": output_folder,
-                        "auto_recorded": True,
-                    }
-                })
+                import asyncio
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                try:
+                    loop.run_until_complete(tool.execute(
+                        action="record_result",
+                        strategy=f"auto_{session_key}",
+                        success=quality_score >= AUTO_RECORD_THRESHOLD,
+                        fitness_gain=quality_score,
+                        context={
+                            "query": query[:100],
+                            "tools_used": tools_used,
+                            "output_folder": output_folder,
+                            "auto_recorded": True,
+                        }
+                    ))
+                finally:
+                    loop.close()
                 logger.info(
                     f"✅ Auto-recorded to MetaLearning "
                     f"(quality={quality_score:.2f})"
