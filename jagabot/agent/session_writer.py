@@ -121,7 +121,6 @@ class MetaLearningConnector:
 
     def __init__(self, tool_registry=None) -> None:
         self.tool_registry = tool_registry
-        self._available = self._check_available()
 
     def _check_available(self) -> bool:
         if self.tool_registry is None:
@@ -139,7 +138,7 @@ class MetaLearningConnector:
         tools_used: list,
         output_folder: str,
     ) -> bool:
-        if not self._available:
+        if not self._check_available():
             logger.debug("MetaLearning not available — skipping auto-record")
             return False
         try:
