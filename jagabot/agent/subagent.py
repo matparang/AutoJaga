@@ -251,9 +251,9 @@ class SubagentManager:
             _console.print()
             # Still notify main agent with a brief summary (not full result)
             # so it knows the task is done without re-processing
-            announce_content = f"[Subagent '{label}' {status_text}] Task complete. Result has been shown to user direct."
-
-        announce_content = f"""[Subagent '{label}' {status_text}]
+            announce_content = f"[Subagent '{label}' {status_text}] Task complete. Result shown to user."
+        else:
+            announce_content = f"""[Subagent '{label}' {status_text}]
 
 Task: {task}
 
