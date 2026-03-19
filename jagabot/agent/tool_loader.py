@@ -10,6 +10,8 @@ import os
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from loguru import logger
+
 if TYPE_CHECKING:
     from jagabot.agent.tools.registry import ToolRegistry
     from jagabot.bus.queue import MessageBus
