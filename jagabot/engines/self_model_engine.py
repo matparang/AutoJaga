@@ -301,19 +301,48 @@ class SelfModelEngine:
             f"quality={quality:.2f} tools={len(tools_used)}"
         )
 
-    def get_knowledge_gaps(self, domain: str) -> list[str]:
-        """Return known weak areas for a domain."""
+    def get_knowledge_gaps(self, domain: str) -> list:
+        """Return known weak areas for a domain as KnowledgeGap objects."""
+        from dataclasses import dataclass
+        
+        @dataclass
+        class KnowledgeGap:
+            topic: str
+            gap_type: str
+            description: str
+            priority: float
+        
         gaps = []
         stats = self._domain_cache.get(domain, {})
         if not stats:
-            gaps.append(f"No data collected for domain '{domain}' yet")
+            gaps.append(KnowledgeGap(
+                topic=domain,
+                gap_type="no_data",
+                description=f"No data collected for domain '{domain}' yet",
+                priority=0.5
+            ))
             return gaps
         quality = stats.get("avg_quality", 1.0)
         if quality < 0.5:
-            gaps.append(f"Low quality in '{domain}' (avg={quality:.2f})")
+            gaps.append(KnowledgeGap(
+                topic=domain,
+                gap_type="low_quality",
+                description=f"Low quality in '{domain}' (avg={quality:.2f})",
+                priority=0.8
+            ))
         if stats.get("total_turns", 0) < 5:
-            gaps.append(f"Insufficient experience in '{domain}' (<5 turns)")
-        return gaps if gaps else [f"No significant gaps detected in '{domain}'"]
+            gaps.append(KnowledgeGap(
+                topic=domain,
+                gap_type="insufficient_experience",
+                description=f"Insufficient experience in '{domain}' (<5 turns)",
+                priority=0.6
+            ))
+        return gaps if gaps else [KnowledgeGap(
+            topic=domain,
+            gap_type="none",
+            description=f"No significant gaps detected in '{domain}'",
+            priority=0.0
+        )]
 
     def update_domain_reliability(self, domain: str, quality: float) -> None:
         """Update reliability score for a domain."""
