@@ -138,6 +138,18 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Cross-Domain Insight Engine
+        try:
+            from jagabot.core.cross_domain_engine import CrossDomainEngine
+            self.cross_domain_engine = CrossDomainEngine(
+                workspace=workspace,
+                brier_scorer=None,
+            )
+            logger.info("CrossDomainEngine initialized")
+        except Exception as _cd_err:
+            logger.warning(f"CrossDomainEngine init failed: {_cd_err}")
+            self.cross_domain_engine = None
+
         # Hypothesis Engine
         try:
             from jagabot.core.hypothesis_engine import HypothesisEngine
@@ -247,6 +259,10 @@ class AgentLoop:
         if self.hypothesis_engine and hasattr(self, 'brier'):
             self.hypothesis_engine.brier = self.brier
             logger.info("HypothesisEngine ← BrierScorer wired")
+
+        if self.cross_domain_engine and hasattr(self, 'brier'):
+            self.cross_domain_engine.brier = self.brier
+            logger.info("CrossDomainEngine ← BrierScorer wired")
 
         # System Health Monitor (unified health scoring)
         from jagabot.core.system_health_monitor import SystemHealthMonitor
