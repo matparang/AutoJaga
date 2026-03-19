@@ -1022,6 +1022,7 @@ class AgentLoop:
                     1 for t in (tools_used or [])
                     if isinstance(t, dict) and t.get("error")
                 )
+                _belief_state = self.bdi_tracker.get_belief_state() if self.bdi_tracker else None
                 _bdi = score_turn(
                     tools_used=tools_used or [],
                     quality=self.writer.scorer.score(
@@ -1030,6 +1031,7 @@ class AgentLoop:
                     ),
                     anomaly_count=_anomalies,
                     tool_errors=_tool_errors,
+                    belief_state=_belief_state,
                 )
                 self.bdi_tracker.record(_bdi)
             except Exception as _e:
@@ -1302,6 +1304,10 @@ class AgentLoop:
                         )
                         continue
 
+                    # BDI Phase 2: reset belief tracking at start of first tool call
+                    if len(tools_used) == 1 and self.bdi_tracker:
+                        self.bdi_tracker.reset_turn()
+
                     h_id = self.harness.register(tool_call.name)
 
                     if _consecutive_failures.get(tool_call.name, 0) >= _MAX_TOOL_RETRIES:
@@ -1314,11 +1320,23 @@ class AgentLoop:
                         logger.warning(f"Circuit breaker tripped for tool {tool_call.name}")
                         self.harness.fail(h_id, "circuit breaker")
                         result = f"Error: Circuit breaker tripped for tool '{tool_call.name}'"
+                        if self.bdi_tracker:
+                            self.bdi_tracker.record_belief_update(
+                                tool_name=tool_call.name,
+                                success=False,
+                                circuit_breaker=True,
+                            )
                     else:
                         result = await self.tools.execute(tool_call.name, tool_call.arguments)
 
                         if isinstance(result, str) and result.startswith("Error"):
                             logger.warning(f"Tool {tool_call.name} failed, retrying once")
+                            if self.bdi_tracker:
+                                self.bdi_tracker.record_belief_update(
+                                    tool_name=tool_call.name,
+                                    success=False,
+                                    error_message=result[:100],
+                                )
                             result = await self.tools.execute(
                                 tool_call.name, tool_call.arguments,
                             )
@@ -1329,9 +1347,14 @@ class AgentLoop:
                         else:
                             result_str = str(result) if result else ""
                             self.harness.complete(h_id, result_text=result_str)
+                            if self.bdi_tracker:
+                                self.bdi_tracker.record_belief_update(
+                                    tool_name=tool_call.name,
+                                    success=True,
+                                )
                             # Record in RepetitionGuard for caching
                             self.rep_guard.record(tool_call.name, tool_call.arguments, result_str)
-                            
+
                             # Phase 1 — Trajectory Monitor: record tool call
                             self.trajectory_monitor.on_tool_called(tool_call.name)
 

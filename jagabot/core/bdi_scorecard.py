@@ -40,6 +40,7 @@ def score_turn(
     tool_errors:    int   = 0,
     used_fallback:  bool  = False,
     verified_mid:   bool  = False,
+    belief_state:   dict  = None,
 ) -> BDIScore:
     """
     Score a single agent turn on BDI dimensions.
@@ -60,7 +61,23 @@ def score_turn(
     belief_tools = {"self_model_awareness", "memory_fleet", "read_file"}
     belief_used = bool(set(tools_used) & belief_tools)
 
-    if verified_mid:
+    # Use real belief state if available
+    if belief_state and belief_state.get("total_checks", 0) > 0:
+        sr = belief_state.get("success_rate", 1.0)
+        cb = belief_state.get("circuit_breakers", 0)
+        if cb > 0:
+            score.belief_score = 0.5
+            notes.append(f"❌ Belief: circuit breaker tripped — core assumption broken")
+        elif sr >= 0.9:
+            score.belief_score = 2.5
+            notes.append(f"✅ Belief: {belief_state['total_checks']} checks, {sr:.0%} success rate")
+        elif sr >= 0.7:
+            score.belief_score = 1.5
+            notes.append(f"🟡 Belief: {belief_state['total_checks']} checks, {sr:.0%} success rate")
+        else:
+            score.belief_score = 1.0
+            notes.append(f"🟠 Belief: high failure rate ({1-sr:.0%} failed)")
+    elif verified_mid:
         score.belief_score = 2.5
         notes.append("✅ Belief: mid-task verification detected")
     elif belief_used and quality >= 0.7:
@@ -161,6 +178,54 @@ class BDIScorecardTracker:
         self.db_path = self.workspace / "memory" / "bdi_scores.jsonl"
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._recent: list[BDIScore] = []
+        self._belief_checks: list[dict] = []
+        self._belief_failures: int = 0
+
+    def record_belief_update(
+        self,
+        tool_name: str,
+        success: bool,
+        error_message: str = "",
+        circuit_breaker: bool = False,
+    ) -> None:
+        """Record a mid-task belief verification event."""
+        self._belief_checks.append({
+            "tool": tool_name,
+            "success": success,
+            "error": error_message,
+            "circuit_breaker": circuit_breaker,
+            "timestamp": datetime.now().isoformat(),
+        })
+        if not success:
+            self._belief_failures += 1
+            if circuit_breaker:
+                logger.warning(
+                    f"BDI Belief: circuit breaker on '{tool_name}' "
+                    f"— assumption broken ({self._belief_failures} failures)"
+                )
+            else:
+                logger.debug(
+                    f"BDI Belief: '{tool_name}' failed "
+                    f"({self._belief_failures} total failures)"
+                )
+        else:
+            logger.debug(f"BDI Belief: '{tool_name}' verified ✅")
+
+    def get_belief_state(self) -> dict:
+        """Return current belief health for this turn."""
+        total = len(self._belief_checks)
+        failures = self._belief_failures
+        return {
+            "total_checks": total,
+            "failures": failures,
+            "success_rate": round((total - failures) / total, 2) if total > 0 else 1.0,
+            "circuit_breakers": sum(1 for b in self._belief_checks if b.get("circuit_breaker")),
+        }
+
+    def reset_turn(self) -> None:
+        """Reset per-turn belief tracking."""
+        self._belief_checks = []
+        self._belief_failures = 0
 
     def record(self, score: BDIScore) -> None:
         """Save score to disk and keep in memory."""
