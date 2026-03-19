@@ -1023,6 +1023,7 @@ class AgentLoop:
                     if isinstance(t, dict) and t.get("error")
                 )
                 _belief_state = self.bdi_tracker.get_belief_state() if self.bdi_tracker else None
+                _desire_state = self.bdi_tracker.get_desire_state() if self.bdi_tracker else None
                 _bdi = score_turn(
                     tools_used=tools_used or [],
                     quality=self.writer.scorer.score(
@@ -1032,6 +1033,7 @@ class AgentLoop:
                     anomaly_count=_anomalies,
                     tool_errors=_tool_errors,
                     belief_state=_belief_state,
+                    desire_state=_desire_state,
                 )
                 self.bdi_tracker.record(_bdi)
             except Exception as _e:
@@ -1326,6 +1328,11 @@ class AgentLoop:
                                 success=False,
                                 circuit_breaker=True,
                             )
+                            self.bdi_tracker.record_desire_challenge(
+                                tool_name=tool_call.name,
+                                challenge_type="circuit_breaker",
+                                alternatives_suggested=True,
+                            )
                     else:
                         result = await self.tools.execute(tool_call.name, tool_call.arguments)
 
@@ -1336,6 +1343,11 @@ class AgentLoop:
                                     tool_name=tool_call.name,
                                     success=False,
                                     error_message=result[:100],
+                                )
+                                self.bdi_tracker.record_desire_challenge(
+                                    tool_name=tool_call.name,
+                                    challenge_type="tool_error",
+                                    persisting=True,
                                 )
                             result = await self.tools.execute(
                                 tool_call.name, tool_call.arguments,
@@ -1352,6 +1364,13 @@ class AgentLoop:
                                     tool_name=tool_call.name,
                                     success=True,
                                 )
+                                # Check if this was a recovery (tool previously failed)
+                                if _consecutive_failures.get(tool_call.name, 0) > 0:
+                                    self.bdi_tracker.record_desire_challenge(
+                                        tool_name=tool_call.name,
+                                        challenge_type="recovered",
+                                        success_after_failure=True,
+                                    )
                             # Record in RepetitionGuard for caching
                             self.rep_guard.record(tool_call.name, tool_call.arguments, result_str)
 

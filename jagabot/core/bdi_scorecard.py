@@ -41,6 +41,7 @@ def score_turn(
     used_fallback:  bool  = False,
     verified_mid:   bool  = False,
     belief_state:   dict  = None,
+    desire_state:   dict  = None,
 ) -> BDIScore:
     """
     Score a single agent turn on BDI dimensions.
@@ -92,7 +93,24 @@ def score_turn(
 
     # ── Desire Score (0-2.5) ─────────────────────────────────────────
     # Did agent maintain goal when things went wrong?
-    if used_fallback:
+    # Use real desire state if available
+    if desire_state:
+        recovered = desire_state.get("recovered_count", 0)
+        fallback = desire_state.get("fallback_used", False)
+        challenges = desire_state.get("total_challenges", 0)
+        if fallback and recovered > 0:
+            score.desire_score = 2.5
+            notes.append(f"✅ Desire: recovered {recovered}x from failures, used alternatives")
+        elif challenges > 0 and quality >= 0.7:
+            score.desire_score = 1.5
+            notes.append(f"🟡 Desire: faced {challenges} challenges, maintained goal")
+        elif challenges > 0 and quality < 0.7:
+            score.desire_score = 0.5
+            notes.append(f"❌ Desire: {challenges} challenges, goal not achieved")
+        else:
+            score.desire_score = 1.5
+            notes.append("🟢 Desire: clean execution, no failures to recover from")
+    elif used_fallback:
         score.desire_score = 2.5
         notes.append("✅ Desire: used alternative approach after failure")
     elif tool_errors > 0 and quality >= 0.7:
@@ -102,7 +120,7 @@ def score_turn(
         score.desire_score = 0.5
         notes.append("❌ Desire: tool errors led to goal failure")
     else:
-        score.desire_score = 1.5  # No errors = smooth execution
+        score.desire_score = 1.5
         notes.append("🟢 Desire: clean execution, no failures to recover from")
 
     # ── Intention Score (0-2.5) ──────────────────────────────────────
@@ -180,6 +198,9 @@ class BDIScorecardTracker:
         self._recent: list[BDIScore] = []
         self._belief_checks: list[dict] = []
         self._belief_failures: int = 0
+        self._desire_challenges: list[dict] = []
+        self._recovered_count: int = 0
+        self._fallback_used: bool = False
 
     def record_belief_update(
         self,
@@ -222,10 +243,55 @@ class BDIScorecardTracker:
             "circuit_breakers": sum(1 for b in self._belief_checks if b.get("circuit_breaker")),
         }
 
+    def record_desire_challenge(
+        self,
+        tool_name: str,
+        challenge_type: str,
+        persisting: bool = False,
+        success_after_failure: bool = False,
+        alternatives_suggested: bool = False,
+    ) -> None:
+        """Record a desire preservation event."""
+        self._desire_challenges.append({
+            "tool": tool_name,
+            "type": challenge_type,
+            "persisting": persisting,
+            "recovered": success_after_failure,
+            "alternatives": alternatives_suggested,
+            "timestamp": datetime.now().isoformat(),
+        })
+        if success_after_failure:
+            self._recovered_count += 1
+            self._fallback_used = True
+            logger.info(
+                f"BDI Desire: recovered from failure on '{tool_name}' "
+                f"({self._recovered_count} recoveries this turn) ✅"
+            )
+        elif persisting:
+            logger.debug(f"BDI Desire: persisting despite failure on '{tool_name}'")
+        elif alternatives_suggested:
+            logger.debug(f"BDI Desire: alternatives suggested for '{tool_name}'")
+
+    def get_desire_state(self) -> dict:
+        """Return desire preservation health for this turn."""
+        total_challenges = len(self._desire_challenges)
+        return {
+            "total_challenges": total_challenges,
+            "recovered_count": self._recovered_count,
+            "fallback_used": self._fallback_used,
+            "persistence_rate": round(
+                sum(1 for d in self._desire_challenges if d.get("persisting"))
+                / total_challenges, 2
+            ) if total_challenges > 0 else 1.0,
+        }
+
     def reset_turn(self) -> None:
-        """Reset per-turn belief tracking."""
+        """Reset per-turn belief and desire tracking."""
         self._belief_checks = []
         self._belief_failures = 0
+        self._desire_challenges = []
+        self._recovered_count = 0
+        self._fallback_used = False
 
     def record(self, score: BDIScore) -> None:
         """Save score to disk and keep in memory."""
