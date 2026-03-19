@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Response cache — reduces redundant tool calls
+        try:
+            from jagabot.core.response_cache import ResponseCache
+            self.cache = ResponseCache(workspace=workspace)
+            logger.info("ResponseCache initialized")
+        except Exception as _rc_err:
+            logger.warning(f"ResponseCache init failed: {_rc_err}")
+            self.cache = None
+
         # BeliefEngine — calibrated belief states downstream of BrierScorer
         try:
             from jagabot.core.belief_engine import BeliefEngine
@@ -1368,6 +1377,15 @@ class AgentLoop:
             f"BrierScorer: deferred for '{topic}' — will record when outcome verified"
         )
 
+        # Log cache stats every 10 turns
+        if self.cache and len(self.tools._registry) % 10 == 0:
+            _cs = self.cache.get_stats()
+            if _cs["hits"] > 0:
+                logger.info(
+                    f"Cache stats: {_cs['hit_rate']:.0%} hit rate "
+                    f"({_cs['hits']} hits, {_cs['misses']} misses)"
+                )
+
         return OutboundMessage(
             channel=msg.channel,
             chat_id=msg.chat_id,
@@ -1538,7 +1556,21 @@ class AgentLoop:
                                 alternatives_suggested=True,
                             )
                     else:
-                        result = await self.tools.execute(tool_call.name, tool_call.arguments)
+                        # Check cache first
+                        _cached = None
+                        if self.cache:
+                            _cached = self.cache.get(tool_call.name, tool_call.arguments)
+
+                        if _cached is not None:
+                            result = _cached
+                            logger.debug(f"Cache HIT: {tool_call.name} — skipping tool call")
+                        else:
+                            result = await self.tools.execute(tool_call.name, tool_call.arguments)
+                            # Cache successful results
+                            if self.cache and isinstance(result, str) and not result.startswith("Error"):
+                                _ttl = self.cache.get_tool_ttl(tool_call.name)
+                                if _ttl > 0:
+                                    self.cache.set(tool_call.name, tool_call.arguments, result, ttl=_ttl)
 
                         if isinstance(result, str) and result.startswith("Error"):
                             logger.warning(f"Tool {tool_call.name} failed, retrying once")
