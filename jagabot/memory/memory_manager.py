@@ -870,28 +870,54 @@ class MemoryManager:
         self, response: str, topic: str
     ) -> list[MemoryEntry]:
         """Extract important facts from an agent response."""
+        # Broad signal set — covers GPT, DeepSeek, and structured output styles
         fact_signals = [
+            # Original signals
             "conclusion:", "finding:", "verified:",
             "key insight:", "important:", "✅", "result:",
+            # DeepSeek / markdown style
+            "**", "key point", "summary:", "in summary",
+            "therefore", "thus,", "hence,",
+            "the answer is", "the result is",
+            "successfully", "completed", "confirmed",
+            # Bullet point facts (lines starting with - or •)
+            "- ", "• ", "* ",
+            # Numbered facts
+            "1.", "2.", "3.",
+            # Research signals
+            "hypothesis:", "verdict:", "recommendation:",
+            "analysis:", "assessment:", "evidence:",
+        ]
+        # Negative signals — skip these lines
+        skip_signals = [
+            "i'll", "i will", "let me", "i can", "i'm going",
+            "please", "would you", "do you want",
+            "error:", "failed:", "exception:",
         ]
         facts = []
         now   = datetime.now().isoformat()
 
         for line in response.split("\n"):
             line = line.strip()
-            if (
-                len(line) > 40 and
-                any(s in line.lower() for s in fact_signals)
-            ):
-                facts.append(MemoryEntry(
-                    content    = line[:200],
-                    source     = "session_extraction",
-                    date       = now,
-                    topic      = topic,
-                    verified   = "unknown",
-                    entry_type = "fact",
-                ))
-        return facts[:5]  # cap at 5 per turn
+            # Skip empty, short, or conversational lines
+            if len(line) < 30:
+                continue
+            if any(s in line.lower() for s in skip_signals):
+                continue
+            # Must match a fact signal
+            if any(s in line.lower() for s in fact_signals):
+                # Clean markdown formatting
+                clean = line.replace("**", "").replace("##", "").strip()
+                if len(clean) > 30:
+                    facts.append(MemoryEntry(
+                        content    = clean[:200],
+                        source     = "session_extraction",
+                        date       = now,
+                        topic      = topic,
+                        verified   = "unknown",
+                        entry_type = "fact",
+                    ))
+        return facts[:10]  # increased cap to 10 per turn
 
     def _split_into_chunks(self, content: str) -> list[str]:
         """Split content into meaningful chunks for indexing."""
