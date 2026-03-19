@@ -146,18 +146,18 @@ if __name__ == "__main__":
             domain = "engineering"
         
         client = JagabotClient()
-        challenge = client.agent_loop.challenge_gen.next(domain=domain)
-        formatted = client.agent_loop.challenge_gen.format_for_agent(challenge)
+        challenge = client.agent.challenge_gen.next(domain=domain)
+        formatted = client.agent.challenge_gen.format_for_agent(challenge)
         print(formatted)
         answer = input("\nYour answer: ").strip()
         confidence = float(input("Confidence (0.0-1.0): ").strip() or "0.7")
-        result = client.agent_loop.challenge_gen.record_outcome(
+        result = client.agent.challenge_gen.record_outcome(
             challenge.id, answer, confidence
         )
         if result:
             print(f"\n{'✅ CORRECT' if result.was_correct else '❌ WRONG'}")
             print(f"Brier score: {result.brier_score:.3f}")
-            print(f"Stats: {client.agent_loop.challenge_gen.get_stats()}")
+            print(f"Stats: {client.agent.challenge_gen.get_stats()}")
         exit(0)
     
     print(f"🤔 Asking: {prompt}\n")
