@@ -43,7 +43,7 @@ TARGET_TOTAL  = 920    # total budget
 # Maps query signals to likely tools needed
 TOOL_RELEVANCE = {
     "financial": [
-        "financial_cv", "monte_carlo", "var", "cvar",
+        "financial_cv", "monte_carlo", "var", "cvar", "yahoo_finance",
         "portfolio_analyzer", "early_warning", "stress_test",
         "decision_engine", "visualization",
     ],
@@ -84,7 +84,7 @@ TOOL_RELEVANCE = {
 
 # Maps query signals to topics
 SIGNAL_TO_TOPIC = {
-    "financial": ["stock", "portfolio", "var", "cvar", "margin",
+    "financial": ["stock", "portfolio", "var", "cvar", "margin", "ticker", "aapl", "nvda", "msft", "tsla", "nasdaq", "nyse", "shares",
                   "equity", "monte carlo", "risk", "volatility",
                   "vix", "price", "fund", "investment"],
     "research":  ["research", "hypothesis", "study", "paper",
