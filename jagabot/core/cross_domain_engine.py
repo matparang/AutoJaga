@@ -100,10 +100,10 @@ def extract_pattern_type(text: str) -> str:
 
 def compute_analogy_strength(pattern_a: DomainPattern, pattern_b: DomainPattern) -> float:
     """Compute how strong the analogy between two patterns is."""
-    if pattern_a.pattern_type != pattern_b.pattern_type:
+    if False:  # Allow cross-pattern analogies
         return 0.0
 
-    # Same pattern type = base strength
+    # Base strength — allow all cross-domain pairs
     strength = 0.5
 
     # Boost if confidence levels are similar
@@ -265,7 +265,7 @@ class CrossDomainEngine:
                 seen_pairs.add(pair_key)
 
                 strength = compute_analogy_strength(pa, pb)
-                if strength < 0.5:
+                if strength < 0.3:
                     continue  # Only keep meaningful analogies
 
                 analogy = generate_analogy_statement(pa, pb, strength)
