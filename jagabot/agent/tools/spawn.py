@@ -57,6 +57,39 @@ class SpawnTool(Tool):
     
     async def execute(self, task: str, label: str | None = None, **kwargs: Any) -> str:
         """Spawn a subagent to execute the given task."""
+        from jagabot.core.token_budget import budget
+
+        # Estimate subagent cost — average ~3000 tokens per subagent run
+        SUBAGENT_ESTIMATED_TOKENS = 3000
+
+        # Check session budget
+        remaining = budget.remaining()
+        if remaining < SUBAGENT_ESTIMATED_TOKENS:
+            return (
+                f"⚠️ Cannot spawn subagent '{label or task[:30]}' — "
+                f"session budget too low ({remaining:,} tokens remaining, "
+                f"need ~{SUBAGENT_ESTIMATED_TOKENS:,}). "
+                f"Start a new session to reset."
+            )
+
+        # Check daily budget
+        daily_used  = budget._daily.get("total", 0)
+        daily_left  = budget.daily_limit - daily_used
+        if daily_left < SUBAGENT_ESTIMATED_TOKENS:
+            return (
+                f"⚠️ Cannot spawn subagent '{label or task[:30]}' — "
+                f"daily budget exhausted ({daily_left:,} tokens remaining). "
+                f"Budget resets tomorrow."
+            )
+
+        # Warn if running low but allow spawn
+        if daily_left < SUBAGENT_ESTIMATED_TOKENS * 10:
+            from loguru import logger
+            logger.warning(
+                f"Spawn: daily budget low ({daily_left:,} tokens left) — "
+                f"spawning '{label or task[:30]}' but use sparingly"
+            )
+
         return await self._manager.spawn(
             task=task,
             label=label,
