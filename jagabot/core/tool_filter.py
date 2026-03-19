@@ -24,6 +24,8 @@ except ImportError:
 # ── Always-on tools (sent regardless of topic) ─────────────────────
 # Keep this list ≤ 3. These are tools the agent needs for basic orientation.
 ALWAYS_SEND: set[str] = {
+    "yahoo_finance",
+    "web_search_mcp",
     "memory_fleet",
     "read_file",
     "self_model_awareness",
