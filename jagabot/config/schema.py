@@ -250,6 +250,12 @@ class Config(BaseSettings):
     gateway: GatewayConfig = Field(default_factory=GatewayConfig)
     tools: ToolsConfig = Field(default_factory=ToolsConfig)
     
+    # Budget configuration (optional)
+    budget: dict = Field(default_factory=lambda: {
+        "session_limit": 500000,
+        "daily_limit": 2000000,
+    })
+    
     # Model switching configuration (auto-populated if missing)
     model_presets: dict = Field(default_factory=lambda: {
         "1": {
