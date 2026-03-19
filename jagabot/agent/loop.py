@@ -129,6 +129,15 @@ class AgentLoop:
             logger.warning(f"ParallelRunner init failed: {_pr_err}")
             self.parallel_runner = None
 
+        # BDI Scorecard tracker
+        try:
+            from jagabot.core.bdi_scorecard import BDIScorecardTracker
+            self.bdi_tracker = BDIScorecardTracker(workspace)
+            logger.info("BDI Scorecard initialized")
+        except Exception as _bdi_err:
+            logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
+            self.bdi_tracker = None
+
         # CognitiveStack — two-tier model architecture (M1 classifies, M2 plans, M1 executes)
         try:
             from jagabot.core.cognitive_stack import CognitiveStack
@@ -1003,6 +1012,28 @@ class AgentLoop:
             auditor_approved=auditor_approved,
             anomaly_count=len(self.behavior_monitor.check_anomalies()),
         )
+
+        # BDI Scorecard — record autonomy score for this turn
+        if self.bdi_tracker:
+            try:
+                from jagabot.core.bdi_scorecard import score_turn
+                _anomalies = len(self.behavior_monitor.check_anomalies())
+                _tool_errors = sum(
+                    1 for t in (tools_used or [])
+                    if isinstance(t, dict) and t.get("error")
+                )
+                _bdi = score_turn(
+                    tools_used=tools_used or [],
+                    quality=self.writer.scorer.score(
+                        content=final_content,
+                        tools_used=tools_used,
+                    ),
+                    anomaly_count=_anomalies,
+                    tool_errors=_tool_errors,
+                )
+                self.bdi_tracker.record(_bdi)
+            except Exception as _e:
+                logger.debug(f"BDI scoring failed: {_e}")
 
         # ── ProactiveWrapper: ensure response has interpretation ────
         final_content = self.pro_wrapper.enhance(
