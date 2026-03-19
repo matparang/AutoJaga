@@ -48,6 +48,18 @@ def get_tools_for_query(query: str, all_tools) -> list:
     2. TOOL_RELEVANCE map    → send relevant tools + always-on
     3. Fallback              → send only ALWAYS_SEND tools
     """
+    # CCI: log token savings estimate
+    try:
+        from jagabot.core.cci import report as cci_report
+        _cci = cci_report(query)
+        if _cci["estimated_savings"] > 1000:
+            logger.debug(
+                f"CCI: saved ~{_cci['estimated_savings']} tokens "
+                f"({_cci['triggered_count']}/{_cci['total_tools']} tools active)"
+            )
+    except Exception:
+        pass
+
     if _FULL_TOOLS:
         logger.warning(f"JAGABOT_FULL_TOOLS=1 — sending all tools")
         if hasattr(all_tools, 'get_definitions'):
