@@ -1090,45 +1090,6 @@ class AgentLoop:
             except Exception as _e:
                 logger.debug(f"BDI scoring failed: {_e}")
 
-        # Add per-output reliability note (FIX 3)
-        if self.self_model and final_content and len(final_content) > 100:
-            # Get quality score from writer
-            session_quality = getattr(self.writer, '_last_quality', None)
-            
-            # Detect topic for domain reliability
-            topic = "general"
-            text_lower = msg.content.lower()
-            if any(w in text_lower for w in ["stock", "portfolio", "risk", "margin", "financial"]):
-                topic = "financial"
-            elif any(w in text_lower for w in ["research", "study", "hypothesis"]):
-                topic = "research"
-            elif any(w in text_lower for w in ["code", "software", "engineering"]):
-                topic = "engineering"
-            
-            # Get domain reliability from self_model
-            domain_trust = None
-            if hasattr(self.self_model, 'get_domain_reliability'):
-                try:
-                    domain_trust = self.self_model.get_domain_reliability(topic)
-                except Exception:
-                    pass
-            
-            # Only show note if trust is below threshold or quality is notable
-            reliability_note = None
-            if domain_trust is not None and domain_trust < 0.65:
-                reliability_note = (
-                    f"\n\n*[Reliability: {domain_trust:.0%} confidence in {topic} domain — "
-                    f"verify key claims]*"
-                )
-            elif session_quality is not None and session_quality < 0.6:
-                reliability_note = (
-                    f"\n\n*[Quality score: {session_quality:.0%} — lower confidence response]*"
-                )
-            
-            if reliability_note:
-                final_content = final_content + reliability_note
-                logger.debug(f"Reliability note added: topic={topic}, trust={domain_trust}, quality={session_quality}")
-
         # ── ProactiveWrapper: ensure response has interpretation ────
         final_content = self.pro_wrapper.enhance(
             content=final_content,
@@ -1150,28 +1111,6 @@ class AgentLoop:
             tools_used=tools_used,
             pending_outcomes=len(self.outcome_tracker._load_pending()),
         )
-
-        # ── Automatic Evaluation (FIX 5) — post-response hook ───────
-        # Only for complex profiles (RESEARCH, VERIFICATION, CALIBRATION)
-        harness_profile = getattr(self, '_last_profile', 'SAFE_DEFAULT')
-        if (
-            harness_profile in ("RESEARCH", "VERIFICATION", "CALIBRATION") and
-            len(final_content) > 200  # skip trivial responses
-        ):
-            try:
-                eval_result = self._auto_evaluate(
-                    content=final_content,
-                    query=msg.content,
-                    topic=self._detect_topic(msg.content),
-                )
-                if eval_result and eval_result.get("issues"):
-                    logger.info(
-                        f"AutoEval: {len(eval_result['issues'])} issue(s) found"
-                    )
-                    # Store for /eval command
-                    self._last_eval = eval_result
-            except Exception as _ae_err:
-                logger.debug(f"AutoEval skipped: {_ae_err}")
 
         # ── Run improvement cycle every 10 sessions ─────────────────
         self._session_count += 1
@@ -2028,78 +1967,6 @@ Respond with ONLY valid JSON, no markdown fences."""
                 logger.info("Memory consolidation fallback: session trimmed, placeholder history entry written")
             except Exception as fallback_err:
                 logger.error(f"Memory consolidation fallback also failed: {fallback_err}")
-
-    def _detect_topic(self, text: str) -> str:
-        """Detect topic/domain from text for reliability scoring."""
-        text_lower = text.lower()
-        if any(w in text_lower for w in ["stock", "portfolio", "risk", "margin", "financial", "var", "cvar"]):
-            return "financial"
-        elif any(w in text_lower for w in ["research", "study", "hypothesis", "experiment", "paper"]):
-            return "research"
-        elif any(w in text_lower for w in ["code", "software", "engineering", "api", "python"]):
-            return "engineering"
-        elif any(w in text_lower for w in ["health", "medical", "drug", "clinical", "patient"]):
-            return "healthcare"
-        elif any(w in text_lower for w in ["calibration", "confidence", "brier", "forecast"]):
-            return "calibration"
-        return "general"
-
-    def _auto_evaluate(
-        self,
-        content: str,
-        query: str,
-        topic: str,
-    ) -> dict:
-        """
-        Lightweight post-response evaluation.
-        Checks for common issues without requiring historical predictions.
-        
-        Returns dict with:
-            - issues: list of issue strings (empty if none)
-            - score: overall quality score 0-1
-            - topic: detected topic
-        """
-        issues = []
-        score = 1.0
-        
-        # Check for hedging language (too much uncertainty)
-        hedge_count = sum(1 for w in ["might", "could", "possibly", "uncertain", "may"] if w in content.lower())
-        if hedge_count > 5:
-            issues.append(f"Excessive hedging ({hedge_count} instances) — consider being more decisive")
-            score -= 0.1
-        
-        # Check for unsupported claims
-        if any(w in content.lower() for w in ["clearly", "obviously", "definitely"]) and topic in ("financial", "healthcare"):
-            issues.append("Strong claims in high-stakes domain — verify with sources")
-            score -= 0.15
-        
-        # Check for missing citations in research
-        if topic == "research" and "source" not in content.lower() and "citation" not in content.lower():
-            if len(content) > 300:  # Long research response without sources
-                issues.append("Research response lacks source citations")
-                score -= 0.1
-        
-        # Check for code without verification
-        if topic == "engineering" and "def " in content and "test" not in content.lower():
-            issues.append("Code provided without test verification")
-            score -= 0.05
-        
-        # Check for financial claims without numbers
-        if topic == "financial":
-            has_numbers = any(c.isdigit() for c in content)
-            if not has_numbers and len(content) > 200:
-                issues.append("Financial analysis lacks quantitative support")
-                score -= 0.15
-        
-        # Clamp score
-        score = max(0.0, min(1.0, score))
-        
-        return {
-            "issues": issues,
-            "score": round(score, 2),
-            "topic": topic,
-            "query": query[:100],
-        }
 
     async def process_direct(
         self,

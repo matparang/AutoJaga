@@ -107,13 +107,15 @@ HARNESS_PROFILES = {
     "RESEARCH": {
         "description":   "Web research, synthesis, exploration",
         "engines":       ["librarian", "curiosity_engine",
-                          "self_model", "brier_scorer"],
+                          "self_model", "brier_scorer",
+                          "k3_perspective"],  # ADDED: adversarial for all domains
         "tools":         ["web_search", "web_fetch", "researcher",
                           "memory_fleet", "read_file",
-                          "k1_bayesian", "write_file"],
+                          "k1_bayesian", "write_file",
+                          "k3_perspective"],  # ADDED: enable k3 tool
         "context_files": ["core_identity.md"],
         "token_budget":  700,
-        "triggers":      ["research_keyword", "question_keyword"],
+        "triggers":      ["research_keyword", "question_keyword", "adversarial_keyword"],
     },
 
     # ── VERIFICATION ─────────────────────────────────────────────
@@ -122,13 +124,14 @@ HARNESS_PROFILES = {
     "VERIFICATION": {
         "description":   "Fact checking, adversarial review",
         "engines":       ["librarian", "belief_engine",
-                          "brier_scorer", "strategic_interceptor"],
+                          "brier_scorer", "strategic_interceptor",
+                          "k3_perspective"],  # ADDED: explicit adversarial
         "tools":         ["tri_agent", "exec", "read_file",
                           "memory_fleet", "k1_bayesian",
-                          "web_search"],
+                          "web_search", "k3_perspective"],  # ADDED: enable k3
         "context_files": ["core_identity.md"],
         "token_budget":  600,
-        "triggers":      ["verify_keyword", "proof_keyword"],
+        "triggers":      ["verify_keyword", "proof_keyword", "adversarial_keyword"],
     },
 
     # ── AUTONOMOUS ───────────────────────────────────────────────
@@ -242,6 +245,12 @@ KEYWORDS = {
     "proof_keyword": [
         "proof", "prove", "evidence", "show me", "demonstrate",
         "is it true", "is that true", "can you confirm",
+    ],
+    "adversarial_keyword": [  # ADDED: trigger k3_perspective for all domains
+        "what are the risks", "devil's advocate", "challenge this",
+        "argue against", "what could go wrong", "opposing view",
+        "steelman", "counterargument", "bull case", "bear case",
+        "worst case", "downside", "critique this",
     ],
     "yolo_command":  ["/yolo"],
     "goals_command": ["/goals"],
@@ -398,6 +407,10 @@ class FluidDispatcher:
         if any(kw in text for kw in KEYWORDS["verify_keyword"] +
                KEYWORDS["proof_keyword"]):
             return "VERIFICATION", "verify_keyword"
+
+        # ── Priority 3b: Adversarial keywords (ADDED) ───────────
+        if any(kw in text for kw in KEYWORDS["adversarial_keyword"]):
+            return "VERIFICATION", "adversarial_keyword"
 
         # ── Priority 4: Research keywords ────────────────────────
         if any(kw in text for kw in KEYWORDS["research_keyword"]):

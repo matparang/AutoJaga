@@ -215,6 +215,10 @@ class SessionWriter:
             penalty = min(0.3, _anomalies * 0.10)
             quality = max(0.0, quality - penalty)
             logger.debug(f"Quality penalized by {penalty:.2f} ({_anomalies} anomalies) → {quality:.2f}")
+        
+        # Store for loop.py reliability note
+        self._last_quality = quality
+        
         label = (
             "excellent" if quality >= HIGH_QUALITY_THRESHOLD
             else "good" if quality >= AUTO_RECORD_THRESHOLD
