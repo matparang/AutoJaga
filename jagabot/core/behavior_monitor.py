@@ -110,6 +110,15 @@ class BehaviorMonitor:
             if avg_usage > 0 and count > avg_usage * 3:
                 # Suppress if user explicitly requested this tool
                 if not self._user_requested_tool(tool, self._last_user_message):
+                    # Special handling for exec tool — often used multiple times
+                    # for file verification, which is normal behavior
+                    if tool == "exec" and count <= 5:
+                        # Exec used ≤5 times is normal for file verification workflows
+                        logger.debug(
+                            f"Behavior monitor: exec used {count}x (normal for "
+                            f"file verification, not flagging as anomaly)"
+                        )
+                        continue
                     anomalies.append(Anomaly(
                         category="tool_spike",
                         message=(
