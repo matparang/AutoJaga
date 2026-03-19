@@ -102,6 +102,14 @@ class ConclusionExtractor:
         "data shows", "statistics show",
     ]
 
+    # Queries that trigger reflection/analysis — skip outcome extraction
+    SKIP_QUERY_SIGNALS = [
+        "pathological failure", "hidden assumption", "counter-scenario",
+        "adversarial", "guardrail", "self-reflect", "reasoning chain",
+        "failure analysis", "edge case", "logic loop", "analyze your",
+        "critique your", "what went wrong", "your mistakes",
+    ]
+
     def extract(
         self,
         content: str,
@@ -110,6 +118,12 @@ class ConclusionExtractor:
         output_folder: str,
     ) -> list[PendingOutcome]:
         """Extract conclusions from agent response."""
+        # Skip extraction for self-reflection and analysis queries
+        query_lower = query.lower()
+        if any(s in query_lower for s in self.SKIP_QUERY_SIGNALS):
+            logger.debug("OutcomeTracker: skipping extraction — self-reflection query detected")
+            return []
+
         conclusions = []
         content_lower = content.lower()
 
