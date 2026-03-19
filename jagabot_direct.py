@@ -47,19 +47,19 @@ class JagabotClient:
             with open(config_path) as f:
                 config = json.load(f)
             if model is None:
-                model = config.get("agents", {}).get("defaults", {}).get("model", "dashscope/qwen-plus")
+                model = config.get("agents", {}).get("defaults", {}).get("model", "deepseek/deepseek-chat")
         else:
-            model = model or "dashscope/qwen-plus"
+            model = model or "deepseek/deepseek-chat"
         
         # Create minimal message bus
         self.bus = MessageBus()
         
         # Create provider
         self.provider = LiteLLMProvider(
-            api_key=config.get("providers", {}).get("dashscope", {}).get("apiKey", "") if config_path.exists() else "",
-            api_base=config.get("providers", {}).get("dashscope", {}).get("apiBase") if config_path.exists() else None,
+            api_key=config.get("providers", {}).get("deepseek", {}).get("apiKey", "") if config_path.exists() else "",
+            api_base=config.get("providers", {}).get("deepseek", {}).get("apiBase") if config_path.exists() else None,
             default_model=model,
-            provider_name="dashscope"
+            provider_name="deepseek"
         )
         
         # Create agent loop
@@ -123,14 +123,44 @@ async def ask_jagabot(prompt: str, workspace: str | None = None) -> str:
 
 if __name__ == "__main__":
     import sys
-    
+
     if len(sys.argv) < 2:
         print("Usage: python3 -m jagabot_direct <prompt>")
         print("Example: python3 -m jagabot_direct \"What tools do you have?\"")
+        print("\nChallenge mode: python3 -m jagabot_direct \"challenge financial\"")
+        print("Domains: financial, research, calibration, engineering")
         sys.exit(1)
-    
+
     prompt = " ".join(sys.argv[1:])
-    print(f"🤔 Asking: {prompt}\n")
     
+    # Challenge mode
+    if prompt.lower().startswith("challenge"):
+        domain = None
+        if "financial" in prompt.lower():
+            domain = "financial"
+        elif "research" in prompt.lower():
+            domain = "research"
+        elif "calibration" in prompt.lower():
+            domain = "calibration"
+        elif "engineering" in prompt.lower():
+            domain = "engineering"
+        
+        client = JagabotClient()
+        challenge = client.agent_loop.challenge_gen.next(domain=domain)
+        formatted = client.agent_loop.challenge_gen.format_for_agent(challenge)
+        print(formatted)
+        answer = input("\nYour answer: ").strip()
+        confidence = float(input("Confidence (0.0-1.0): ").strip() or "0.7")
+        result = client.agent_loop.challenge_gen.record_outcome(
+            challenge.id, answer, confidence
+        )
+        if result:
+            print(f"\n{'✅ CORRECT' if result.was_correct else '❌ WRONG'}")
+            print(f"Brier score: {result.brier_score:.3f}")
+            print(f"Stats: {client.agent_loop.challenge_gen.get_stats()}")
+        exit(0)
+    
+    print(f"🤔 Asking: {prompt}\n")
+
     result = asyncio.run(ask_jagabot(prompt))
     print(f"\n✅ Response:\n{result}")
