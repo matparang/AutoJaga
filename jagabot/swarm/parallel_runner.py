@@ -264,29 +264,47 @@ class ParallelRunner:
         results: list[AgentResult],
         task: str,
     ) -> tuple[str, Optional[str]]:
-        """Use BrierScorer to pick the best result."""
-        if not self.brier_scorer or not hasattr(self.brier_scorer, 'trust_score'):
-            # Fallback to voting
-            return self._vote(results), None
-        
-        # Get trust scores for each result
-        best_score = -1
-        best_result = None
-        best_role = None
-        
-        for r in results:
-            # Use role as "perspective" for trust lookup
-            trust = self.brier_scorer.trust_score("general", r.role)
-            if trust is None:
-                trust = r.confidence  # Fallback to self-reported confidence
-            
-            adjusted = r.confidence * (trust or 0.5)
-            if adjusted > best_score:
-                best_score = adjusted
-                best_result = r.output
-                best_role = r.role
-        
-        return best_result or "No result", best_role
+        """Use StrategyArbitrator (Brier-based) to pick the best result."""
+        valid = [r for r in results if r.output and not r.error]
+        if not valid:
+            return "All agents failed.", None
+
+        # Try full StrategyArbitrator first
+        try:
+            from jagabot.swarm.arbitrator import StrategyArbitrator
+            arbitrator = StrategyArbitrator(brier_scorer=self.brier_scorer)
+            perspectives = [
+                {
+                    "perspective": r.role,
+                    "verdict":     r.output[:300],
+                    "confidence":  r.confidence,
+                    "evidence":    r.output[:100],
+                }
+                for r in valid
+            ]
+            arb_result = arbitrator.arbitrate_perspectives(
+                perspectives=perspectives,
+                domain="general",
+            )
+            winner_role   = arb_result.winner.perspective
+            winner_output = next(
+                (r.output for r in valid if r.role == winner_role),
+                valid[0].output
+            )
+            method = arb_result.method
+            gap    = arb_result.confidence_gap
+            contested = "⚠️ Contested" if arb_result.was_contested else "✅ Clear"
+
+            # Log rich arbitration result
+            logger.info(
+                f"Arbitration: {winner_role} wins "
+                f"({contested}, gap={gap:.2f}, method={method})"
+            )
+            return winner_output, winner_role
+
+        except Exception as _arb_err:
+            logger.warning(f"StrategyArbitrator failed: {_arb_err} — falling back to voting")
+            return self._vote(valid), valid[0].role if valid else None
     
     def _vote(self, results: list[AgentResult]) -> str:
         """Simple majority voting."""
