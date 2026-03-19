@@ -1426,13 +1426,33 @@ class AgentLoop:
                 else:
                     input_tokens = getattr(usage, 'prompt_tokens', 0)
                     output_tokens = getattr(usage, 'completion_tokens', 0)
-                budget.record(
+                budget_result = budget.record(
                     input_tokens=input_tokens,
                     output_tokens=output_tokens,
                     model=getattr(response, 'model', self._current_model_id),
                     messages=messages,  # For checkpoint on budget exceeded
                     workspace=self.workspace,
+                    interactive=True,  # Enable interactive budget handling
                 )
+                
+                # Handle interactive budget exceeded
+                if budget_result == "BUDGET_EXCEEDED_ASK_USER":
+                    logger.warning("⚠️  Session budget exceeded — pausing for user decision")
+                    # Save checkpoint and return control to user
+                    from jagabot.core.session_checkpoint import save_checkpoint
+                    save_checkpoint(messages, self._calls, self.workspace)
+                    
+                    # Return message to user asking what to do
+                    return self.context.add_assistant_message(
+                        messages,
+                        "⚠️ **Session budget exceeded.**\n\n"
+                        "Checkpoint saved. Please choose:\n"
+                        "1. Continue this session (budget override) — just continue typing\n"
+                        "2. Start new session — use `/new`\n"
+                        "3. Check budget — use `/budget status`\n"
+                        "4. Set higher budget — use `jagabot budget set-session <tokens>`\n\n"
+                        "Your conversation is saved. Type anything to continue or use a command.",
+                    )
             else:
                 # No usage data — skip budget tracking for this turn
                 logger.debug("Budget tracking: no usage data from provider (streaming mode?)")

@@ -686,7 +686,7 @@ def status():
         from jagabot.providers.registry import PROVIDERS
 
         console.print(f"Model: {config.agents.defaults.model}")
-        
+
         # Check API keys from registry
         for spec in PROVIDERS:
             p = getattr(config.providers, spec.name, None)
@@ -701,6 +701,101 @@ def status():
             else:
                 has_key = bool(p.api_key)
                 console.print(f"{spec.label}: {'[green]✓[/green]' if has_key else '[dim]not set[/dim]'}")
+
+
+@app.command()
+def budget(
+    action: str = typer.Argument("status", help="status|set-session|set-daily"),
+    value: int = typer.Argument(None, help="Budget value in tokens (for set-session/set-daily)"),
+):
+    """
+    View or set token budget limits.
+    
+    Examples:
+        jagabot budget status        # Show current limits and usage
+        jagabot budget set-session 1000000  # Set session limit to 1M tokens
+        jagabot budget set-daily 5000000    # Set daily limit to 5M tokens
+    """
+    from jagabot.core.token_budget import SESSION_LIMIT, DAILY_LIMIT, STATE_PATH, _load_daily
+    
+    if action == "status":
+        daily = _load_daily()
+        console.print("## 💰 Token Budget Status\n")
+        console.print(f"**Session Limit:** {SESSION_LIMIT:,} tokens")
+        console.print(f"**Daily Limit:** {DAILY_LIMIT:,} tokens\n")
+        console.print(f"**Today's Usage:** {daily.get('total', 0):,} tokens ({daily.get('calls', 0)} calls)")
+        console.print(f"**Daily Remaining:** {max(0, DAILY_LIMIT - daily.get('total', 0)):,} tokens\n")
+        if STATE_PATH.exists():
+            console.print(f"Budget state: {STATE_PATH}")
+        else:
+            console.print("Budget state: Not initialized (starts on first LLM call)")
+        
+        console.print("\n💡 **Tip:** Default session limit is 500k tokens.")
+        console.print("   Use `jagabot budget set-session <tokens>` to increase.")
+        console.print("   Example: `jagabot budget set-session 1000000` for 1M tokens\n")
+        
+    elif action == "set-session":
+        if value is None:
+            console.print("❌ Error: Please specify token limit")
+            console.print("   Example: jagabot budget set-session 1000000")
+            raise typer.Exit(1)
+        
+        # Update environment variable for current session
+        os.environ["JAGABOT_SESSION_LIMIT"] = str(value)
+        
+        # Also update config if possible
+        from jagabot.config.loader import load_config, get_config_path
+        config_path = get_config_path()
+        if config_path.exists():
+            try:
+                import json
+                config = json.loads(config_path.read_text())
+                if "budget" not in config:
+                    config["budget"] = {}
+                config["budget"]["session_limit"] = value
+                config_path.write_text(json.dumps(config, indent=2))
+                console.print(f"✅ Session budget saved to config: {value:,} tokens")
+            except Exception as e:
+                console.print(f"⚠️  Could not save to config: {e}")
+                console.print(f"   Budget set for current session only: {value:,} tokens")
+        else:
+            console.print(f"✅ Session budget set for current session: {value:,} tokens")
+        
+        console.print(f"\n💡 Restart jagabot agent to apply new limit.")
+        
+    elif action == "set-daily":
+        if value is None:
+            console.print("❌ Error: Please specify token limit")
+            console.print("   Example: jagabot budget set-daily 5000000")
+            raise typer.Exit(1)
+        
+        # Update environment variable for current session
+        os.environ["JAGABOT_DAILY_LIMIT"] = str(value)
+        
+        # Also update config if possible
+        from jagabot.config.loader import load_config, get_config_path
+        config_path = get_config_path()
+        if config_path.exists():
+            try:
+                import json
+                config = json.loads(config_path.read_text())
+                if "budget" not in config:
+                    config["budget"] = {}
+                config["budget"]["daily_limit"] = value
+                config_path.write_text(json.dumps(config, indent=2))
+                console.print(f"✅ Daily budget saved to config: {value:,} tokens")
+            except Exception as e:
+                console.print(f"⚠️  Could not save to config: {e}")
+                console.print(f"   Budget set for current session only: {value:,} tokens")
+        else:
+            console.print(f"✅ Daily budget set for current session: {value:,} tokens")
+        
+        console.print(f"\n💡 Restart jagabot agent to apply new limit.")
+        
+    else:
+        console.print(f"❌ Unknown action: {action}")
+        console.print("   Use: status | set-session | set-daily")
+        raise typer.Exit(1)
 
 
 if __name__ == "__main__":
