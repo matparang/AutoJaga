@@ -150,7 +150,7 @@ if __name__ == "__main__":
         formatted = client.agent.challenge_gen.format_for_agent(challenge)
         print(formatted)
         answer = input("\nYour answer: ").strip()
-        confidence = float(input("Confidence (0.0-1.0): ").strip() or "0.7")
+        confidence = float(input("Confidence: ").strip() or "0.7")
         result = client.agent.challenge_gen.record_outcome(
             challenge.id, answer, confidence
         )
