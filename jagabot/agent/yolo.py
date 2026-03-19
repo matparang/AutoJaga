@@ -542,6 +542,24 @@ class YOLORunner:
             # Save session log
             self._save_session_log(session)
 
+            # Auto-lesson extraction — consolidate findings into MEMORY.md
+            try:
+                from jagabot.memory.consolidation import ConsolidationEngine
+                _consolidation = ConsolidationEngine(
+                    memory_dir=Path(self.workspace) / "memory",
+                )
+                _lessons = _consolidation.run(force=True)
+                if _lessons > 0:
+                    logger.info(
+                        f"YOLO auto-lesson extraction: {_lessons} lessons "
+                        f"written to MEMORY.md"
+                    )
+                    session.memory_added += _lessons
+                else:
+                    logger.debug("YOLO auto-lesson extraction: no new lessons to consolidate")
+            except Exception as _ce:
+                logger.warning(f"YOLO auto-lesson extraction failed: {_ce}")
+
             display.show_final(session)
 
         self._log_audit(
