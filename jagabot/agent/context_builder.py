@@ -47,6 +47,9 @@ TOOL_RELEVANCE = {
         "portfolio_analyzer", "early_warning", "stress_test",
         "decision_engine", "visualization",
     ],
+    "stock": [  # Added for stock price queries
+        "yahoo_finance", "decision_engine", "financial_cv",
+    ],
     "research": [
         "web_search", "web_fetch", "researcher",
         "tri_agent", "quad_agent", "debate",
