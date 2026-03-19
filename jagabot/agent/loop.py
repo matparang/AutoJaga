@@ -138,6 +138,18 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # ChallengeProblems generator
+        try:
+            from jagabot.core.challenge_problems import ChallengeProblemGenerator
+            self.challenge_gen = ChallengeProblemGenerator(
+                workspace=workspace,
+                brier_scorer=None,  # wired after brier init
+            )
+            logger.info("ChallengeProblemGenerator initialized")
+        except Exception as _cp_err:
+            logger.warning(f"ChallengeProblemGenerator init failed: {_cp_err}")
+            self.challenge_gen = None
+
         # CognitiveStack — two-tier model architecture (M1 classifies, M2 plans, M1 executes)
         try:
             from jagabot.core.cognitive_stack import CognitiveStack
@@ -215,6 +227,10 @@ class AgentLoop:
         if self.parallel_runner and hasattr(self, 'brier'):
             self.parallel_runner.brier_scorer = self.brier
             logger.info("ParallelRunner ← BrierScorer wired")
+
+        if self.challenge_gen and hasattr(self, 'brier'):
+            self.challenge_gen.brier = self.brier
+            logger.info("ChallengeProblemGenerator ← BrierScorer wired")
 
         # System Health Monitor (unified health scoring)
         from jagabot.core.system_health_monitor import SystemHealthMonitor
