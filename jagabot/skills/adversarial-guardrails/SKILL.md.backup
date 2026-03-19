@@ -4,7 +4,7 @@ description: Pathological failure analysis and adversarial guardrails to prevent
 metadata: {"jagabot":{"emoji":"🛡️","always":true}}
 ---
 
-# Adversarial Guardrails Protocol (v1.1)
+# Adversarial Guardrails Protocol (v1.0)
 
 **Priority: ALWAYS ACTIVE** - This protocol activates automatically for ANY financial analysis, tool workaround, or subagent result.
 
@@ -55,42 +55,6 @@ For critical reasoning chains:
 | Web scraping | Degraded        | 2 sources         | 60%            |
 | User claim   | Failed → Workaround | 1 source      | 30%            |
 | Unverified   | Multiple failures | None           | 10%            |
-## 🔴 RULE 7: DOCUMENTATION VERIFICATION PROTOCOL
-When using ANY tool based on documentation:
-1. **Cross-check function signatures**: Verify SKILL.md claims match actual tool source code
-2. **Test parameter compatibility**: Ensure documented parameters work as described
-3. **Flag mismatches**: Documentation/implementation mismatches reduce max confidence by 20%
-4. **Trigger**: First use of any tool in a session requires documentation verification
-
-## 🔴 RULE 8: NULL VALUE PROTOCOL
-When ANY tool returns null/empty values:
-1. **Immediate flag**: Null values → "degraded data" classification
-2. **Validation check**: price != null, summary != "", etc. before using data
-3. **Action**: If null values detected, report "INVALID/MISSING DATA" not "no change"
-4. **Confidence impact**: Null values → max 10% confidence regardless of other factors
-
-## 🔴 RULE 9: RESOURCE AVAILABILITY PROTOCOL
-Before resource-intensive operations (subagent spawning, parallel processing):
-1. **Pre-check**: Verify budget, rate limits, system load before execution
-2. **Action**: If budget exhausted, report "RESOURCE CONSTRAINT" not "tool failure"
-3. **Workaround**: Offer alternatives (direct execution, batch processing, etc.)
-4. **Confidence**: Resource constraints → max 30% confidence for parallel capabilities
-
-## 🔴 RULE 10: NETWORK RESILIENCE PROTOCOL
-For network-dependent operations (web search, API calls):
-1. **Connectivity check**: Verify network availability before operations
-2. **Timeout monitoring**: Enforce timeout thresholds and implement exponential backoff
-3. **Failure handling**: Proper error classification (timeout vs. content vs. DNS)
-4. **Confidence**: Network-dependent operations → max 80% confidence
-
-## 🔴 RULE 11: DOMAIN EXPERTISE VERIFICATION
-When operating in specialized domains (quantum physics, advanced mathematics):
-1. **Self-assessment**: Check domain_reliability before making claims
-2. **Disclosure**: Clearly separate "field consensus" from "personal reliability"
-3. **Expert consultation**: For frontier research, recommend expert verification
-4. **Confidence**: Untested domains → max 50% confidence for novel claims
-
-
 
 ---
 
@@ -101,11 +65,6 @@ When operating in specialized domains (quantum physics, advanced mathematics):
 - Any tool workaround implementation
 - Any subagent/spawned process result
 - Any analysis using unverified data sources
-- Any tool documentation usage (Rule 7)
-- Any null/empty value returns (Rule 8)
-- Any resource-intensive operation (Rule 9)
-- Any network-dependent operation (Rule 10)
-- Any specialized domain analysis (Rule 11)
 
 ### Required Disclosure Format
 ```
