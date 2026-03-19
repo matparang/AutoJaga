@@ -42,6 +42,7 @@ def score_turn(
     verified_mid:   bool  = False,
     belief_state:   dict  = None,
     desire_state:   dict  = None,
+    intention_state: dict = None,
 ) -> BDIScore:
     """
     Score a single agent turn on BDI dimensions.
@@ -125,22 +126,27 @@ def score_turn(
 
     # ── Intention Score (0-2.5) ──────────────────────────────────────
     # Did agent use tools effectively and purposefully?
+    # Boost intention score if means-end analysis was used
+    _means_end_bonus = 0.5 if (
+        intention_state and intention_state.get("means_end_used")
+    ) else 0.0
+    _approaches = intention_state.get("approaches_considered", 0) if intention_state else 0
     n_tools = len(set(tools_used))  # unique tools used
 
     if n_tools >= 3 and quality >= 0.8:
-        score.intention_score = 2.5
-        notes.append("✅ Intention: diverse tool use, high quality output")
+        score.intention_score = min(2.5, 2.5 + _means_end_bonus)
+        notes.append(f"✅ Intention: diverse tool use, high quality{' + means-end analysis' if _means_end_bonus else ''}")
     elif n_tools >= 2 and quality >= 0.7:
-        score.intention_score = 2.0
-        notes.append("🟡 Intention: good tool use")
+        score.intention_score = min(2.5, 2.0 + _means_end_bonus)
+        notes.append(f"🟡 Intention: good tool use{f' + {_approaches} approaches' if _approaches else ''}")
     elif n_tools >= 1 and quality >= 0.6:
-        score.intention_score = 1.5
+        score.intention_score = min(2.5, 1.5 + _means_end_bonus)
         notes.append("🟠 Intention: minimal tool use")
     elif n_tools == 0:
-        score.intention_score = 0.5
+        score.intention_score = min(2.5, 0.5 + _means_end_bonus)
         notes.append("❌ Intention: no tools used")
     else:
-        score.intention_score = 1.0
+        score.intention_score = min(2.5, 1.0 + _means_end_bonus)
         notes.append("🟠 Intention: tools used but quality low")
 
     # ── Anomaly Score (0-2.5) ────────────────────────────────────────
@@ -201,6 +207,8 @@ class BDIScorecardTracker:
         self._desire_challenges: list[dict] = []
         self._recovered_count: int = 0
         self._fallback_used: bool = False
+        self._means_end_used: bool = False
+        self._approaches_considered: int = 0
 
     def record_belief_update(
         self,
@@ -292,6 +300,24 @@ class BDIScorecardTracker:
         self._desire_challenges = []
         self._recovered_count = 0
         self._fallback_used = False
+        self._means_end_used = False
+        self._approaches_considered = 0
+
+    def record_means_end(self, approaches_count: int) -> None:
+        """Record that means-end analysis was performed."""
+        self._means_end_used = True
+        self._approaches_considered = approaches_count
+        logger.info(
+            f"BDI Intention: means-end analysis — "
+            f"{approaches_count} approaches considered ✅"
+        )
+
+    def get_intention_state(self) -> dict:
+        """Return intention quality state."""
+        return {
+            "means_end_used": self._means_end_used,
+            "approaches_considered": self._approaches_considered,
+        }
 
     def record(self, score: BDIScore) -> None:
         """Save score to disk and keep in memory."""

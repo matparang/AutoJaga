@@ -726,6 +726,39 @@ class AgentLoop:
         # Agent loop with audit-in-the-loop verification
         self.auditor.causal_tracer.clear()  # Fresh causal log per message
         self.auditor.clear_log()  # Clear audit log and pending missing files
+        
+        # Phase 4 — Means-End Analysis: for complex tasks enumerate approaches
+        _fluid_profile = package.profile if 'package' in locals() else "SAFE_DEFAULT"
+        _is_complex = _fluid_profile in ("RESEARCH", "CALIBRATION", "VERIFICATION")
+        if _is_complex and self.cognitive_stack and self.bdi_tracker:
+            try:
+                _mea_prompt = (
+                    f"Task: {msg.content[:200]}\n\n"
+                    f"Before executing, briefly list 2-3 possible approaches "
+                    f"and select the best one. Format:\n"
+                    f"APPROACH 1: ...\nAPPROACH 2: ...\nAPPROACH 3: ...\n"
+                    f"SELECTED: [number] because [reason]\n"
+                    f"Keep this under 100 words."
+                )
+                _mea_response = await self.provider.chat(
+                    messages=[{"role": "user", "content": _mea_prompt}],
+                    model=self.cognitive_stack.model1_id,
+                    max_tokens=150,
+                    temperature=0.3,
+                )
+                _mea_text = _mea_response.content if _mea_response else ""
+                _approach_count = _mea_text.lower().count("approach")
+                if _approach_count >= 2:
+                    self.bdi_tracker.record_means_end(_approach_count)
+                    # Inject selected approach into context
+                    if messages and messages[0].get("role") == "system":
+                        messages[0]["content"] += (
+                            f"\n\n[Means-End Analysis]\n{_mea_text}"
+                        )
+                    logger.info(f"Means-End: {_approach_count} approaches considered")
+            except Exception as _mea_err:
+                logger.debug(f"Means-End Analysis skipped: {_mea_err}")
+        
         messages, final_content, tools_used = await self._run_agent_loop(
             messages, self.max_iterations,
             user_query=msg.content,  # Pass query for tool filtering
@@ -1024,6 +1057,7 @@ class AgentLoop:
                 )
                 _belief_state = self.bdi_tracker.get_belief_state() if self.bdi_tracker else None
                 _desire_state = self.bdi_tracker.get_desire_state() if self.bdi_tracker else None
+                _intention_state = self.bdi_tracker.get_intention_state() if self.bdi_tracker else None
                 _bdi = score_turn(
                     tools_used=tools_used or [],
                     quality=self.writer.scorer.score(
@@ -1034,6 +1068,7 @@ class AgentLoop:
                     tool_errors=_tool_errors,
                     belief_state=_belief_state,
                     desire_state=_desire_state,
+                    intention_state=_intention_state,
                 )
                 self.bdi_tracker.record(_bdi)
             except Exception as _e:
