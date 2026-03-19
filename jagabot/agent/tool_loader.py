@@ -123,7 +123,7 @@ def register_default_tools(
     # Web Search MCP — real-time web search (no API key)
     try:
         from jagabot.agent.tools.web_search_mcp import WebSearchMcpTool
-        registry.register(WebSearchMcpTool())
+        registry.register(WebSearchTool())
         logger.debug("WebSearchMcpTool registered")
     except Exception as _ws_err:
         logger.debug(f"WebSearchMcpTool skipped: {_ws_err}")
