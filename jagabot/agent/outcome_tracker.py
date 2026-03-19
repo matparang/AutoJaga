@@ -521,6 +521,11 @@ class OutcomeTracker:
                         "do not", "don't", "not record", "not actual",
                         "before", "after", "if", "when", "whether",
                         "should", "would", "could", "might",
+                        # Hypothetical/philosophy signals
+                        "assume", "suppose", "imagine", "one of your",
+                        "core assumption", "how do you", "how would",
+                        "don't know which", "you don't know",
+                        "which one", "any of", "some of",
                     ]
                     if any(phrase in context for phrase in exclude_phrases):
                         continue  # Skip this match
@@ -529,15 +534,23 @@ class OutcomeTracker:
                     break
         
         # Pattern 2: Natural language verdicts (more lenient)
+        # STRICT: Only match if referring to past agent output, not hypotheticals
         if result is None:
-            # Must be a statement about a specific conclusion being right/wrong
-            # NOT just containing the word "true" or "correct"
-            if re.search(r"\bthat\s+(was|is)\s+correct\b", msg_lower):
-                result = "correct"
-            elif re.search(r"\bthat\s+(was|is)\swrong\b", msg_lower):
-                result = "wrong"
+            # Skip if message is a hypothetical/philosophical question
+            hypothetical_signals = [
+                "assume ", "suppose ", "imagine ", "what if ",
+                "how do you", "how would", "which one is",
+                "could be wrong", "might be wrong", "may be wrong",
+                "one of your", "core assumption", "if one",
+                "don't know which", "you don't know",
+            ]
+            if any(s in msg_lower for s in hypothetical_signals):
+                result = None  # Skip — hypothetical, not a verdict
+            elif re.search(r"\bthat\s+was\s+correct\b", msg_lower):
+                result = "correct"  # "that was correct" — past tense, clear verdict
+            elif re.search(r"\bthat\s+was\s+wrong\b", msg_lower):
+                result = "wrong"    # "that was wrong" — past tense, clear verdict
             elif re.search(r"\byou'?re\s+(correct|right)\b", msg_lower):
-                # "you're correct" = user confirming agent was right
                 result = "correct"
             elif re.search(r"\b(correct|right)\s+conclusion\b", msg_lower):
                 result = "correct"
