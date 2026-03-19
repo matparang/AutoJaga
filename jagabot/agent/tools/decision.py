@@ -422,6 +422,25 @@ class DecisionTool(Tool):
         "buffet_perspective": buffet_perspective,
         "collapse_perspectives": collapse_perspectives,
     }
+    
+    # Valid kwargs for each perspective method
+    _VALID_KWARGS = {
+        "bull_perspective": {
+            "probability_below_target", "current_price", "target_price",
+            "cv", "percentiles", "recovery_months",
+        },
+        "bear_perspective": {
+            "probability_below_target", "current_price", "target_price",
+            "var_pct", "cvar_pct", "warnings", "risk_level",
+            "margin_call", "margin_shortfall_ratio",
+        },
+        "buffet_perspective": {
+            "probability_below_target", "current_price", "target_price",
+            "intrinsic_value", "recovery_months", "equity",
+            "debt_ratio", "margin_call",
+        },
+        "collapse_perspectives": {"bull", "bear", "buffet", "weights"},
+    }
 
     async def execute(self, **kwargs: Any) -> str:
         method = kwargs.get("method", "")
@@ -446,8 +465,13 @@ class DecisionTool(Tool):
         fn = self._DISPATCH.get(method)
         if fn is None:
             return json.dumps({"error": f"Unknown method: {method}"})
+        
+        # Filter params to only valid kwargs for this method
+        valid = self._VALID_KWARGS.get(method, set())
+        filtered_params = {k: v for k, v in params.items() if k in valid}
+        
         try:
-            result = fn(**params)
+            result = fn(**filtered_params)
             return json.dumps(result)
         except Exception as e:
             return json.dumps({"error": str(e)})

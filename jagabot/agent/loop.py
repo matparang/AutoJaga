@@ -1852,8 +1852,15 @@ class AgentLoop:
         for m in old_messages:
             if not m.get("content"):
                 continue
+            # Fix: content may be dict/list from tool responses
+            content = m.get("content", "")
+            if isinstance(content, (dict, list)):
+                import json
+                content = json.dumps(content, default=str)[:500]
+            elif not isinstance(content, str):
+                content = str(content)[:500]
             tools = f" [tools: {', '.join(m['tools_used'])}]" if m.get("tools_used") else ""
-            lines.append(f"[{m.get('timestamp', '?')[:16]}] {m['role'].upper()}{tools}: {m['content']}")
+            lines.append(f"[{m.get('timestamp', '?')[:16]}] {m['role'].upper()}{tools}: {content}")
         conversation = "\n".join(lines)
         current_memory = memory.read_long_term()
 
