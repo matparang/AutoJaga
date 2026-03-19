@@ -138,6 +138,18 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Hypothesis Engine
+        try:
+            from jagabot.core.hypothesis_engine import HypothesisEngine
+            self.hypothesis_engine = HypothesisEngine(
+                workspace=workspace,
+                brier_scorer=None,  # wired after brier init
+            )
+            logger.info("HypothesisEngine initialized")
+        except Exception as _he_err:
+            logger.warning(f"HypothesisEngine init failed: {_he_err}")
+            self.hypothesis_engine = None
+
         # ChallengeProblems generator
         try:
             from jagabot.core.challenge_problems import ChallengeProblemGenerator
@@ -231,6 +243,10 @@ class AgentLoop:
         if self.challenge_gen and hasattr(self, 'brier'):
             self.challenge_gen.brier = self.brier
             logger.info("ChallengeProblemGenerator ← BrierScorer wired")
+
+        if self.hypothesis_engine and hasattr(self, 'brier'):
+            self.hypothesis_engine.brier = self.brier
+            logger.info("HypothesisEngine ← BrierScorer wired")
 
         # System Health Monitor (unified health scoring)
         from jagabot.core.system_health_monitor import SystemHealthMonitor
