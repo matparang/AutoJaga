@@ -38,16 +38,32 @@ def _localise_pattern(pattern: str, locale: str = "en") -> str:
     return labels.get(pattern, pattern)
 
 
-def calculate_cv(changes: list[float]) -> float:
-    """Coefficient of variation with sample standard deviation."""
+def calculate_cv(changes: list[float] = None, mean: float = None, stddev: float = None) -> float:
+    """Coefficient of variation with sample standard deviation.
+    
+    Accepts either:
+    - changes: list of price changes/returns
+    - mean and stddev: precomputed statistics
+    
+    Returns CV = stddev / abs(mean)
+    """
+    # Handle mean/stddev input
+    if mean is not None and stddev is not None:
+        if mean == 0:
+            return 0.0
+        return stddev / abs(mean)
+    
+    # Handle changes list input (backward compatibility)
+    if changes is None:
+        changes = []
     if not changes or len(changes) < 2:
         return 0.0
     n = len(changes)
-    mean = sum(changes) / n
-    if mean == 0:
+    mean_val = sum(changes) / n
+    if mean_val == 0:
         return 0.0
-    variance = sum((x - mean) ** 2 for x in changes) / (n - 1)
-    return math.sqrt(variance) / abs(mean)
+    variance = sum((x - mean_val) ** 2 for x in changes) / (n - 1)
+    return math.sqrt(variance) / abs(mean_val)
 
 
 def calculate_cv_ratios(changes: list[float], locale: str = "en") -> dict:

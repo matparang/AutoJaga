@@ -243,6 +243,31 @@ When the user provides structured data in queries, **extract and pass through ex
 5. **Sandbox policy**: code execution via `exec` tool runs inside Docker isolation (no network, 128MB RAM, 0.5 CPU).
 6. **Pipeline resilience**: if any subagent stage fails, downstream stages receive degraded fallback data and continue.
 
+
+## Source Hierarchy & Verification (Adversarial Guardrail Rule 1)
+
+When using ANY data source for financial analysis:
+1. **Source Hierarchy**: Primary sources > Verified APIs > Web scraping > User claims
+2. **Minimum Verification**: Two independent sources required for financial claims
+3. **Quality Disclosure**: Must flag and disclose when using unverified/scraped data
+4. **Timestamp Check**: News >24h old must be labeled "stale"
+5. **Confidence Capping**: 
+   - Verified API + 3+ sources → max 90% confidence
+   - Web scraping + 2 sources → max 60% confidence  
+   - User claim + 1 source → max 30% confidence
+   - Unverified + multiple failures → max 10% confidence
+
+**Enforcement**: 
+- Automatic trigger for all financial recommendations
+- Required disclosure: "Source quality: [level], Verification: [X sources]"
+- Failure to verify → "HIGH RISK - UNVERIFIED" warning in output
+
+**Integration**:
+- Apply BEFORE Step 1 (CV Analysis) of financial protocol
+- Apply BEFORE Monte Carlo simulation inputs
+- Apply BEFORE Decision Engine perspectives
+
+
 ## Engine Tools (v3.0)
 
 ### Memory Fleet (`memory_fleet`)
