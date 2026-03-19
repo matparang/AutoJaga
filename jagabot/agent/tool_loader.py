@@ -109,7 +109,7 @@ def register_default_tools(
 
     # Spawn tool (subagents)
     registry.register(SpawnTool(manager=subagents))
-    
+
     # Register spawn_subagent alias — DeepSeek sometimes calls spawn_subagent instead of spawn
     from jagabot.agent.tools.spawn import SpawnTool as _SpawnTool
     class _SpawnAlias(_SpawnTool):
@@ -117,6 +117,14 @@ def register_default_tools(
         def name(self) -> str:
             return "spawn_subagent"
     registry.register(_SpawnAlias(manager=subagents))
+
+    # Yahoo Finance — real-time market data
+    try:
+        from jagabot.agent.tools.yahoo_finance import YahooFinanceTool
+        registry.register(YahooFinanceTool())
+        logger.debug("YahooFinanceTool registered")
+    except Exception as _yf_err:
+        logger.debug(f"YahooFinanceTool skipped: {_yf_err}")
 
     # Cron tool (scheduling)
     if cron_service:
