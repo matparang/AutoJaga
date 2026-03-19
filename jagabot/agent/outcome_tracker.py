@@ -220,6 +220,7 @@ class LoopConnector:
 
         self._call_meta_learning(outcome, success, fitness)
         self._call_k1_bayesian(outcome, success)
+        self._call_brier_scorer(outcome, success, partial)
         
         # Boost quality score when outcome verified correct
         try:
@@ -236,6 +237,34 @@ class LoopConnector:
             f"✅ Loop closed: [{outcome.conclusion_type}] "
             f"'{outcome.conclusion[:50]}...' → {result}"
         )
+
+    def _call_brier_scorer(
+        self,
+        outcome: PendingOutcome,
+        success: bool,
+        partial: bool,
+    ) -> None:
+        """Record verified outcome to BrierScorer for calibration."""
+        try:
+            brier = self._get("brier_scorer")
+            if brier and hasattr(brier, 'record'):
+                # actual: 1=correct, 0=wrong, 0.5=partial
+                actual = 1 if success else (0.5 if partial else 0)
+                brier.record(
+                    perspective = "general",  # Could detect from outcome.conclusion_type
+                    domain      = "research",  # Could detect from topic
+                    forecast    = outcome.confidence,
+                    actual      = actual,
+                    claim       = outcome.conclusion[:200],
+                    session_key = outcome.session_key,
+                )
+                logger.info(
+                    f"📊 BrierScorer: {outcome.conclusion_type} "
+                    f"forecast={outcome.confidence:.2f} actual={actual} "
+                    f"brier={(outcome.confidence - actual)**2:.3f}"
+                )
+        except Exception as e:
+            logger.debug(f"BrierScorer record skipped: {e}")
 
     def _call_meta_learning(
         self,

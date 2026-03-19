@@ -1360,18 +1360,13 @@ class AgentLoop:
             domain      = topic,
         )
 
-        # WIRING: Auto-solidification — record calibration data point
-        try:
-            _topic = locals().get('topic', 'general')
-            self.brier.record(
-                perspective = "general",
-                domain      = _topic,
-                forecast    = getattr(self, '_last_confidence', 0.8),
-                actual      = 1.0,  # Will be updated by outcome_tracker on feedback
-            )
-            logger.debug(f"BrierScorer: recorded prediction for '{_topic}'")
-        except Exception as _brier_err:
-            logger.warning(f"BrierScorer record failed: {_brier_err}")
+        # WIRING: BrierScorer — NOT recorded here (outcome unknown)
+        # BrierScorer.record() is ONLY called by outcome_tracker.record_verified_outcome()
+        # when user provides verified verdict (correct/wrong/partial)
+        # Recording actual=1.0 here would corrupt calibration data
+        logger.debug(
+            f"BrierScorer: deferred for '{topic}' — will record when outcome verified"
+        )
 
         return OutboundMessage(
             channel=msg.channel,
