@@ -739,7 +739,15 @@ class AgentLoop:
             )
 
         # ── Check if user is providing outcome feedback ─────────────
-        feedback = self.outcome_tracker.record_outcome_by_context(msg.content)
+        # Skip verdict detection for self-reflection and analysis queries
+        _skip_verdict = any(s in msg.content.lower() for s in [
+            "pathological failure", "hidden assumption", "counter-scenario",
+            "adversarial", "guardrail", "self-reflect", "reasoning chain",
+            "failure analysis", "edge case", "logic loop", "analyze your",
+            "critique your", "what went wrong", "your mistakes",
+            "incorrect answer", "wrong answer", "false positive",
+        ])
+        feedback = None if _skip_verdict else self.outcome_tracker.record_outcome_by_context(msg.content)
         if feedback:
             # User said "that was correct/wrong" — loop closed
             logger.info("✅ Outcome recorded via natural language")
