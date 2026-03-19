@@ -1378,7 +1378,7 @@ class AgentLoop:
         )
 
         # Log cache stats every 10 turns
-        if self.cache and len(self.tools._registry) % 10 == 0:
+        if self.cache and len(self.tools._tools) % 10 == 0:
             _cs = self.cache.get_stats()
             if _cs["hits"] > 0:
                 logger.info(
