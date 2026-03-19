@@ -2055,6 +2055,7 @@ Respond with ONLY valid JSON, no markdown fences."""
             Handles markdown fences (``` and ```json), partial wrapping, and
             unterminated strings by falling back to regex extraction.
             """
+            import json as _json  # explicit import to avoid closure bug
             text = text.strip()
             # Strip ```json ... ``` or ``` ... ``` fences
             fence_match = re.match(r"^```(?:json)?\s*\n?(.*?)```\s*$", text, re.DOTALL)
@@ -2062,15 +2063,15 @@ Respond with ONLY valid JSON, no markdown fences."""
                 text = fence_match.group(1).strip()
             # Try direct parse first
             try:
-                return json.loads(text)
-            except json.JSONDecodeError:
+                return _json.loads(text)
+            except _json.JSONDecodeError:
                 pass
             # Fallback: extract the outermost {...} block
             brace_match = re.search(r"\{.*\}", text, re.DOTALL)
             if brace_match:
                 try:
-                    return json.loads(brace_match.group(0))
-                except json.JSONDecodeError:
+                    return _json.loads(brace_match.group(0))
+                except _json.JSONDecodeError:
                     pass
             raise ValueError(f"Could not parse JSON from LLM response: {text[:200]!r}")
 
