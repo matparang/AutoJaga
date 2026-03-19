@@ -66,10 +66,42 @@ def calculate_cv(changes: list[float] = None, mean: float = None, stddev: float 
     return math.sqrt(variance) / abs(mean_val)
 
 
-def calculate_cv_ratios(changes: list[float], locale: str = "en") -> dict:
-    """Calculate CV ratios with pattern classification across time windows."""
+def calculate_cv_ratios(
+    changes: list[float] = None,
+    cv_values: dict = None,
+    locale: str = "en"
+) -> dict:
+    """Calculate CV ratios. Accepts either:
+    - changes: list of price changes/returns (e.g. [0.01, -0.02, 0.03])
+    - cv_values: dict of {asset_name: cv_value} for comparison
+    
+    Returns:
+    - mode: "asset_comparison" or "time_window"
+    - ranked: list of assets ranked by CV (for asset_comparison mode)
+    - overall_cv: overall coefficient of variation (for time_window mode)
+    - windows: CV by time window (for time_window mode)
+    - pattern: volatility pattern classification (for time_window mode)
+    """
+    # Asset comparison mode
+    if cv_values is not None:
+        if not cv_values:
+            return {"error": "cv_values dict is empty"}
+        ranked = sorted(cv_values.items(), key=lambda x: x[1])
+        return {
+            "mode": "asset_comparison",
+            "ranked": [{"asset": k, "cv": v} for k, v in ranked],
+            "lowest_risk": ranked[0][0] if ranked else None,
+            "highest_risk": ranked[-1][0] if ranked else None,
+            "count": len(ranked),
+        }
+    
+    # Time-window mode (original logic)
+    if changes is None:
+        return {"error": "Provide either changes list or cv_values dict"}
+    
     if not changes or len(changes) < 2:
         return {
+            "mode": "time_window",
             "overall_cv": 0.0, "windows": {},
             "pattern": _localise_pattern("insufficient_data", locale),
         }
@@ -82,12 +114,13 @@ def calculate_cv_ratios(changes: list[float], locale: str = "en") -> dict:
 
     if not windows:
         return {
+            "mode": "time_window",
             "overall_cv": overall_cv, "windows": {},
             "pattern": _localise_pattern("insufficient_data", locale),
         }
 
-    cv_values = list(windows.values())
-    trend = cv_values[-1] - cv_values[0] if len(cv_values) > 1 else 0.0
+    cv_values_list = list(windows.values())
+    trend = cv_values_list[-1] - cv_values_list[0] if len(cv_values_list) > 1 else 0.0
 
     if abs(trend) < 0.05:
         pattern_key = "stable"
@@ -97,6 +130,7 @@ def calculate_cv_ratios(changes: list[float], locale: str = "en") -> dict:
         pattern_key = "decreasing_volatility"
 
     return {
+        "mode": "time_window",
         "overall_cv": round(overall_cv, 6),
         "windows": {k: round(v, 6) for k, v in windows.items()},
         "trend": round(trend, 6),
