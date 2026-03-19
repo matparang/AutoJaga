@@ -138,6 +138,18 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # BeliefEngine — calibrated belief states downstream of BrierScorer
+        try:
+            from jagabot.core.belief_engine import BeliefEngine
+            self.belief_engine = BeliefEngine(
+                workspace=workspace,
+                brier_scorer=None,  # wired after brier init
+            )
+            logger.info("BeliefEngine initialized")
+        except Exception as _be_err:
+            logger.warning(f"BeliefEngine init failed: {_be_err}")
+            self.belief_engine = None
+
         # Cross-Domain Insight Engine
         try:
             from jagabot.core.cross_domain_engine import CrossDomainEngine
@@ -263,6 +275,10 @@ class AgentLoop:
         if self.cross_domain_engine and hasattr(self, 'brier'):
             self.cross_domain_engine.brier = self.brier
             logger.info("CrossDomainEngine ← BrierScorer wired")
+
+        if self.belief_engine and hasattr(self, 'brier'):
+            self.belief_engine.brier = self.brier
+            logger.info("BeliefEngine ← BrierScorer wired")
 
         # System Health Monitor (unified health scoring)
         from jagabot.core.system_health_monitor import SystemHealthMonitor
@@ -569,13 +585,34 @@ class AgentLoop:
         if self.cognitive_stack and hasattr(self, 'brier'):
             _topic = locals().get('topic', 'general')
             _trust = self.brier.trust_score("general", _topic)
-            if _trust and _trust < 0.5:
-                self.cognitive_stack.calibration_mode = True
-                logger.info(f"CognitiveStack: low trust ({_trust:.2f}) on '{_topic}' → CRITICAL mode")
+            _trust = _trust if _trust is not None else 1.0
+            self._last_confidence = _trust
+
+            # Route through BeliefEngine for calibrated recommendation
+            if self.belief_engine:
+                _belief = self.belief_engine.update(
+                    domain         = _topic,
+                    perspective    = "general",
+                    raw_confidence = _trust,
+                )
+                _cog_rec = self.belief_engine.get_cognitive_recommendation(_topic)
+                if _cog_rec == "CRITICAL":
+                    self.cognitive_stack.calibration_mode = True
+                    logger.info(
+                        f"BeliefEngine → CognitiveStack: CRITICAL "
+                        f"(calibrated={_belief.calibrated_confidence:.2f})"
+                    )
+                else:
+                    self.cognitive_stack.calibration_mode = False
+                    logger.debug(
+                        f"BeliefEngine → CognitiveStack: {_cog_rec} "
+                        f"(calibrated={_belief.calibrated_confidence:.2f})"
+                    )
             else:
-                self.cognitive_stack.calibration_mode = False
-                logger.debug(f"CognitiveStack: trust ({_trust or 'n/a'}) on '{_topic}' → normal mode")
-            self._last_confidence = _trust if _trust is not None else 1.0  # Default to 1.0 if no data
+                if _trust < 0.5:
+                    self.cognitive_stack.calibration_mode = True
+                else:
+                    self.cognitive_stack.calibration_mode = False
 
         # Reset repetition guard for new user turn
         self.rep_guard.reset_for_new_turn()
