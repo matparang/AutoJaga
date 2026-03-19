@@ -120,6 +120,14 @@ def register_default_tools(
             return "spawn_subagent"
     registry.register(_SpawnAlias(manager=subagents))
 
+    # Web Search MCP — real-time web search (no API key)
+    try:
+        from jagabot.agent.tools.web_search_mcp import WebSearchMcpTool
+        registry.register(WebSearchMcpTool())
+        logger.debug("WebSearchMcpTool registered")
+    except Exception as _ws_err:
+        logger.debug(f"WebSearchMcpTool skipped: {_ws_err}")
+
     # Yahoo Finance — real-time market data
     try:
         from jagabot.agent.tools.yahoo_finance import YahooFinanceTool

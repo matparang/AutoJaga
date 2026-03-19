@@ -53,6 +53,7 @@ TOOL_RELEVANCE = {
     "research": [
         "web_search", "web_fetch", "researcher",
         "tri_agent", "quad_agent", "debate",
+        "web_search_mcp",  # Real-time web search via MCP
     ],
     "memory": [
         "memory_fleet", "knowledge_graph",
