@@ -1,185 +1,214 @@
-# 🧪 RESEARCH SKILL v1.0
-*Last Updated: 2026-03-14*
+---
+metadata: {"jagabot":{"emoji":"🔬","always":false}}
+version: 2.0
+trigger: research, analyze, scenario, risk, study, investigate, assess, evaluate, hypothesis
+---
 
-## 🎯 PURPOSE
-Conduct autonomous research using 4-phase pipeline:
-1. **Idea Exploration** - Tri-agent debate (Bull/Bear/Buffett)
-2. **Experiment Planning** - Main agent methodology design
-3. **Execution** - Quad-agent swarm for verified results
-4. **Synthesis** - Tri-agent interpretation and reporting
+# 🔬 Research & Analysis Skill v2.0
+## System Diagnosis Protocol
 
-## 📋 CAPABILITIES
+> Default mode: DIAGNOSTICIAN, not SUMMARIZER.
+> Goal: Expose what breaks, when, and why — not what happened.
 
-### Phase 1: Idea Exploration (Tri-Agent)
-```yaml
-agents:
-  - bull: "Optimistic perspective, identifies opportunities"
-  - bear: "Skeptical perspective, identifies risks"
-  - buffett: "Value perspective, long-term thinking"
-output: research_proposal.md
-hallucination_allowed: true  # FEATURE, not bug!
+---
+
+## MANDATORY ANALYSIS FRAMEWORK
+
+For every research or risk scenario, apply ALL 6 layers:
+
+### LAYER 1: FAILURE DECOMPOSITION
+Do NOT describe the scenario. Diagnose it.
+Answer: **What breaks first?** (earliest failure point, not most obvious)
+
+Separate three failure types:
+- **Detection failure** — We didn't see it coming. Why?
+- **Decision failure** — We saw it but chose wrong. Why?
+- **Execution failure** — We decided right but acted too slow. Why?
+
+Output format:
+```
+BREAKS FIRST: [specific component/assumption]
+DETECTION: [what signal was missed and why]
+DECISION: [what choice point failed]
+EXECUTION: [what lag caused damage]
 ```
 
-Phase 2: Experiment Planning (Main Agent)
+### LAYER 2: CONTROL LAW ANALYSIS
+Map the control structure explicitly:
+- **Controlled variable**: Is it leading or lagging? (lagging = dangerous)
+- **Observed variable**: How stale is this signal in practice?
+- **Intervention lag**: How long from trigger to effect?
+- **Threat velocity**: How fast does the problem escalate?
 
-```yaml
-agent: autojaga_main
-inputs: 
-  - research_proposal.md
-output: experiment_plan.json
-hallucination_allowed: false  # MUST BE PRECISE
-validation: schema_validation
+Critical test: If intervention_lag > threat_velocity → system CANNOT self-correct. Flag this explicitly.
+
+Output format:
+```
+CONTROLLED VAR: [name] — [leading/lagging] indicator
+INTERVENTION LAG: [time]
+THREAT VELOCITY: [time to critical threshold]
+SELF-CORRECTING: [YES/NO — explain if NO]
 ```
 
-Phase 3: Execution (Quad-Agent)
+### LAYER 3: SECOND-ORDER EFFECTS
+For each proposed fix, ask: **What does this break elsewhere?**
 
-```yaml
-agents:
-  - worker: "Executes tasks"
-  - verifier: "Checks accuracy"
-  - adversary: "Tests robustness"
-  - planner: "Adapts if needed"
-outputs:
-  - results.json
-  - verified_data/
-hallucination_allowed: false
-verification: harness + disk
+Example:
+- "Diversify suppliers" → increases coordination complexity → raises
+  operational cost → squeezes margin → reduces R&D budget
+- Do NOT stop at first-order fix. Trace at least 2 levels deep.
+
+Output format:
+```
+FIX: [proposed solution]
+SECOND ORDER: [what it breaks]
+THIRD ORDER: [what that breaks]
+NET VERDICT: [worth it / conditional / avoid]
 ```
 
-Phase 4: Synthesis (Tri-Agent)
+### LAYER 4: CAUSAL BOTTLENECK IDENTIFICATION
+Find the SINGLE point where all failure paths converge.
+This is usually NOT what the scenario headline suggests.
 
-```yaml
-agents: [bull, bear, buffett]
-inputs:
-  - experiment_plan.json
-  - results.json
-  - verified_data/
-output: research_summary.md
-hallucination_allowed: true  # Interpretation OK
+Ask: "If I could fix only ONE thing, what would prevent 80% of failure modes?"
+
+Output format:
+```
+CAUSAL BOTTLENECK: [single root cause]
+EVIDENCE: [why this is the bottleneck, not symptoms]
+FIX PRIORITY: [what to fix first vs what to fix later]
 ```
 
-🚀 USAGE
+### LAYER 5: ESCALATION THRESHOLD MAPPING
+NOT everything should be automated. Map explicitly:
 
-Basic Research Request
+| Condition | Response | Human vs Auto |
+|-----------|----------|---------------|
+| [threshold A] | [action] | AUTO |
+| [threshold B] | [action] | HUMAN REVIEW |
+| [threshold C] | [action] | HUMAN ONLY |
 
-```python
-from jagabot.skills.research import ResearchSkill
+Rules:
+- Reversible, fast, low-stakes → AUTO
+- Irreversible, slow, high-stakes → HUMAN
+- Novel, ambiguous → HUMAN (automation compounds errors)
 
-skill = ResearchSkill()
-result = skill.run(
-    topic="cryptocurrency market trends",
-    depth="comprehensive"
-)
+### LAYER 6: CALIBRATED CONFIDENCE
+NEVER state confidence without evidence basis.
+
+Format:
+```
+CLAIM: [specific claim]
+EVIDENCE BASIS: [what data/reasoning supports this]
+CONFIDENCE: [X%]
+CONFIDENCE TYPE: [empirical/theoretical/expert consensus/estimate]
+WHAT WOULD CHANGE IT: [what evidence would raise/lower confidence]
 ```
 
-Advanced Configuration
+Red flags (auto-flag these):
+- Confidence stated without evidence basis → MAX 50%
+- "Best practices" cited without scenario-specific data → MAX 60%
+- Symmetrical confidence (everything 80-85%) → likely uncalibrated
 
-```python
-result = skill.run(
-    topic="renewable energy investments",
-    config={
-        "phase1": {"rounds": 3},
-        "phase2": {"methodology": "comparative"},
-        "phase3": {"workers": 4},
-        "phase4": {"format": "academic"}
-    }
-)
+---
+
+## OUTPUT STRUCTURE
+
+Every research/scenario output MUST follow:
+
+```
+## [SCENARIO NAME] — System Diagnosis
+
+### FAILURE DECOMPOSITION
+[Layer 1 output]
+
+### CONTROL LAW
+[Layer 2 output]
+
+### SECOND-ORDER EFFECTS
+[Layer 3 output — top 2 proposed fixes only]
+
+### CAUSAL BOTTLENECK
+[Layer 4 output]
+
+### ESCALATION MAP
+[Layer 5 table]
+
+### CONFIDENCE AUDIT
+[Layer 6 for each major claim]
+
+### CROSS-SCENARIO PATTERN (if multiple scenarios)
+[Shared control primitives across all scenarios]
+[Which scenarios share the same causal bottleneck]
+[Fast-loop vs slow-loop classification for each]
 ```
 
-🔧 CONFIGURATION
+---
 
-domains.yaml
+## ANTI-PATTERNS (NEVER DO THESE)
 
-```yaml
-domains:
-  finance:
-    debate_prompts: finance_prompts.json
-    metrics: ["volatility", "roi", "risk"]
-    
-  technology:
-    debate_prompts: tech_prompts.json
-    metrics: ["adoption", "innovation", "scalability"]
-    
-  science:
-    debate_prompts: science_prompts.json
-    metrics: ["reproducibility", "significance", "impact"]
-```
+❌ Restating the scenario as findings
+❌ Listing "importance of X" without identifying why X failed
+❌ Standard best practices without scenario-specific calibration
+❌ Symmetric confidence numbers (80%, 80%, 80%)
+❌ Stopping analysis at first-order effects
+❌ Treating all scenarios as equally urgent
+❌ Skipping the "what breaks first" question
+❌ Bolting on Jagabot module references without causal connection
 
-📊 OUTPUT STRUCTURE
+---
 
-research_proposal.md
+## DIAGNOSTIC QUALITY MARKERS
 
-```markdown
-# Research Proposal: [Topic]
+A strong analysis will:
+✅ Name a specific assumption that breaks first
+✅ Show intervention_lag vs threat_velocity comparison
+✅ Have at least one second-order effect that surprises
+✅ Identify where automation should STOP
+✅ State confidence with explicit evidence basis
+✅ Sound like a system fault report, not lecture notes
 
-## Bull Perspective
-- Opportunity 1
-- Opportunity 2
+---
 
-## Bear Perspective
-- Risk 1
-- Risk 2
+## EXAMPLE: SEMICONDUCTOR SUPPLIER FAILURE — UPGRADED
 
-## Buffett Perspective
-- Long-term value 1
-- Long-term value 2
+**BREAKS FIRST:** The assumption that lead time increase is a
+gradual signal. In practice, supplier failure is discontinuous —
+it jumps from "nominal" to "critical" with no warning window.
 
-## Recommended Focus
-[Consensus area]
-```
+**DETECTION FAILURE:** Lead time metrics are sampled weekly,
+but supply chain collapse happens in hours. The monitoring
+frequency is mismatched to threat velocity by 100x.
 
-experiment_plan.json
+**CONTROL LAW PROBLEM:**
+- Inventory level = lagging indicator (measures damage already done)
+- Supplier communication = leading indicator (rarely monitored)
+- Intervention lag = 1-2 weeks to onboard alternative supplier
+- Threat velocity = 24-72 hours to production halt
+- Result: CANNOT self-correct. Human escalation required immediately.
 
-```json
-{
-  "methodology": "comparative analysis",
-  "steps": [
-    {"action": "collect_data", "sources": ["a", "b"]},
-    {"action": "analyze", "metrics": ["mean", "volatility"]}
-  ],
-  "success_criteria": ["accuracy > 0.95", "files_exist"]
-}
-```
+**SECOND ORDER:**
+- FIX: Diversify to 3 suppliers
+- SECOND ORDER: Coordination overhead increases 3x, each supplier
+  gets smaller orders, loses priority status, paradoxically
+  increasing vulnerability to each individual supplier
+- NET VERDICT: Conditional — only works if volumes are large enough
+  to maintain priority with all suppliers simultaneously
 
-research_summary.md
+**CAUSAL BOTTLENECK:** Single-threaded supplier qualification process.
+You cannot onboard a backup supplier in a crisis because
+qualification takes 3-6 months. The bottleneck is not
+supplier availability — it's the qualification pipeline.
 
-```markdown
-# Research Summary: [Topic]
+**ESCALATION:**
+| Lead time increase <20% | Monitor | AUTO |
+| Lead time increase 20-50% | Activate secondary quotes | AUTO |
+| Lead time increase >50% | Halt new commitments, escalate | HUMAN |
+| Supplier goes silent >48h | Emergency sourcing protocol | HUMAN ONLY |
 
-## Key Findings
-- Finding 1 (Bull-supported)
-- Finding 2 (Bear-supported)
-- Finding 3 (Buffett-supported)
-
-## Methodology
-[How it was done]
-
-## Results
-[Verified data summary]
-
-## Conclusions
-[Balanced interpretation]
-
-## Next Steps
-[Future research directions]
-```
-
-🧪 TESTING
-
-```bash
-# Test complete research pipeline
-pytest jagabot/skills/research/tests/test_pipeline.py
-
-# Test individual phases
-pytest jagabot/skills/research/tests/test_phase1.py
-pytest jagabot/skills/research/tests/test_phase2.py
-pytest jagabot/skills/research/tests/test_phase3.py
-pytest jagabot/skills/research/tests/test_phase4.py
-```
-
-🔄 VERSION HISTORY
-
-Version Date Changes
-v1.0 2026-03-14 Initial release - 4-phase research pipeline
-v1.1 - Planned: Multi-domain support
-v2.0 - Planned: Learning from past research
+**CONFIDENCE:**
+- "Diversification improves resilience" — 70% confidence
+- Evidence: theoretical (portfolio diversification principle)
+- NOT empirical for this specific supplier/product combination
+- What would change it: historical data on this supplier's
+  failure modes and recovery times
