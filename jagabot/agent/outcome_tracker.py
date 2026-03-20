@@ -570,6 +570,10 @@ class OutcomeTracker:
                 "give two", "name one", "state the",
                 "important:", "do not just", "prefer causal",
                 "system diagnosis protocol", "failure type",
+                # Repetition signals
+                "again but", "again,", "protocol again",
+                "this time do not", "this time use",
+                "but this time", "once more",
             ]
             if any(s in msg_lower for s in hypothetical_signals):
                 result = None  # Skip — hypothetical, not a verdict
