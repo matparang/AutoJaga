@@ -105,7 +105,7 @@ class AgentLoop:
         self.harness = ToolHarness(workspace)
         self.rep_guard = RepetitionGuard()
         self.trajectory_monitor = TrajectoryMonitor()
-        
+
         # Session checkpointing (prevents memory loss on crash)
         from jagabot.core.session_checkpoint import load_latest_checkpoint
         self._checkpoint_dir = workspace / "checkpoints"
@@ -879,7 +879,18 @@ class AgentLoop:
         message_tool = self.tools.get("message")
         if isinstance(message_tool, MessageTool):
             message_tool.set_context(msg.channel, msg.chat_id)
-        
+
+        # Store current chat context for Telegram thinker
+        self._current_chat_id = int(msg.chat_id) if msg.chat_id else 0
+        # Look up thinker from global registry
+        try:
+            from jagabot.channels.telegram_thinking import get_thinker, unregister_thinker
+            self._telegram_thinker = get_thinker(self._current_chat_id)
+            self._unregister_thinker = unregister_thinker
+        except Exception:
+            self._telegram_thinker = None
+            self._unregister_thinker = None
+
         spawn_tool = self.tools.get("spawn")
         if isinstance(spawn_tool, SpawnTool):
             spawn_tool.set_context(msg.channel, msg.chat_id)
@@ -1630,6 +1641,13 @@ class AgentLoop:
             except Exception:
                 pass
 
+        # Unregister telegram thinker
+        if hasattr(self, '_unregister_thinker') and self._unregister_thinker:
+            try:
+                self._unregister_thinker(self._current_chat_id)
+            except Exception:
+                pass
+
         return OutboundMessage(
             channel=msg.channel,
             chat_id=msg.chat_id,
@@ -2282,6 +2300,17 @@ class AgentLoop:
         if isinstance(message_tool, MessageTool):
             message_tool.set_context(origin_channel, origin_chat_id)
         
+        # Store current chat context for Telegram thinker
+        self._current_chat_id = int(msg.chat_id) if msg.chat_id else 0
+        # Look up thinker from global registry
+        try:
+            from jagabot.channels.telegram_thinking import get_thinker, unregister_thinker
+            self._telegram_thinker = get_thinker(self._current_chat_id)
+            self._unregister_thinker = unregister_thinker
+        except Exception:
+            self._telegram_thinker = None
+            self._unregister_thinker = None
+
         spawn_tool = self.tools.get("spawn")
         if isinstance(spawn_tool, SpawnTool):
             spawn_tool.set_context(origin_channel, origin_chat_id)
