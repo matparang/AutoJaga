@@ -806,6 +806,38 @@ def budget(
         raise typer.Exit(1)
 
 
+@app.command()
+def engines(
+    workspace: str = typer.Option(
+        str(Path.home() / ".jagabot"),
+        "--workspace", "-w",
+        help="Jagabot workspace path"
+    ),
+    reset: bool = typer.Option(
+        False, "--reset",
+        help="Reset all engine monitoring data"
+    ),
+) -> None:
+    """Show engine correlation monitor — which engines fire and how they relate."""
+    import os
+    from pathlib import Path as _Path
+    from jagabot.core.engine_monitor import EngineCorrelationMonitor
+
+    ws = _Path(workspace).expanduser()
+    monitor = EngineCorrelationMonitor(workspace=ws)
+
+    if reset:
+        db = ws / "memory" / "engine_monitor.db"
+        if db.exists():
+            db.unlink()
+            print("✅ Engine monitor data reset.")
+        else:
+            print("Nothing to reset.")
+        return
+
+    monitor.print_report()
+
+
 if __name__ == "__main__":
     app()
 

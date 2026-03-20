@@ -304,19 +304,92 @@ class EngineCorrelationMonitor:
             return {"error": str(e)}
 
     def print_report(self) -> None:
-        """Print human-readable report."""
+        """Print gamified engine correlation report."""
         report = self.get_report()
-        if report.get("total_turns", 0) == 0:
-            print("EngineMonitor: no data yet")
+        total  = report.get("total_turns", 0)
+
+        print("\n" + "═" * 60)
+        print("  🧠 JAGABOT ENGINE CORRELATION MONITOR")
+        print("═" * 60)
+
+        if total == 0:
+            print("\n  📭 No data yet — run some queries first!")
+            print("  Tip: Try 'jagabot agent' and ask a few questions.")
+            print("═" * 60)
             return
 
-        print(f"\n📊 Engine Correlation Report ({report['total_turns']} turns)")
-        print("\n🔥 Always firing (>90%):")
-        for e in report.get("always_fired", []):
-            print(f"  {e}: {report['firing_rates'][e]:.0%}")
-        print("\n💀 Never firing:")
-        for e in report.get("never_fired", []):
-            print(f"  {e}")
-        print("\n🔗 Top correlations:")
-        for c in report.get("top_correlations", [])[:5]:
-            print(f"  {c['a']} ↔ {c['b']}: {c['corr']:.0%} ({c['co_fires']} co-fires)")
+        # Header stats
+        rates  = report.get("firing_rates", {})
+        always = report.get("always_fired", [])
+        never  = report.get("never_fired", [])
+        active = [e for e, r in rates.items() if 0 < r < 0.9]
+
+        print(f"\n  📊 Total turns analyzed: {total}")
+        print(f"  🔥 Always firing:  {len(always)} engines")
+        print(f"  ⚡ Sometimes fire:  {len(active)} engines")
+        print(f"  💀 Never fired:    {len(never)} engines")
+
+        # Quality by complexity
+        qbc = report.get("quality_by_complexity", {})
+        if qbc:
+            print("\n" + "─" * 60)
+            print("  📈 QUALITY BY COMPLEXITY")
+            print("─" * 60)
+            for complexity, stats in sorted(qbc.items()):
+                q = stats["avg_quality"]
+                t = stats["turns"]
+                bar = "█" * int(q * 20) + "░" * (20 - int(q * 20))
+                grade = "S" if q >= 0.9 else "A" if q >= 0.8 else "B" if q >= 0.7 else "C" if q >= 0.6 else "D"
+                print(f"  [{grade}] {complexity:<12} [{bar}] {q:.0%} ({t} turns)")
+
+        # Engine firing rates — sorted by rate
+        print("\n" + "─" * 60)
+        print("  ⚙️  ENGINE FIRING RATES")
+        print("─" * 60)
+        sorted_rates = sorted(rates.items(), key=lambda x: x[1], reverse=True)
+        for engine, rate in sorted_rates:
+            if rate == 0:
+                continue
+            bar_len = int(rate * 20)
+            bar = "█" * bar_len + "░" * (20 - bar_len)
+            if rate >= 0.9:
+                icon = "🔥"
+            elif rate >= 0.5:
+                icon = "⚡"
+            elif rate >= 0.1:
+                icon = "💤"
+            else:
+                icon = "❌"
+            print(f"  {icon} {engine:<28} [{bar}] {rate:.0%}")
+
+        # Never fired
+        if never:
+            print("\n" + "─" * 60)
+            print("  💀 NEVER FIRED (optimization candidates)")
+            print("─" * 60)
+            for e in never:
+                print(f"  ✂️  {e}")
+
+        # Top correlations
+        top_corr = report.get("top_correlations", [])
+        if top_corr:
+            print("\n" + "─" * 60)
+            print("  🔗 TOP ENGINE CORRELATIONS")
+            print("─" * 60)
+            for c in top_corr[:8]:
+                corr = c["corr"]
+                bar  = "█" * int(corr * 15) + "░" * (15 - int(corr * 15))
+                merge_hint = " ← MERGE CANDIDATE" if corr >= 0.95 else ""
+                print(f"  {c['a']:<22} ↔ {c['b']:<22} [{bar}] {corr:.0%}{merge_hint}")
+
+        # Optimization score
+        opt_score = 100 - (len(never) * 3) - (len(always) * 0)
+        opt_score = max(0, min(100, opt_score))
+        grade = "S" if opt_score >= 90 else "A" if opt_score >= 80 else "B" if opt_score >= 70 else "C"
+        print("\n" + "─" * 60)
+        print(f"  🏆 OPTIMIZATION SCORE: {opt_score}/100 (Grade {grade})")
+        if never:
+            print(f"  💡 Tip: Remove {len(never)} dead engines to improve score")
+        if any(c["corr"] >= 0.95 for c in top_corr):
+            print(f"  💡 Tip: Merge highly correlated engine pairs")
+        print("═" * 60 + "\n")
