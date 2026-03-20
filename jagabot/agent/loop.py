@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Calibration engine — empirical feedback loop
+        try:
+            from jagabot.core.calibration_engine import CalibrationEngine
+            self.calibration_engine = CalibrationEngine(workspace=workspace)
+            logger.info("CalibrationEngine initialized")
+        except Exception as _ce_err:
+            logger.warning(f"CalibrationEngine init failed: {_ce_err}")
+            self.calibration_engine = None
+
         # Task state manager — tracks fetched data to prevent redundant calls
         try:
             from jagabot.core.task_state_manager import TaskStateManager
@@ -1440,6 +1449,18 @@ class AgentLoop:
                     f"Cache stats: {_cs['hit_rate']:.0%} hit rate "
                     f"({_cs['hits']} hits, {_cs['misses']} misses)"
                 )
+
+        # Run calibration engine every 10 turns
+        if self.calibration_engine:
+            try:
+                _turn_count = getattr(self, '_cal_turn_count', 0) + 1
+                self._cal_turn_count = _turn_count
+                if _turn_count % 10 == 0:
+                    _cal_report = self.calibration_engine.run()
+                    if _cal_report and _cal_report.alert.startswith("⚠️"):
+                        logger.warning(f"Calibration alert: {_cal_report.alert}")
+            except Exception as _cal_err:
+                logger.debug(f"Calibration run failed: {_cal_err}")
 
         return OutboundMessage(
             channel=msg.channel,
