@@ -543,6 +543,13 @@ class OutcomeTracker:
                 "could be wrong", "might be wrong", "may be wrong",
                 "one of your", "core assumption", "if one",
                 "don't know which", "you don't know",
+                # Protocol/instruction signals
+                "apply the", "apply this", "use the protocol",
+                "do not give", "produce exactly", "for each scenario",
+                "rewrite the", "classify the", "defend why",
+                "give two", "name one", "state the",
+                "important:", "do not just", "prefer causal",
+                "system diagnosis protocol", "failure type",
             ]
             if any(s in msg_lower for s in hypothetical_signals):
                 result = None  # Skip — hypothetical, not a verdict
