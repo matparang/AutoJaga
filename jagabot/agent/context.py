@@ -49,7 +49,25 @@ class ContextBuilder:
         memory = self.memory.get_memory_context()
         if memory:
             parts.append(f"# Memory\n\n{memory}")
-        
+
+        # Selective guardrails — load only domain-relevant rules
+        try:
+            from jagabot.core.selective_guardrails import load_for_domain
+            # Detect domain from query stored in context
+            _query = getattr(self, '_current_query', '')
+            _domain = "general"
+            if any(w in _query.lower() for w in ["stock", "price", "financial", "invest", "nvda", "aapl", "ticker"]):
+                _domain = "financial"
+            elif any(w in _query.lower() for w in ["research", "hypothesis", "study", "paper"]):
+                _domain = "research"
+            elif any(w in _query.lower() for w in ["spawn", "subagent", "parallel", "agent"]):
+                _domain = "subagent"
+            _guardrail_content = load_for_domain(_domain)
+            if _guardrail_content:
+                parts.append(_guardrail_content)
+        except Exception as _sg_err:
+            logger.debug(f"SelectiveGuardrails failed: {_sg_err}")
+
         # Skills - progressive loading
         # 1. Always-loaded skills: include full content
         always_skills = self.skills.get_always_skills()

@@ -910,6 +910,9 @@ class AgentLoop:
         _complexity_level = _complexity.level if _complexity else "STANDARD"
         self.context._include_skills_summary = _complexity_level == "RESEARCH"
 
+        # Pass query to context for selective guardrail loading
+        self.context._current_query = msg.content
+
         # Build initial messages (use get_history for LLM-formatted messages)
         messages = self.context.build_messages(
             history=session.get_history(),
