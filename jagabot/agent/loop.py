@@ -599,22 +599,6 @@ class AgentLoop:
         logger.debug(f"ModelSwitchboard: {model_config.model_id} ({model_config.reason})")
         self._current_model_id = model_config.model_id
 
-        # Complexity routing — scale tools and tokens to query depth
-        _complexity = None
-        if self._classify_complexity:
-            _complexity = self._classify_complexity(msg.content)
-            logger.debug(
-                f"Complexity: {_complexity.level} "
-                f"(max_tools={_complexity.max_tools}, "
-                f"concise={_complexity.concise})"
-            )
-            # Inject concise instruction for simple queries
-            if _complexity.concise and messages and messages[0].get("role") == "system":
-                from jagabot.core.complexity_router import get_concise_instruction
-                _ci = get_concise_instruction(_complexity.level)
-                if _ci and _ci not in messages[0]["content"]:
-                    messages[0]["content"] += _ci
-
         # WIRING: BrierScorer trust → CognitiveStack calibration mode
         if self.cognitive_stack and hasattr(self, 'brier'):
             _topic = locals().get('topic', 'general')
@@ -830,6 +814,22 @@ class AgentLoop:
             channel=msg.channel,
             chat_id=msg.chat_id,
         )
+
+        # Complexity routing — scale tools and tokens to query depth
+        _complexity = None
+        if self._classify_complexity:
+            _complexity = self._classify_complexity(msg.content)
+            logger.debug(
+                f"Complexity: {_complexity.level} "
+                f"(max_tools={_complexity.max_tools}, "
+                f"concise={_complexity.concise})"
+            )
+            # Inject concise instruction for simple queries
+            if _complexity.concise and messages and messages[0].get("role") == "system":
+                from jagabot.core.complexity_router import get_concise_instruction
+                _ci = get_concise_instruction(_complexity.level)
+                if _ci and _ci not in messages[0]["content"]:
+                    messages[0]["content"] += _ci
 
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 10:
