@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Complexity router — progressive depth scaling
+        try:
+            from jagabot.core.complexity_router import classify as _classify_complexity
+            self._classify_complexity = _classify_complexity
+            logger.info("ComplexityRouter initialized")
+        except Exception as _cr_err:
+            logger.warning(f"ComplexityRouter init failed: {_cr_err}")
+            self._classify_complexity = None
+
         # Response cache — reduces redundant tool calls
         try:
             from jagabot.core.response_cache import ResponseCache
@@ -590,6 +599,22 @@ class AgentLoop:
         logger.debug(f"ModelSwitchboard: {model_config.model_id} ({model_config.reason})")
         self._current_model_id = model_config.model_id
 
+        # Complexity routing — scale tools and tokens to query depth
+        _complexity = None
+        if self._classify_complexity:
+            _complexity = self._classify_complexity(msg.content)
+            logger.debug(
+                f"Complexity: {_complexity.level} "
+                f"(max_tools={_complexity.max_tools}, "
+                f"concise={_complexity.concise})"
+            )
+            # Inject concise instruction for simple queries
+            if _complexity.concise and messages and messages[0].get("role") == "system":
+                from jagabot.core.complexity_router import get_concise_instruction
+                _ci = get_concise_instruction(_complexity.level)
+                if _ci and _ci not in messages[0]["content"]:
+                    messages[0]["content"] += _ci
+
         # WIRING: BrierScorer trust → CognitiveStack calibration mode
         if self.cognitive_stack and hasattr(self, 'brier'):
             _topic = locals().get('topic', 'general')
@@ -860,7 +885,11 @@ class AgentLoop:
                     logger.info(f"Means-End: {_approach_count} approaches considered")
             except Exception as _mea_err:
                 logger.debug(f"Means-End Analysis skipped: {_mea_err}")
-        
+
+        # Pass complexity to agent loop
+        if _complexity:
+            self._current_complexity = _complexity
+
         messages, final_content, tools_used = await self._run_agent_loop(
             messages, self.max_iterations,
             user_query=msg.content,  # Pass query for tool filtering
@@ -1421,6 +1450,14 @@ class AgentLoop:
                 tools_payload = package.tools
             else:
                 tools_payload = get_tools_for_query(user_query, self.tools)
+
+            # Apply complexity limit
+            if hasattr(self, '_current_complexity') and self._current_complexity:
+                max_t = self._current_complexity.max_tools
+                if len(tools_payload) > max_t:
+                    tools_payload = tools_payload[:max_t]
+                    logger.debug(f"Complexity limit: {max_t} tools max")
+
             logger.debug(f"API call: {len(tools_payload)} tools sent, model={self._current_model_id}")
 
             # PHASE 3 — HISTORY COMPRESSION: Prevent unbounded token growth
