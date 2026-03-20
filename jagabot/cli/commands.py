@@ -838,6 +838,26 @@ def engines(
     monitor.print_report()
 
 
+@app.command()
+def search(
+    query: str = typer.Argument(..., help="Search query"),
+    max_results: int = typer.Option(10, "--max", "-n", help="Max results"),
+    min_score: float = typer.Option(0.3, "--score", "-s", help="Min relevance score 0-1"),
+    path: str = typer.Option(None, "--path", "-p", help="Search specific path only"),
+) -> None:
+    """Fuzzy search across all jagabot markdown files — memory, research, skills."""
+    from jagabot.core.fuzzy_search import search as _search, format_results, get_search_paths
+    from pathlib import Path as _Path
+
+    if path:
+        paths = list(_Path(path).rglob("*.md"))
+    else:
+        paths = get_search_paths()
+
+    results = _search(query, max_results=max_results, min_score=min_score, paths=paths)
+    print(format_results(results, query))
+
+
 if __name__ == "__main__":
     app()
 
