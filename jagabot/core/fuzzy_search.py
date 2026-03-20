@@ -90,7 +90,6 @@ def get_search_paths() -> list[Path]:
     paths = []
     search_dirs = [
         Path("/root/memory"),
-        Path("/root/research_output"),
         Path("/root/.jagabot/memory"),
         Path("/root/nanojaga/jagabot/skills"),
     ]
@@ -98,12 +97,18 @@ def get_search_paths() -> list[Path]:
         if not d.exists():
             continue
         if d.name == "skills":
-            # Only SKILL.md files
             for skill_md in d.rglob("SKILL.md"):
                 paths.append(skill_md)
         else:
             for md in d.glob("*.md"):
                 paths.append(md)
+
+    # Research output — each session is a folder with report.md
+    research_dir = Path("/root/research_output")
+    if research_dir.exists():
+        for report in research_dir.rglob("report.md"):
+            paths.append(report)
+
     return paths
 
 
