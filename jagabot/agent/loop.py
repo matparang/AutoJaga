@@ -878,6 +878,15 @@ class AgentLoop:
         if isinstance(cron_tool, CronTool):
             cron_tool.set_context(msg.channel, msg.chat_id)
         
+        # Complexity routing — must run BEFORE build_messages to control skills loading
+        _complexity = None
+        if self._classify_complexity:
+            _complexity = self._classify_complexity(msg.content)
+
+        # Set skills summary flag — only load for COMPLEX/RESEARCH queries
+        _complexity_level = _complexity.level if _complexity else "STANDARD"
+        self.context._include_skills_summary = _complexity_level in ("COMPLEX", "RESEARCH")
+
         # Build initial messages (use get_history for LLM-formatted messages)
         messages = self.context.build_messages(
             history=session.get_history(),
@@ -886,11 +895,6 @@ class AgentLoop:
             channel=msg.channel,
             chat_id=msg.chat_id,
         )
-
-        # Complexity routing — scale tools and tokens to query depth
-        _complexity = None
-        if self._classify_complexity:
-            _complexity = self._classify_complexity(msg.content)
             logger.debug(
                 f"Complexity: {_complexity.level} "
                 f"(max_tools={_complexity.max_tools}, "
