@@ -265,7 +265,7 @@ class VerifierEvaluatorLoop:
         tools_used = tools_used or []
 
         # Skip evaluation for simple responses
-        if complexity == "SIMPLE" or len(response) < 100:
+        if complexity == "SIMPLE" or len(response) < 30:
             return EvaluationReport(
                 overall_score=1.0, verdict="PASS",
                 checks=[], issues=[], feedback="", caveat=""
@@ -280,7 +280,7 @@ class VerifierEvaluatorLoop:
         ]
 
         # Calculate overall score (weighted average)
-        weights = [0.2, 0.25, 0.25, 0.15, 0.15]
+        weights = [0.35, 0.25, 0.20, 0.10, 0.10]  # unsupported claims is most important
         overall = sum(c.score * w for c, w in zip(checks, weights))
 
         # Collect issues
