@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Engine correlation monitor
+        try:
+            from jagabot.core.engine_monitor import EngineCorrelationMonitor
+            self.engine_monitor = EngineCorrelationMonitor(workspace=workspace)
+            logger.info("EngineCorrelationMonitor initialized")
+        except Exception as _em_err:
+            logger.warning(f"EngineCorrelationMonitor init failed: {_em_err}")
+            self.engine_monitor = None
+
         # Reasoning tracker — verbose CLI output
         try:
             from jagabot.core.reasoning_tracker import ReasoningTracker
@@ -921,6 +930,27 @@ class AgentLoop:
             channel=msg.channel,
             chat_id=msg.chat_id,
         )
+
+        # Start engine monitor for this turn
+        if self.engine_monitor:
+            try:
+                _mon_domain = "financial" if any(w in msg.content.lower() for w in ["stock","price","nvda","aapl","invest"]) else "general"
+                self.engine_monitor.start_turn(
+                    msg.content,
+                    _mon_domain,
+                    _complexity.level if _complexity else "STANDARD"
+                )
+                # Record which engines fired this turn
+                self.engine_monitor.record_engine("fluid_dispatcher", True)
+                self.engine_monitor.record_engine("complexity_router", _complexity is not None)
+                self.engine_monitor.record_engine("belief_engine", True)
+                self.engine_monitor.record_engine("jit_schema", True)
+                self.engine_monitor.record_engine("task_state_manager", self.task_state is not None)
+                self.engine_monitor.record_engine("selective_guardrails", True)
+                self.engine_monitor.record_engine("stake_escalation", self.stake_escalation is not None)
+            except Exception:
+                pass
+
         if _complexity:
             logger.debug(
                 f"Complexity: {_complexity.level} "
@@ -1406,6 +1436,22 @@ class AgentLoop:
                             self.perf_tracker.check_alerts()
                     except Exception as _pt_err:
                         logger.debug(f"PerfTracker record failed: {_pt_err}")
+
+                # Finish engine monitor turn
+                if self.engine_monitor:
+                    try:
+                        self.engine_monitor.record_engine("bdi_scorecard", True)
+                        self.engine_monitor.record_engine("verifier_evaluator", self.verifier is not None)
+                        self.engine_monitor.record_engine("performance_tracker", self.perf_tracker is not None)
+                        self.engine_monitor.record_engine("means_end", _is_complex if '_is_complex' in dir() else False)
+                        _mon_quality = getattr(self, '_last_quality', 0.0)
+                        self.engine_monitor.finish_turn(
+                            quality     = _mon_quality,
+                            bdi_score   = _bdi.total,
+                            tokens_used = getattr(self, '_last_tokens', 0),
+                        )
+                    except Exception:
+                        pass
             except Exception as _e:
                 logger.debug(f"BDI scoring failed: {_e}")
 
