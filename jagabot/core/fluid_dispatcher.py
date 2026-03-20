@@ -402,7 +402,9 @@ class FluidDispatcher:
             return "MAINTENANCE", "command_prefix:/"
 
         # ── Priority 2: Verdict words (calibration critical) ─────
-        if VERDICT_PATTERN.search(text):
+        # Only trigger for SHORT messages (verdicts are brief)
+        # Long messages containing "wrong" are instructions, not verdicts
+        if VERDICT_PATTERN.search(text) and len(text) < 120:
             return "CALIBRATION", "verdict_word_detected"
 
         # ── Priority 3: Verification keywords ────────────────────
