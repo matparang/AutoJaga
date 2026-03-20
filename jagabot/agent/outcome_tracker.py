@@ -275,12 +275,11 @@ class LoopConnector:
         try:
             tool = self._get("meta_learning")
             if tool:
-                # Tools have async execute(), not call()
                 import asyncio
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                try:
-                    loop.run_until_complete(tool.execute(
+                import threading
+
+                async def _run():
+                    await tool.execute(
                         action="record_result",
                         strategy=f"research_{outcome.conclusion_type}",
                         success=success,
@@ -292,9 +291,19 @@ class LoopConnector:
                             "outcome": "correct" if success else "wrong",
                             "days_to_verify": outcome.days_pending,
                         }
-                    ))
-                finally:
-                    loop.close()
+                    )
+
+                def _thread_run():
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    try:
+                        loop.run_until_complete(_run())
+                    finally:
+                        loop.close()
+
+                t = threading.Thread(target=_thread_run, daemon=True)
+                t.start()
+                t.join(timeout=3.0)
         except Exception as e:
             logger.debug(f"MetaLearning record skipped: {e}")
 
@@ -306,20 +315,31 @@ class LoopConnector:
         try:
             tool = self._get("k1_bayesian")
             if tool:
-                # Tools have async execute(), not call()
                 import asyncio
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                try:
-                    loop.run_until_complete(tool.execute(
+                import concurrent.futures
+                import threading
+
+                async def _run():
+                    await tool.execute(
                         action="record_outcome",
                         perspective="research",
                         predicted_prob=outcome.confidence,
                         actual=actual,
                         prediction_id=f"research_{outcome.id}",
-                    ))
-                finally:
-                    loop.close()
+                    )
+
+                # Run in separate thread with its own event loop
+                def _thread_run():
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    try:
+                        loop.run_until_complete(_run())
+                    finally:
+                        loop.close()
+
+                t = threading.Thread(target=_thread_run, daemon=True)
+                t.start()
+                t.join(timeout=3.0)  # max 3 seconds
         except Exception as e:
             logger.debug(f"K1 Bayesian record skipped: {e}")
 
