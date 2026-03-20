@@ -26,6 +26,21 @@ from loguru import logger
 MAX_MSG_LEN   = 4000   # Telegram limit is 4096
 EDIT_INTERVAL = 1.2    # seconds between edits (rate limit buffer)
 
+# Global registry — allows loop.py to find thinker by chat_id
+_THINKER_REGISTRY: dict[int, "TelegramThinkingManager"] = {}
+
+def get_thinker(chat_id: int) -> "TelegramThinkingManager | None":
+    """Get thinker for a chat_id from global registry."""
+    return _THINKER_REGISTRY.get(chat_id)
+
+def register_thinker(chat_id: int, thinker: "TelegramThinkingManager") -> None:
+    """Register thinker for a chat_id."""
+    _THINKER_REGISTRY[chat_id] = thinker
+
+def unregister_thinker(chat_id: int) -> None:
+    """Remove thinker registration after turn completes."""
+    _THINKER_REGISTRY.pop(chat_id, None)
+
 
 @dataclass
 class ThinkingState:
@@ -153,3 +168,20 @@ class TelegramThinkingManager:
 
     def get_state(self, chat_id: int) -> ThinkingState | None:
         return self._states.get(chat_id)
+
+
+# ── Global thinker registry ─────────────────────────────────────
+# Allows agent loop to look up thinker by chat_id
+_thinker_registry: dict[int, TelegramThinkingManager] = {}
+
+def register_thinker(chat_id: int, thinker: TelegramThinkingManager) -> None:
+    """Register a thinker for a chat_id."""
+    _thinker_registry[chat_id] = thinker
+
+def get_thinker(chat_id: int) -> TelegramThinkingManager | None:
+    """Get thinker for a chat_id."""
+    return _thinker_registry.get(chat_id)
+
+def unregister_thinker(chat_id: int) -> None:
+    """Remove thinker from registry."""
+    _thinker_registry.pop(chat_id, None)

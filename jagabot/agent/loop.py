@@ -880,16 +880,18 @@ class AgentLoop:
         if isinstance(message_tool, MessageTool):
             message_tool.set_context(msg.channel, msg.chat_id)
 
-        # Store current chat context for Telegram thinker
-        self._current_chat_id = int(msg.chat_id) if msg.chat_id else 0
-        # Look up thinker from global registry
-        try:
-            from jagabot.channels.telegram_thinking import get_thinker, unregister_thinker
-            self._telegram_thinker = get_thinker(self._current_chat_id)
-            self._unregister_thinker = unregister_thinker
-        except Exception:
-            self._telegram_thinker = None
-            self._unregister_thinker = None
+        # Store current chat context for Telegram thinker (Telegram uses numeric chat IDs)
+        self._current_chat_id = 0
+        self._telegram_thinker = None
+        self._unregister_thinker = None
+        if msg.channel == "telegram" and msg.chat_id:
+            try:
+                self._current_chat_id = int(msg.chat_id)
+                from jagabot.channels.telegram_thinking import get_thinker, unregister_thinker
+                self._telegram_thinker = get_thinker(self._current_chat_id)
+                self._unregister_thinker = unregister_thinker
+            except Exception:
+                pass
 
         spawn_tool = self.tools.get("spawn")
         if isinstance(spawn_tool, SpawnTool):

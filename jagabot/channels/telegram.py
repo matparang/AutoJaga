@@ -194,6 +194,8 @@ class TelegramChannel(BaseChannel):
             try:
                 chat_id_int = int(msg.chat_id)
                 await self._thinker.finish(chat_id_int, delete=True)
+                from jagabot.channels.telegram_thinking import unregister_thinker
+                unregister_thinker(chat_id_int)
             except Exception as e:
                 logger.debug(f"TelegramThinking: finish failed: {e}")
 
@@ -344,6 +346,9 @@ class TelegramChannel(BaseChannel):
             if not self._thinker:
                 self._thinker = TelegramThinkingManager(self._app.bot)
             await self._thinker.start(int(chat_id), content or "")
+            # Register in global registry so loop.py can find it
+            from jagabot.channels.telegram_thinking import register_thinker
+            register_thinker(int(chat_id), self._thinker)
 
         # Forward to the message bus
         await self._handle_message(
