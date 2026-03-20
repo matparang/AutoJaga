@@ -34,22 +34,38 @@ def _fuzzy_score(query: str, text: str) -> float:
     q = query.lower()
     t = text.lower()
 
-    # Exact match = 1.0
+    # Exact phrase match = 1.0 (highest priority)
     if q in t:
         return 1.0
 
-    # Word-level matching
     query_words = q.split()
-    text_words  = set(t.split())
-    word_hits   = sum(1 for w in query_words if any(
-        w in tw for tw in text_words
-    ))
-    word_score  = word_hits / len(query_words) if query_words else 0
+    if not query_words:
+        return 0.0
+
+    # All words present = high score
+    text_lower = t
+    all_present = all(w in text_lower for w in query_words)
+    if all_present:
+        # Bonus if words appear close together
+        positions = []
+        for w in query_words:
+            idx = text_lower.find(w)
+            if idx >= 0:
+                positions.append(idx)
+        if positions:
+            span = max(positions) - min(positions)
+            proximity_bonus = max(0, 1.0 - span / 200)
+            return 0.7 + (0.3 * proximity_bonus)
+
+    # Partial word matching
+    text_words = set(text_lower.split())
+    word_hits  = sum(1 for w in query_words if any(w in tw for tw in text_words))
+    word_score = word_hits / len(query_words)
 
     # Sequence similarity
     seq_score = SequenceMatcher(None, q, t[:len(q)*3]).ratio()
 
-    return max(word_score, seq_score)
+    return max(word_score * 0.8, seq_score)
 
 
 def _get_snippet(lines: list[str], line_num: int, query: str, width: int = 120) -> str:
