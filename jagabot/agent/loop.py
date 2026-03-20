@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Mistake pattern analyzer — learns from wrong outcomes
+        try:
+            from jagabot.core.mistake_analyzer import MistakePatternAnalyzer
+            self.mistake_analyzer = MistakePatternAnalyzer(workspace=workspace)
+            logger.info("MistakePatternAnalyzer initialized")
+        except Exception as _ma_err:
+            logger.warning(f"MistakePatternAnalyzer init failed: {_ma_err}")
+            self.mistake_analyzer = None
+
         # Calibration engine — empirical feedback loop
         try:
             from jagabot.core.calibration_engine import CalibrationEngine
@@ -861,6 +870,20 @@ class AgentLoop:
         # Symbolic expansion — expand any symbols in system message
         if self.symbolic_mapper and messages:
             messages = self.symbolic_mapper.expand_messages(messages)
+
+        # Inject mistake warnings for this query domain
+        if self.mistake_analyzer and messages:
+            try:
+                _warnings = self.mistake_analyzer.get_warnings_for_query(msg.content)
+                if _warnings and messages[0].get("role") == "system":
+                    _warn_text = "\n[MISTAKE WARNINGS]\n" + "\n".join(_warnings)
+                    if "[MISTAKE WARNINGS]" not in messages[0]["content"]:
+                        messages[0]["content"] += _warn_text
+                    logger.debug(f"MistakeAnalyzer: injected {len(_warnings)} warning(s)")
+                # Process any new wrong outcomes
+                self.mistake_analyzer.process_new_wrong_outcomes()
+            except Exception as _maw_err:
+                logger.debug(f"MistakeAnalyzer warning injection failed: {_maw_err}")
 
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 10:
