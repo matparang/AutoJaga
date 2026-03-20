@@ -921,6 +921,17 @@ class AgentLoop:
             except Exception as _maw_err:
                 logger.debug(f"MistakeAnalyzer warning injection failed: {_maw_err}")
 
+        # Inject stake escalation instruction
+        if self.stake_escalation and messages:
+            try:
+                _stake = self.stake_escalation.assess(msg.content)
+                if _stake.level in ("HIGH", "CATASTROPHIC") and _stake.instruction:
+                    if messages[0].get("role") == "system":
+                        messages[0]["content"] += _stake.instruction
+                    logger.info(f"StakeEscalation: {_stake.level} — injected instruction")
+            except Exception as _se_err:
+                logger.debug(f"StakeEscalation failed: {_se_err}")
+
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 10:
             compressed = self.context_compressor.get_compressed_context()
@@ -1628,16 +1639,7 @@ class AgentLoop:
                     tools_payload = tools_payload[:max_t]
                     logger.debug(f"Complexity limit: {max_t} tools max")
 
-            # Inject stake escalation instruction
-            if self.stake_escalation and messages:
-                try:
-                    _stake = self.stake_escalation.assess(msg.content)
-                    if _stake.level in ("HIGH", "CATASTROPHIC") and _stake.instruction:
-                        if messages[0].get("role") == "system":
-                            messages[0]["content"] += _stake.instruction
-                        logger.info(f"StakeEscalation: {_stake.level} — injected instruction")
-                except Exception as _se_err:
-                    logger.debug(f"StakeEscalation failed: {_se_err}")
+            # Stake escalation handled in _process_message
 
             # Inject task state summary to prevent re-narration
             if self.task_state and tools_used and messages:
