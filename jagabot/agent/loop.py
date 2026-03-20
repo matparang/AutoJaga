@@ -856,6 +856,8 @@ class AgentLoop:
             "critique your", "what went wrong", "your mistakes",
             "incorrect answer", "wrong answer", "false positive",
         ])
+        # Skip verdict detection for long messages — real verdicts are short (<200 chars)
+        _skip_verdict = _skip_verdict or len(msg.content) > 200
         feedback = None if _skip_verdict else self.outcome_tracker.record_outcome_by_context(msg.content)
         if feedback:
             # User said "that was correct/wrong" — loop closed
