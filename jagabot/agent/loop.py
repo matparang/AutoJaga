@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Task state manager — tracks fetched data to prevent redundant calls
+        try:
+            from jagabot.core.task_state_manager import TaskStateManager
+            self.task_state = TaskStateManager()
+            logger.info("TaskStateManager initialized")
+        except Exception as _ts_err:
+            logger.warning(f"TaskStateManager init failed: {_ts_err}")
+            self.task_state = None
+
         # Symbolic mapper — expand symbols in messages
         try:
             from jagabot.core.symbolic_map import SymbolicMapper
@@ -903,6 +912,10 @@ class AgentLoop:
         if _complexity:
             self._current_complexity = _complexity
 
+        # Reset task state for new turn
+        if self.task_state:
+            self.task_state.reset(turn_id=id(msg))
+
         messages, final_content, tools_used = await self._run_agent_loop(
             messages, self.max_iterations,
             user_query=msg.content,  # Pass query for tool filtering
@@ -1471,6 +1484,24 @@ class AgentLoop:
                     tools_payload = tools_payload[:max_t]
                     logger.debug(f"Complexity limit: {max_t} tools max")
 
+            # Inject task state summary to prevent re-narration
+            if self.task_state and tools_used and messages:
+                _state_summary = self.task_state.get_state_summary()
+                _phase_instr   = self.task_state.get_phase_instruction()
+                if _state_summary and messages[0].get("role") == "system":
+                    _state_injection = f"\n[TURN STATE] {_state_summary} {_phase_instr}"
+                    if "[TURN STATE]" not in messages[0]["content"]:
+                        messages[0]["content"] += _state_injection
+                    else:
+                        # Update existing state injection
+                        import re as _re
+                        messages[0]["content"] = _re.sub(
+                            r"\[TURN STATE\].*$",
+                            f"[TURN STATE] {_state_summary} {_phase_instr}",
+                            messages[0]["content"],
+                            flags=_re.MULTILINE | _re.DOTALL
+                        )
+
             logger.debug(f"API call: {len(tools_payload)} tools sent, model={self._current_model_id}")
 
             # PHASE 3 — HISTORY COMPRESSION: Prevent unbounded token growth
@@ -1621,6 +1652,15 @@ class AgentLoop:
                                 _ttl = self.cache.get_tool_ttl(tool_call.name)
                                 if _ttl > 0:
                                     self.cache.set(tool_call.name, tool_call.arguments, result, ttl=_ttl)
+
+                            # Record in task state to prevent re-fetching
+                            if self.task_state:
+                                self.task_state.record_fetch(
+                                    tool_call.name,
+                                    tool_call.arguments,
+                                    result[:200],
+                                )
+                                self.task_state.auto_advance_phase(len(tools_used))
 
                         if isinstance(result, str) and result.startswith("Error"):
                             logger.warning(f"Tool {tool_call.name} failed, retrying once")
