@@ -263,7 +263,7 @@ class CalibrationEngine:
             bar = "█" * int(b.accuracy * 10) + "░" * (10 - int(b.accuracy * 10))
             lines.append(
                 f"  {b.confidence_min:.0%}-{b.confidence_max:.0%} conf → "
-                f"b.accuracy:.0%} actual [{bar}] {b.label}"
+                f"{b.accuracy:.0%} actual [{bar}] {b.label}"
             )
         return "\n".join(lines)
 
