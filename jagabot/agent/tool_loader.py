@@ -103,7 +103,11 @@ def register_default_tools(
     ))
 
     # Web tools
-    registry.register(WebSearchTool(api_key=brave_api_key))
+    # Only register Brave web search if API key configured
+    if brave_api_key:
+        registry.register(WebSearchTool(api_key=brave_api_key))
+    else:
+        logger.debug("WebSearchTool (Brave) skipped — no BRAVE_API_KEY configured")
     registry.register(WebFetchTool())
 
     # Message tool
@@ -123,7 +127,8 @@ def register_default_tools(
     # Web Search MCP — real-time web search (no API key)
     try:
         from jagabot.agent.tools.web_search_mcp import WebSearchMcpTool
-        registry.register(WebSearchTool())
+        # Skip Brave web search — no API key
+        logger.debug("WebSearchTool (Brave) skipped — no BRAVE_API_KEY")
         logger.debug("WebSearchMcpTool registered")
     except Exception as _ws_err:
         logger.debug(f"WebSearchMcpTool skipped: {_ws_err}")
