@@ -2197,8 +2197,17 @@ Respond with ONLY valid JSON, no markdown fences."""
                 result = await _call_consolidation_llm(strict_prompt)
 
             if entry := result.get("history_entry"):
-                memory.append_history(entry)
+                # Ensure entry is a string not dict
+                if isinstance(entry, dict):
+                    import json as _j
+                    entry = _j.dumps(entry)
+                memory.append_history(str(entry))
             if update := result.get("memory_update"):
+                # Ensure update is a string not dict
+                if isinstance(update, dict):
+                    import json as _j
+                    update = _j.dumps(update)
+                update = str(update)
                 if update != current_memory:
                     memory.write_long_term(update)
 
