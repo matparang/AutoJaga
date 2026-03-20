@@ -1858,22 +1858,6 @@ class AgentLoop:
                                 alternatives_suggested=True,
                             )
                     else:
-                        # JIT: inject full schema if first use of this tool
-                        if _jit and _jit.needs_injection(tool_call.name):
-                            full_schema = _jit.get_full_schema(tool_call.name)
-                            if full_schema:
-                                import json as _json
-                                _schema_msg = (
-                                    f"[JIT SCHEMA for {tool_call.name}]\n"
-                                    f"{_json.dumps(full_schema, indent=2)}"
-                                )
-                                messages.append({
-                                    "role": "user",
-                                    "content": _schema_msg
-                                })
-                                _jit.mark_injected(tool_call.name)
-                                logger.debug(f"JIT: injected full schema for {tool_call.name}")
-
                         # Check cache first
                         _cached = None
                         if self.cache:

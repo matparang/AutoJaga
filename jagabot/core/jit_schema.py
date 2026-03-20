@@ -34,6 +34,18 @@ def make_stub_schema(full_schema: dict) -> dict:
     # Keep only first line of description
     short_desc = desc.split("\n")[0][:80].strip()
 
+    # Keep parameter names but strip descriptions
+    fn_params = fn.get("parameters", {})
+    props = fn_params.get("properties", {})
+    slim_props = {}
+    for param_name, param_def in props.items():
+        slim_props[param_name] = {
+            "type": param_def.get("type", "string"),
+            "enum": param_def["enum"] if "enum" in param_def else None,
+        }
+        # Remove None values
+        slim_props[param_name] = {k: v for k, v in slim_props[param_name].items() if v is not None}
+
     return {
         "type": "function",
         "function": {
@@ -41,8 +53,8 @@ def make_stub_schema(full_schema: dict) -> dict:
             "description": short_desc,
             "parameters": {
                 "type": "object",
-                "properties": {},
-                "required": [],
+                "properties": slim_props,
+                "required": fn_params.get("required", []),
             },
         },
     }
