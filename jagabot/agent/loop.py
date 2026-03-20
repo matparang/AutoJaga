@@ -138,6 +138,24 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Stake-aware escalation — scores decision stakes
+        try:
+            from jagabot.core.stake_escalation import StakeAwareEscalation
+            self.stake_escalation = StakeAwareEscalation()
+            logger.info("StakeAwareEscalation initialized")
+        except Exception as _se_err:
+            logger.warning(f"StakeAwareEscalation init failed: {_se_err}")
+            self.stake_escalation = None
+
+        # Runtime snapshot builder — crash recovery
+        try:
+            from jagabot.core.runtime_snapshot import RuntimeSnapshotBuilder
+            self.snapshot_builder = RuntimeSnapshotBuilder(workspace=workspace)
+            logger.info("RuntimeSnapshotBuilder initialized")
+        except Exception as _rs_err:
+            logger.warning(f"RuntimeSnapshotBuilder init failed: {_rs_err}")
+            self.snapshot_builder = None
+
         # Verifier evaluator — post-response reasoning quality check
         try:
             from jagabot.core.verifier_evaluator import VerifierEvaluatorLoop
@@ -966,6 +984,17 @@ class AgentLoop:
         if self.task_state:
             self.task_state.reset(turn_id=id(msg))
 
+        # Start runtime snapshot for this turn
+        if self.snapshot_builder:
+            try:
+                self.snapshot_builder.start_turn(
+                    task        = msg.content[:200],
+                    session_key = session.key if hasattr(session, 'key') else "default",
+                    turn_id     = str(id(msg)),
+                )
+            except Exception:
+                pass
+
         messages, final_content, tools_used = await self._run_agent_loop(
             messages, self.max_iterations,
             user_query=msg.content,  # Pass query for tool filtering
@@ -1548,6 +1577,14 @@ class AgentLoop:
             except Exception as _cal_err:
                 logger.debug(f"Calibration run failed: {_cal_err}")
 
+        # Complete snapshot for this turn
+        if self.snapshot_builder:
+            try:
+                self.snapshot_builder.update_partial_response(final_content or "")
+                self.snapshot_builder.complete_turn()
+            except Exception:
+                pass
+
         return OutboundMessage(
             channel=msg.channel,
             chat_id=msg.chat_id,
@@ -1590,6 +1627,17 @@ class AgentLoop:
                 if len(tools_payload) > max_t:
                     tools_payload = tools_payload[:max_t]
                     logger.debug(f"Complexity limit: {max_t} tools max")
+
+            # Inject stake escalation instruction
+            if self.stake_escalation and messages:
+                try:
+                    _stake = self.stake_escalation.assess(msg.content)
+                    if _stake.level in ("HIGH", "CATASTROPHIC") and _stake.instruction:
+                        if messages[0].get("role") == "system":
+                            messages[0]["content"] += _stake.instruction
+                        logger.info(f"StakeEscalation: {_stake.level} — injected instruction")
+                except Exception as _se_err:
+                    logger.debug(f"StakeEscalation failed: {_se_err}")
 
             # Inject task state summary to prevent re-narration
             if self.task_state and tools_used and messages:
@@ -1759,6 +1807,17 @@ class AgentLoop:
                                 _ttl = self.cache.get_tool_ttl(tool_call.name)
                                 if _ttl > 0:
                                     self.cache.set(tool_call.name, tool_call.arguments, result, ttl=_ttl)
+
+                            # Record in runtime snapshot
+                            if self.snapshot_builder:
+                                try:
+                                    self.snapshot_builder.record_tool(
+                                        tool_call.name,
+                                        tool_call.arguments,
+                                        result[:100],
+                                    )
+                                except Exception:
+                                    pass
 
                             # Record in task state to prevent re-fetching
                             if self.task_state:
