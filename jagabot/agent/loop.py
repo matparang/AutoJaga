@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Performance trend tracker — early warning for degradation
+        try:
+            from jagabot.core.performance_tracker import PerformanceTrendTracker
+            self.perf_tracker = PerformanceTrendTracker(workspace=workspace)
+            logger.info("PerformanceTrendTracker initialized")
+        except Exception as _pt_err:
+            logger.warning(f"PerformanceTrendTracker init failed: {_pt_err}")
+            self.perf_tracker = None
+
         # Mistake pattern analyzer — learns from wrong outcomes
         try:
             from jagabot.core.mistake_analyzer import MistakePatternAnalyzer
@@ -1260,6 +1269,26 @@ class AgentLoop:
                     intention_state=_intention_state,
                 )
                 self.bdi_tracker.record(_bdi)
+
+                # Record to performance tracker
+                if self.perf_tracker:
+                    try:
+                        self.perf_tracker.record(
+                            bdi_score    = _bdi.total,
+                            quality_score = self.writer.scorer.score(
+                                content   = final_content,
+                                tools_used = tools_used,
+                            ),
+                            domain       = _topic if '_topic' in dir() else "general",
+                            session_key  = session.key if hasattr(session, 'key') else "",
+                        )
+                        # Check alerts every 20 turns
+                        _pt_count = getattr(self, '_pt_turn_count', 0) + 1
+                        self._pt_turn_count = _pt_count
+                        if _pt_count % 20 == 0:
+                            self.perf_tracker.check_alerts()
+                    except Exception as _pt_err:
+                        logger.debug(f"PerfTracker record failed: {_pt_err}")
             except Exception as _e:
                 logger.debug(f"BDI scoring failed: {_e}")
 
