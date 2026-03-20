@@ -107,6 +107,7 @@ class TelegramChannel(BaseChannel):
         self._app: Application | None = None
         self._chat_ids: dict[str, int] = {}  # Map sender_id to chat_id for replies
         self._typing_tasks: dict[str, asyncio.Task] = {}  # chat_id -> typing loop task
+        self._thinker: TelegramThinkingManager | None = None  # Thinking message manager
     
     async def start(self) -> None:
         """Start the Telegram bot with long polling."""
@@ -184,10 +185,18 @@ class TelegramChannel(BaseChannel):
         if not self._app:
             logger.warning("Telegram bot not running")
             return
-        
+
         # Stop typing indicator for this chat
         self._stop_typing(msg.chat_id)
-        
+
+        # Finish thinking message before sending response
+        if self._thinker:
+            try:
+                chat_id_int = int(msg.chat_id)
+                await self._thinker.finish(chat_id_int, delete=True)
+            except Exception as e:
+                logger.debug(f"TelegramThinking: finish failed: {e}")
+
         try:
             chat_id = int(msg.chat_id)
         except ValueError:
@@ -323,12 +332,19 @@ class TelegramChannel(BaseChannel):
         content = "\n".join(content_parts) if content_parts else "[empty message]"
         
         logger.debug(f"Telegram message from {sender_id}: {content[:50]}...")
-        
+
         str_chat_id = str(chat_id)
-        
+
         # Start typing indicator before processing
         self._start_typing(str_chat_id)
-        
+
+        # Start thinking message for real-time reasoning visibility
+        if self._app and self._app.bot:
+            from jagabot.channels.telegram_thinking import TelegramThinkingManager
+            if not self._thinker:
+                self._thinker = TelegramThinkingManager(self._app.bot)
+            await self._thinker.start(int(chat_id), content or "")
+
         # Forward to the message bus
         await self._handle_message(
             sender_id=sender_id,
