@@ -54,8 +54,8 @@ class VerifierEvaluatorLoop:
     Runs after ResponseAuditor to catch logical errors.
     """
 
-    PASS_THRESHOLD = 0.70
-    WARN_THRESHOLD = 0.40
+    PASS_THRESHOLD = 0.75
+    WARN_THRESHOLD = 0.55
 
     # Patterns that indicate unsupported claims
     UNSUPPORTED_CLAIM_PATTERNS = [
@@ -100,10 +100,10 @@ class VerifierEvaluatorLoop:
                 issue="", fix=""
             )
 
-        score = max(0.3, 1.0 - (len(issues) * 0.2))
+        score = max(0.2, 1.0 - (len(issues) * 0.3))  # harder penalty
         return VerificationResult(
             check="unsupported_claims",
-            passed=len(issues) <= 1,
+            passed=len(issues) == 0,  # any absolute claim = failed
             score=score,
             issue=f"Found {len(issues)} absolute claim(s): {issues[:2]}",
             fix="Replace absolute claims with probabilistic language (likely, suggests, indicates)"
