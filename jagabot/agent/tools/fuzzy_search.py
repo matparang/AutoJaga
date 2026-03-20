@@ -9,6 +9,7 @@ Enables agent to:
 """
 
 from __future__ import annotations
+from typing import Any
 from pathlib import Path
 from jagabot.agent.tools.base import Tool
 
@@ -20,6 +21,32 @@ class FuzzySearchTool(Tool):
         "Use to find past analysis, skill protocols, or previous conclusions. "
         "Actions: search"
     )
+
+    @property
+    def parameters(self) -> dict[str, Any]:
+        return {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Search terms e.g. 'NVDA risk analysis' or 'failure decomposition'"
+                },
+                "scope": {
+                    "type": "string",
+                    "enum": ["all", "memory", "research", "skills"],
+                    "description": "Where to search: all=everywhere, memory=MEMORY.md+HISTORY.md, research=past sessions, skills=SKILL.md files"
+                },
+                "max_results": {
+                    "type": "integer",
+                    "description": "Max results to return (default: 5)"
+                },
+                "min_score": {
+                    "type": "number",
+                    "description": "Min relevance 0-1 (default: 0.5)"
+                },
+            },
+            "required": ["query"],
+        }
 
     def to_schema(self) -> dict:
         return {
