@@ -154,6 +154,47 @@ class SymbolicMapper:
         """Return compression/expansion statistics."""
         return self._stats.copy()
 
+    def detect_in_response(self, response_text: str) -> list[str]:
+        """
+        Detect symbol references in agent response.
+        Returns list of symbols the agent is requesting.
+        """
+        found = []
+        for symbol in SYMBOL_REGISTRY:
+            if symbol in response_text:
+                found.append(symbol)
+        if found:
+            logger.info(f"SymbolicMap: agent requested {found}")
+        return found
+
+    def build_injection(self, symbols: list[str]) -> str:
+        """
+        Build content injection from requested symbols.
+        Returns formatted content to inject as tool result.
+        """
+        if not symbols:
+            return ""
+
+        parts = []
+        for symbol in symbols:
+            target = SYMBOL_REGISTRY.get(symbol, "")
+            if target.startswith("/"):
+                content = self._load_file(target)
+                filename = Path(target).name
+                parts.append(
+                    f"## {symbol} → {filename}\n{content[:2000]}"
+                )
+            else:
+                parts.append(f"## {symbol}\n{target}")
+            self._stats["expansions"] += 1
+
+        result = "\n\n---\n\n".join(parts)
+        logger.info(
+            f"SymbolicMap: injecting {len(symbols)} symbol(s), "
+            f"{len(result)} chars"
+        )
+        return result
+
 
 # ── Singleton instance ────────────────────────────────────────────
 _mapper: SymbolicMapper | None = None

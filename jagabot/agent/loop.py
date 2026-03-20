@@ -1727,6 +1727,29 @@ class AgentLoop:
                 if not wants_to_act:
                     # No explicit plan-like language or tool names — return the text
                     final_content = response.content
+
+                    # Symbol detection — check if agent referenced any symbols
+                    if self.symbolic_mapper and final_content:
+                        _symbols = self.symbolic_mapper.detect_in_response(final_content)
+                        if _symbols:
+                            # Inject symbol content as additional context
+                            _injection = self.symbolic_mapper.build_injection(_symbols)
+                            if _injection:
+                                # Add injection as user message for next iteration
+                                messages.append({
+                                    "role": "user",
+                                    "content": (
+                                        f"[Symbol expansion requested]\n\n{_injection}\n\n"
+                                        f"Continue your response using the above content."
+                                    )
+                                })
+                                final_content = None  # Force another iteration
+                                logger.info(
+                                    f"SymbolicMap: injected {len(_symbols)} symbol(s) "
+                                    f"— continuing agent loop"
+                                )
+                                continue
+
                     break
 
                 # If spawn tool was used this turn, don't retry — subagents are running
