@@ -1862,6 +1862,17 @@ class AgentLoop:
                                         tool_call.id or tool_call.name,
                                         tool_call.arguments,
                                     )
+                                    # Forward to Telegram thinker
+                                    if hasattr(self, '_telegram_thinker') and self._telegram_thinker:
+                                        _step = self.reasoning_tracker._get_tool_label(
+                                            tool_call.name, tool_call.arguments
+                                        )
+                                        asyncio.ensure_future(
+                                            self._telegram_thinker.add_step(
+                                                self._current_chat_id,
+                                                f"📈 {_step}..."
+                                            )
+                                        )
                                 except Exception:
                                     pass
 
