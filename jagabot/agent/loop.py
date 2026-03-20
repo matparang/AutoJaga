@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Verifier evaluator — post-response reasoning quality check
+        try:
+            from jagabot.core.verifier_evaluator import VerifierEvaluatorLoop
+            self.verifier = VerifierEvaluatorLoop()
+            logger.info("VerifierEvaluatorLoop initialized")
+        except Exception as _ve_err:
+            logger.warning(f"VerifierEvaluatorLoop init failed: {_ve_err}")
+            self.verifier = None
+
         # Performance trend tracker — early warning for degradation
         try:
             from jagabot.core.performance_tracker import PerformanceTrendTracker
@@ -973,6 +982,31 @@ class AgentLoop:
             if result.approved:
                 final_content = result.content
                 auditor_approved = True
+
+                # Run verifier evaluator after auditor approval
+                if self.verifier and final_content:
+                    try:
+                        _complexity_level = _complexity.level if _complexity else "STANDARD"
+                        _eval = self.verifier.evaluate(
+                            response   = final_content,
+                            domain     = _topic if '_topic' in dir() else "general",
+                            tools_used = tools_used or [],
+                            complexity = _complexity_level,
+                        )
+                        if _eval.verdict == "FAIL":
+                            logger.warning(f"VerifierEvaluator FAIL — requesting revision")
+                            auditor_approved = False
+                            final_content    = None
+                            messages.append({
+                                "role":    "user",
+                                "content": f"[VERIFICATION FAILED]\n{_eval.feedback}\nPlease revise your response."
+                            })
+                        elif _eval.verdict == "WARN" and _eval.caveat:
+                            final_content += _eval.caveat
+                            logger.debug("VerifierEvaluator WARN — appended caveat")
+                    except Exception as _ve_err:
+                        logger.debug(f"VerifierEvaluator failed: {_ve_err}")
+
                 break
 
             if _audit_pass >= self.auditor.max_retries:
