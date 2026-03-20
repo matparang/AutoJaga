@@ -138,6 +138,15 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Symbolic mapper — expand symbols in messages
+        try:
+            from jagabot.core.symbolic_map import SymbolicMapper
+            self.symbolic_mapper = SymbolicMapper()
+            logger.info("SymbolicMapper initialized")
+        except Exception as _sm_err:
+            logger.warning(f"SymbolicMapper init failed: {_sm_err}")
+            self.symbolic_mapper = None
+
         # Complexity router — progressive depth scaling
         try:
             from jagabot.core.complexity_router import classify as _classify_complexity
@@ -830,6 +839,10 @@ class AgentLoop:
                 _ci = get_concise_instruction(_complexity.level)
                 if _ci and _ci not in messages[0]["content"]:
                     messages[0]["content"] += _ci
+
+        # Symbolic expansion — expand any symbols in system message
+        if self.symbolic_mapper and messages:
+            messages = self.symbolic_mapper.expand_messages(messages)
 
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 10:
@@ -2106,6 +2119,10 @@ class AgentLoop:
         current_memory = memory.read_long_term()
         if current_memory and len(current_memory) > 1000:
             current_memory = current_memory[:1000] + "\n... [truncated]"
+
+        # Compress any symbol references in memory before processing
+        if self.symbolic_mapper and current_memory:
+            current_memory = self.symbolic_mapper.compress(current_memory)
 
         prompt = f"""You are a memory consolidation agent. Process this conversation and return a JSON object with exactly two keys:
 
