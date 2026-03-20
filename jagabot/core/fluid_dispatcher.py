@@ -239,8 +239,10 @@ KEYWORDS = {
         "what do you know about",
     ],
     "question_keyword": [
-        "what is", "what are", "how does", "why does",
-        "explain", "describe", "how do", "what was",
+        # Only deep questions route to RESEARCH
+        # Simple "what is X" handled by complexity router as SIMPLE
+        "explain in detail", "describe the mechanism",
+        "how does it work in depth", "why does this happen",
     ],
     "proof_keyword": [
         "proof", "prove", "evidence", "show me", "demonstrate",
