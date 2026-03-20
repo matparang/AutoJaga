@@ -1,7 +1,7 @@
 ---
 name: error-analysis
 description: Mandatory error analysis protocol - activates when any tool fails
-metadata: {"jagabot":{"emoji":"🔍","always":true}}
+metadata: {"jagabot":{"emoji":"🔍","always":false}}
 ---
 
 # Error Analysis Protocol

@@ -1,7 +1,7 @@
 ---
 name: adversarial-guardrails
 description: Pathological failure analysis and adversarial guardrails to prevent high-confidence errors
-metadata: {"jagabot":{"emoji":"🛡️","always":true}}
+metadata: {"jagabot":{"emoji":"🛡️","always":false}}
 ---
 
 # Adversarial Guardrails Protocol (v1.1)

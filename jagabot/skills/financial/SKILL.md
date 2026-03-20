@@ -1,7 +1,7 @@
 ---
 name: financial
 description: Financial crisis analysis protocol — 13-step tool-calling workflow
-metadata: {"jagabot":{"emoji":"📊","always":true}}
+metadata: {"jagabot":{"emoji":"📊","always":false}}
 ---
 
 # Financial Analysis Protocol
