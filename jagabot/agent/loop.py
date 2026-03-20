@@ -138,6 +138,16 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Reasoning tracker — verbose CLI output
+        try:
+            from jagabot.core.reasoning_tracker import ReasoningTracker
+            _verbose = os.getenv("JAGABOT_VERBOSE", "0") == "1"
+            self.reasoning_tracker = ReasoningTracker(verbose=_verbose)
+            logger.info(f"ReasoningTracker initialized (verbose={_verbose})")
+        except Exception as _rt_err:
+            logger.warning(f"ReasoningTracker init failed: {_rt_err}")
+            self.reasoning_tracker = None
+
         # Stake-aware escalation — scores decision stakes
         try:
             from jagabot.core.stake_escalation import StakeAwareEscalation
@@ -885,7 +895,7 @@ class AgentLoop:
 
         # Set skills summary flag — only load for COMPLEX/RESEARCH queries
         _complexity_level = _complexity.level if _complexity else "STANDARD"
-        self.context._include_skills_summary = _complexity_level in ("COMPLEX", "RESEARCH")
+        self.context._include_skills_summary = _complexity_level == "RESEARCH"
 
         # Build initial messages (use get_history for LLM-formatted messages)
         messages = self.context.build_messages(
@@ -1003,6 +1013,14 @@ class AgentLoop:
         # Reset task state for new turn
         if self.task_state:
             self.task_state.reset(turn_id=id(msg))
+
+        # Start reasoning tracker for this turn
+        if self.reasoning_tracker:
+            try:
+                _cplx_level = _complexity.level if _complexity else "STANDARD"
+                self.reasoning_tracker.start_turn(msg.content, _cplx_level)
+            except Exception:
+                pass
 
         # Start runtime snapshot for this turn
         if self.snapshot_builder:
@@ -1605,6 +1623,13 @@ class AgentLoop:
             except Exception:
                 pass
 
+        # Finish reasoning tracker
+        if self.reasoning_tracker:
+            try:
+                self.reasoning_tracker.finish_turn(final_content or "")
+            except Exception:
+                pass
+
         return OutboundMessage(
             channel=msg.channel,
             chat_id=msg.chat_id,
@@ -1811,12 +1836,38 @@ class AgentLoop:
                             result = _cached
                             logger.debug(f"Cache HIT: {tool_call.name} — skipping tool call")
                         else:
+                            # Notify reasoning tracker tool is starting
+                            if self.reasoning_tracker:
+                                try:
+                                    self.reasoning_tracker.on_tool_start(
+                                        tool_call.name,
+                                        tool_call.id or tool_call.name,
+                                        tool_call.arguments,
+                                    )
+                                except Exception:
+                                    pass
+
+                            _tool_start = time.time()
                             result = await self.tools.execute(tool_call.name, tool_call.arguments)
+                            _tool_elapsed = time.time() - _tool_start
+
                             # Cache successful results
                             if self.cache and isinstance(result, str) and not result.startswith("Error"):
                                 _ttl = self.cache.get_tool_ttl(tool_call.name)
                                 if _ttl > 0:
                                     self.cache.set(tool_call.name, tool_call.arguments, result, ttl=_ttl)
+
+                            # Record in reasoning tracker
+                            if self.reasoning_tracker:
+                                try:
+                                    self.reasoning_tracker.on_tool_done(
+                                        tool_call.name,
+                                        tool_call.id or tool_call.name,
+                                        result[:200] if isinstance(result, str) else "",
+                                        elapsed=_tool_elapsed,
+                                    )
+                                except Exception:
+                                    pass
 
                             # Record in runtime snapshot
                             if self.snapshot_builder:
@@ -1851,6 +1902,18 @@ class AgentLoop:
                                     challenge_type="tool_error",
                                     persisting=True,
                                 )
+
+                            # Report failure to reasoning tracker
+                            if self.reasoning_tracker:
+                                try:
+                                    self.reasoning_tracker.on_tool_fail(
+                                        tool_call.name,
+                                        tool_call.id or tool_call.name,
+                                        result[:80],
+                                    )
+                                except Exception:
+                                    pass
+
                             result = await self.tools.execute(
                                 tool_call.name, tool_call.arguments,
                             )

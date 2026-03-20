@@ -433,11 +433,13 @@ def gateway(
     from jagabot.cron.types import CronJob
     from jagabot.heartbeat.service import HeartbeatService
     from jagabot.gateway.server import GatewayServer
-    
+
     if verbose:
         import logging
         logging.basicConfig(level=logging.DEBUG)
-    
+        import os
+        os.environ["JAGABOT_VERBOSE"] = "1"
+
     console.print(f"{__logo__} Starting jagabot gateway on ws://0.0.0.0:{port}")
     
     config = load_config()
@@ -550,6 +552,7 @@ def agent(
     session_id: str = typer.Option("cli:direct", "--session", "-s", help="Session ID"),
     markdown: bool = typer.Option(True, "--markdown/--no-markdown", help="Render assistant output as Markdown"),
     logs: bool = typer.Option(False, "--logs/--no-logs", help="Show jagabot runtime logs during chat"),
+    verbose: bool = typer.Option(False, "--verbose", "-v", help="Verbose reasoning output"),
     tui: bool = typer.Option(False, "--tui", help="Start persistent TUI mode with slash commands"),
 ):
     """Interact with the agent directly."""
@@ -557,16 +560,21 @@ def agent(
     from jagabot.bus.queue import MessageBus
     from jagabot.agent.loop import AgentLoop
     from loguru import logger
-    
+
     config = load_config()
-    
+
     bus = MessageBus()
     provider = _make_provider(config)
 
-    if logs:
+    if logs or verbose:
         logger.enable("jagabot")
     else:
         logger.disable("jagabot")
+
+    # Enable verbose reasoning tracker
+    if verbose:
+        import os
+        os.environ["JAGABOT_VERBOSE"] = "1"
     
     agent_loop = AgentLoop(
         bus=bus,
