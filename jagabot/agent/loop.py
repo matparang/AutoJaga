@@ -957,7 +957,11 @@ class AgentLoop:
         
         # Phase 4 — Means-End Analysis: for complex tasks enumerate approaches
         _fluid_profile = package.profile if 'package' in locals() else "SAFE_DEFAULT"
-        _is_complex = _fluid_profile in ("RESEARCH", "CALIBRATION", "VERIFICATION")
+        _complexity_level = _complexity.level if _complexity else "STANDARD"
+        _is_complex = (
+            _fluid_profile in ("RESEARCH", "CALIBRATION", "VERIFICATION")
+            and _complexity_level not in ("SIMPLE",)  # skip for simple queries
+        )
         if _is_complex and self.cognitive_stack and self.bdi_tracker:
             try:
                 _mea_prompt = (
