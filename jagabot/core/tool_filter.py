@@ -27,6 +27,7 @@ ALWAYS_SEND: set[str] = {
     "yahoo_finance",
     "web_search_mcp",
     "memory_fleet",
+    "fuzzy_search",
     "read_file",
     "self_model_awareness",
 }
