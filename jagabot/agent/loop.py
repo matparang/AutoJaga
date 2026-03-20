@@ -933,7 +933,7 @@ class AgentLoop:
                 logger.debug(f"StakeEscalation failed: {_se_err}")
 
         # Inject compressed context summary for long sessions
-        if self.context_compressor.turn_count >= 10:
+        if self.context_compressor.turn_count >= 5:
             compressed = self.context_compressor.get_compressed_context()
             if compressed and messages and messages[0].get("role") == "system":
                 messages[0]["content"] += (
