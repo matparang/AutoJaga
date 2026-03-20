@@ -911,10 +911,10 @@ class AgentLoop:
         if self.mistake_analyzer and messages:
             try:
                 _warnings = self.mistake_analyzer.get_warnings_for_query(msg.content)
-                if _warnings and messages[0].get("role") == "system":
+                if _warnings:
                     _warn_text = "\n[MISTAKE WARNINGS]\n" + "\n".join(_warnings)
-                    if "[MISTAKE WARNINGS]" not in messages[0]["content"]:
-                        messages[0]["content"] += _warn_text
+                    if messages[-1].get("role") == "user":
+                        messages[-1]["content"] += _warn_text
                     logger.debug(f"MistakeAnalyzer: injected {len(_warnings)} warning(s)")
                 # Process any new wrong outcomes
                 self.mistake_analyzer.process_new_wrong_outcomes()
@@ -926,8 +926,8 @@ class AgentLoop:
             try:
                 _stake = self.stake_escalation.assess(msg.content)
                 if _stake.level in ("HIGH", "CATASTROPHIC") and _stake.instruction:
-                    if messages[0].get("role") == "system":
-                        messages[0]["content"] += _stake.instruction
+                    if messages[-1].get("role") == "user":
+                        messages[-1]["content"] += _stake.instruction
                     logger.info(f"StakeEscalation: {_stake.level} — injected instruction")
             except Exception as _se_err:
                 logger.debug(f"StakeEscalation failed: {_se_err}")
@@ -935,8 +935,8 @@ class AgentLoop:
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 5:
             compressed = self.context_compressor.get_compressed_context()
-            if compressed and messages and messages[0].get("role") == "system":
-                messages[0]["content"] += (
+            if compressed and messages and messages[-1].get("role") == "user":
+                messages[-1]["content"] += (
                     "\n\n--- Conversation history summary ---\n" + compressed
                 )
         
@@ -979,8 +979,8 @@ class AgentLoop:
                 if _approach_count >= 2:
                     self.bdi_tracker.record_means_end(_approach_count)
                     # Inject selected approach into context
-                    if messages and messages[0].get("role") == "system":
-                        messages[0]["content"] += (
+                    if messages and messages[-1].get("role") == "user":
+                        messages[-1]["content"] += (
                             f"\n\n[Means-End Analysis]\n{_mea_text}"
                         )
                     logger.info(f"Means-End: {_approach_count} approaches considered")
@@ -1645,14 +1645,13 @@ class AgentLoop:
             if self.task_state and tools_used and messages:
                 _state_summary = self.task_state.get_state_summary()
                 _phase_instr   = self.task_state.get_phase_instruction()
-                if _state_summary and messages[0].get("role") == "system":
+                if _state_summary and messages[-1].get("role") == "user":
                     _state_injection = f"\n[TURN STATE] {_state_summary} {_phase_instr}"
-                    if "[TURN STATE]" not in messages[0]["content"]:
-                        messages[0]["content"] += _state_injection
+                    if "[TURN STATE]" not in messages[-1]["content"]:
+                        messages[-1]["content"] += _state_injection
                     else:
-                        # Update existing state injection
                         import re as _re
-                        messages[0]["content"] = _re.sub(
+                        messages[-1]["content"] = _re.sub(
                             r"\[TURN STATE\].*$",
                             f"[TURN STATE] {_state_summary} {_phase_instr}",
                             messages[0]["content"],
