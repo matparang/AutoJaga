@@ -2100,7 +2100,12 @@ class AgentLoop:
             tools = f" [tools: {', '.join(m['tools_used'])}]" if m.get("tools_used") else ""
             lines.append(f"[{m.get('timestamp', '?')[:16]}] {m['role'].upper()}{tools}: {content}")
         conversation = "\n".join(lines)
+        # Truncate to prevent JSON truncation in LLM response
+        if len(conversation) > 3000:
+            conversation = conversation[:3000] + "\n... [truncated]"
         current_memory = memory.read_long_term()
+        if current_memory and len(current_memory) > 1000:
+            current_memory = current_memory[:1000] + "\n... [truncated]"
 
         prompt = f"""You are a memory consolidation agent. Process this conversation and return a JSON object with exactly two keys:
 
