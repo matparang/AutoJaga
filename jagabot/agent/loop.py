@@ -895,17 +895,18 @@ class AgentLoop:
             channel=msg.channel,
             chat_id=msg.chat_id,
         )
+        if _complexity:
             logger.debug(
                 f"Complexity: {_complexity.level} "
                 f"(max_tools={_complexity.max_tools}, "
                 f"concise={_complexity.concise})"
             )
             # Inject concise instruction for simple queries
-            if _complexity.concise and messages and messages[0].get("role") == "system":
+            if _complexity.concise and messages and messages[-1].get("role") == "user":
                 from jagabot.core.complexity_router import get_concise_instruction
                 _ci = get_concise_instruction(_complexity.level)
-                if _ci and _ci not in messages[0]["content"]:
-                    messages[0]["content"] += _ci
+                if _ci and _ci not in messages[-1]["content"]:
+                    messages[-1]["content"] += _ci
 
         # Symbolic expansion — expand any symbols in system message
         if self.symbolic_mapper and messages:
