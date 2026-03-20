@@ -573,6 +573,7 @@ class EnhancedCLI:
                     provider=provider,
                     workspace=self.workspace,
                     model=config.agents.defaults.model,
+                    memory_window=config.agents.defaults.memory_window,
                 )
                 console.print("[jagabot.dim]Agent initialized...[/]")
             except Exception as e:
