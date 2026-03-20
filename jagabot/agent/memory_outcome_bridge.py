@@ -287,12 +287,14 @@ class MemoryOutcomeBridge:
 
             delta = CONFIDENCE_DELTA.get(result, 0)
 
-            # Tools have async execute(), not call()
+            # Run in separate thread to avoid event loop conflict
             import asyncio
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            try:
-                loop.run_until_complete(tool.execute(
+            import threading
+
+            _success = [False]
+
+            async def _run():
+                await tool.execute(
                     action="update_node_confidence",
                     topic=topic_tag,
                     conclusion=conclusion[:100],
@@ -300,10 +302,21 @@ class MemoryOutcomeBridge:
                     verified=result != "pending",
                     result=result,
                     timestamp=datetime.now().isoformat(),
-                ))
-            finally:
-                loop.close()
-            return True
+                )
+                _success[0] = True
+
+            def _thread_run():
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                try:
+                    loop.run_until_complete(_run())
+                finally:
+                    loop.close()
+
+            t = threading.Thread(target=_thread_run, daemon=True)
+            t.start()
+            t.join(timeout=3.0)
+            return _success[0]
 
         except Exception as e:
             logger.debug(f"Fractal update failed: {e}")
