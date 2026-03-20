@@ -65,6 +65,7 @@ def register_default_tools(
     from jagabot.agent.tools.self_improver import SelfImproverTool
     from jagabot.agent.tools.portfolio_analyzer import PortfolioAnalyzerTool
     from jagabot.agent.tools.memory_fleet import MemoryFleetTool
+    from jagabot.agent.tools.fuzzy_search import FuzzySearchTool
     from jagabot.agent.tools.knowledge_graph import KnowledgeGraphTool
     from jagabot.agent.tools.evaluation import EvaluationTool
     from jagabot.agent.tools.k1_bayesian import K1BayesianTool
@@ -181,6 +182,7 @@ def register_default_tools(
 
     # v3.0 Phase 1 — Engine extraction tools
     registry.register(MemoryFleetTool())
+    registry.register(FuzzySearchTool())
     registry.register(KnowledgeGraphTool())
     registry.register(EvaluationTool())
 

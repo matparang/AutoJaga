@@ -56,7 +56,7 @@ TOOL_RELEVANCE = {
         "web_search_mcp",  # Real-time web search via MCP
     ],
     "memory": [
-        "memory_fleet", "knowledge_graph",
+        "memory_fleet", "fuzzy_search", "knowledge_graph",
     ],
     "learning": [
         "meta_learning", "k1_bayesian", "k3_perspective",
@@ -102,7 +102,9 @@ SIGNAL_TO_TOPIC = {
     "code":      ["code", "script", "python", "function",
                   "calculate", "compute", "run", "exec"],
     "memory":    ["remember", "recall", "history", "past",
-                  "previous", "memory", "what did"],
+                  "previous", "memory", "what did", "find in", "search"],
+    "research":  ["fuzzy_search", "web_search", "web_fetch", "researcher",
+                  "study", "investigate", "analyze", "research"],
     "learning":  ["calibration", "accuracy", "improve",
                   "self-improvement", "loop", "outcome"],
 }
