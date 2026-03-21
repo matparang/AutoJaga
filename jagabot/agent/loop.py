@@ -482,6 +482,18 @@ class AgentLoop:
         )
         logger.info(f"CuriosityEngine initialized")
 
+        # LatentReasoning (uncertainty tracking via entropy)
+        from jagabot.core.latent_reasoning import LatentReasoning
+        self.latent = LatentReasoning(
+            workspace=workspace,
+            hypothesis_engine=getattr(self, 'hypothesis_engine', None),
+            brier_scorer=getattr(self, 'brier', None),
+            belief_engine=getattr(self, 'belief_engine', None),
+            curiosity=self.curiosity,  # Wire curiosity for gap enrichment
+            config=config.get('latent_reasoning', {}) if config else {},
+        )
+        logger.info(f"LatentReasoning initialized with curiosity={self.latent.curiosity is not None}")
+
         # ConfidenceEngine (structured uncertainty communication)
         from jagabot.engines.confidence_engine import ConfidenceEngine
         self.confidence_engine = ConfidenceEngine(

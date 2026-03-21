@@ -108,7 +108,7 @@ HARNESS_PROFILES = {
         "description":   "Web research, synthesis, exploration",
         "engines":       ["librarian", "curiosity_engine",
                           "self_model", "brier_scorer",
-                          "k3_perspective"],  # ADDED: adversarial for all domains
+                          "k3_perspective", "latent_reasoning"],  # ADDED: latent_reasoning for uncertainty tracking
         "tools":         ["web_search", "web_fetch", "researcher",
                           "memory_fleet", "read_file",
                           "k1_bayesian", "write_file",

@@ -583,10 +583,41 @@ class CognitiveStack:
                 reasoning="stub plan"
             )
 
+        # Latent enrichment: add uncertainty context to planner
+        latent_context = ""
+        runner_latent = getattr(agent_runner, 'latent', None)
+        if runner_latent:
+            try:
+                import asyncio
+                # Check if we're in an async context
+                try:
+                    asyncio.get_running_loop()
+                    # Async context - can await
+                    latent_state = await runner_latent.reason(
+                        query=query[:200],
+                        context=context[:300],
+                        runner=agent_runner,
+                        force_depth=1,  # quick pass — just entropy check
+                    )
+                    if latent_state.entropy > 0.6:
+                        latent_context = (
+                            f"\n\nUncertainty analysis:\n"
+                            f"Entropy: {latent_state.entropy:.3f} (HIGH)\n"
+                            f"Top hypothesis: {latent_state.best.text[:100] if latent_state.best else 'none'}\n"
+                            f"Confidence: {latent_state.best.confidence:.0% if latent_state.best else 'unknown'}\n"
+                        )
+                        if latent_state.clarify_question:
+                            latent_context += f"Clarifying question: {latent_state.clarify_question}\n"
+                except RuntimeError:
+                    # No running loop - skip latent enrichment
+                    pass
+            except Exception as e:
+                logger.debug(f"Latent enrichment failed: {e}")
+
         try:
             prompt = PLANNER_PROMPT.format(
-                query   = query[:300],
-                context = context[:500],
+                query=query[:300],
+                context=context[:500] + latent_context,
             )
             response = await self._call_model(
                 model        = self.model2_id,

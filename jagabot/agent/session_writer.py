@@ -192,6 +192,7 @@ class SessionWriter:
         tools_used: list | None = None,
         session_key: str = "unknown",
         auditor_approved: bool = True,
+        latent_state: object = None,  # LatentReasoning output
         **kwargs,
     ) -> Path:
         """
@@ -216,6 +217,16 @@ class SessionWriter:
             quality = max(0.0, quality - penalty)
             logger.debug(f"Quality penalized by {penalty:.2f} ({_anomalies} anomalies) → {quality:.2f}")
         
+        # Boost quality if latent reasoning converged
+        if latent_state is not None:
+            if getattr(latent_state, 'converged', False):
+                quality = min(1.0, quality + 0.05)
+                logger.debug(f"Quality boosted for converged latent reasoning → {quality:.2f}")
+            # Penalize slightly for very high entropy (uncertain responses are lower quality)
+            if getattr(latent_state, 'entropy', 0) > 0.8:
+                quality = max(0.0, quality - 0.05)
+                logger.debug(f"Quality penalized for high entropy → {quality:.2f}")
+        
         # Store for loop.py reliability note
         self._last_quality = quality
         
@@ -229,7 +240,7 @@ class SessionWriter:
         folder = self._make_folder(timestamp, query)
         self._write_report(folder, content, query, timestamp, session_key)
         self._write_meta(folder, query, tools_used, session_key,
-                         timestamp, quality, label)
+                         timestamp, quality, label, latent_state)
         if tools_used:
             self._write_tools_log(folder, tools_used)
 
@@ -297,7 +308,7 @@ class SessionWriter:
         (folder / "report.md").write_text(header + content, encoding="utf-8")
 
     def _write_meta(self, folder, query, tools_used, session_key,
-                    timestamp, quality, label):
+                    timestamp, quality, label, latent_state=None):
         meta = {
             "timestamp": timestamp.isoformat(),
             "session_key": session_key,
@@ -312,6 +323,13 @@ class SessionWriter:
                 "auto_recorded": quality >= AUTO_RECORD_THRESHOLD,
             }
         }
+        # Add latent reasoning metadata if available
+        if latent_state is not None:
+            meta["latent_entropy"] = getattr(latent_state, 'entropy', None)
+            meta["latent_converged"] = getattr(latent_state, 'converged', None)
+            meta["latent_depth"] = getattr(latent_state, 'depth_reached', None)
+            meta["latent_curiosity_gap"] = getattr(latent_state, 'curiosity_gap', None)
+        
         (folder / "meta.json").write_text(
             json.dumps(meta, indent=2), encoding="utf-8"
         )

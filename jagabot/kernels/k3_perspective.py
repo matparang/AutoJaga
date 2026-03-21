@@ -254,11 +254,44 @@ class K3MultiPerspective:
                       [("bull", bull), ("bear", bear), ("buffet", buffet)] if "error" in r}
             return {"error": "Perspective failure", "details": errors}
 
+        # Latent Reasoning enrichment: compute entropy across perspectives
+        try:
+            from jagabot.core.latent_reasoning import Hypothesis, _calculate_entropy
+            
+            # Convert perspectives to hypotheses for entropy calculation
+            perspective_hypotheses = [
+                Hypothesis(
+                    text=f"{name}: {result.get('verdict', '')}",
+                    confidence=float(result.get('confidence', 0.5)),
+                    source=name,
+                )
+                for name, result in [("bull", bull), ("bear", bear), ("buffet", buffet)]
+            ]
+            
+            # Compute entropy
+            entropy = _calculate_entropy(perspective_hypotheses)
+            
+            # Add entropy and disagreement to each perspective result
+            disagreement = "HIGH" if entropy > 0.7 else "MEDIUM" if entropy > 0.4 else "LOW"
+            for name, result in [("bull", bull), ("bear", bear), ("buffet", buffet)]:
+                result["perspective_entropy"] = round(entropy, 4)
+                result["disagreement"] = disagreement
+            
+        except Exception as e:
+            # Latent reasoning optional — don't break k3
+            pass
+        
         weights_info = self.get_weights()
         weights = weights_info["weights"]
 
         collapsed = collapse_perspectives(bull, bear, buffet, weights=weights)
         collapsed["weights_calibrated"] = weights_info.get("calibrated", False)
+        # Also include entropy in collapsed output
+        try:
+            collapsed["perspective_entropy"] = bull.get("perspective_entropy", 0.0)
+            collapsed["disagreement"] = bull.get("disagreement", "LOW")
+        except Exception:
+            pass
         return collapsed
 
     def get_accuracy_stats(self) -> Dict[str, Any]:
