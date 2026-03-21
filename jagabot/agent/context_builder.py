@@ -56,7 +56,7 @@ TOOL_RELEVANCE = {
         "web_search_mcp",  # Real-time web search via MCP
     ],
     "memory": [
-        "memory_fleet", "fuzzy_search", "knowledge_graph",
+        "memory_fleet", "fuzzy_search", "knowledge_graph", "inference",
     ],
     "learning": [
         "meta_learning", "k1_bayesian", "k3_perspective",
@@ -64,9 +64,10 @@ TOOL_RELEVANCE = {
     ],
     "causal": [
         "statistical_engine", "bayesian_reasoner",
-        "counterfactual_sim", "exec",
+        "counterfactual_sim", "exec", "inference",
     ],
     "ideas": [
+        "tri_agent", "quad_agent", "debate",
         "tri_agent", "quad_agent", "debate",
         "k3_perspective", "meta_learning",
     ],
@@ -84,6 +85,9 @@ TOOL_RELEVANCE = {
     "parallel": [
         "spawn", "subagent",
     ],
+    "reasoning": [
+        "inference", "knowledge_graph", "fuzzy_search",
+    ],
 }
 
 # Maps query signals to topics
@@ -94,7 +98,7 @@ SIGNAL_TO_TOPIC = {
     "research":  ["research", "hypothesis", "study", "paper",
                   "quantum", "literature", "experiment"],
     "causal":    ["ipw", "causal", "confounder", "ate",
-                  "propensity", "regression"],
+                  "propensity", "regression", "inference", "logical"],
     "healthcare":["hospital", "patient", "clinical", "hipaa",
                   "counselor", "mental health", "therapy"],
     "ideas":     ["idea", "brainstorm", "creative", "novel",
@@ -102,11 +106,13 @@ SIGNAL_TO_TOPIC = {
     "code":      ["code", "script", "python", "function",
                   "calculate", "compute", "run", "exec"],
     "memory":    ["remember", "recall", "history", "past",
-                  "previous", "memory", "what did", "find in", "search"],
+                  "previous", "memory", "what did", "find in", "search", "fact"],
     "research":  ["fuzzy_search", "web_search", "web_fetch", "researcher",
-                  "study", "investigate", "analyze", "research"],
+                  "study", "investigate", "analyze", "research", "infer", "derive"],
     "learning":  ["calibration", "accuracy", "improve",
                   "self-improvement", "loop", "outcome"],
+    "reasoning": ["inference", "logical", "chain", "implies", "causes",
+                  "deduce", "reasoning chain", "multi-hop", "fact"],
 }
 
 # Export for tool_filter.py
