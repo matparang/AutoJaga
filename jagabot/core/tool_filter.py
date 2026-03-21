@@ -28,6 +28,7 @@ ALWAYS_SEND: set[str] = {
     "web_search_mcp",
     "memory_fleet",
     "fuzzy_search",
+    "inference",
     "read_file",
     "self_model_awareness",
 }
