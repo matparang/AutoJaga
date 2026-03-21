@@ -93,21 +93,34 @@ def get_search_paths() -> list[Path]:
         Path("/root/.jagabot/memory"),
         Path("/root/nanojaga/jagabot/skills"),
     ]
+    MAX_FILE_SIZE = 50_000  # 50KB limit — skip massive files like HISTORY.md
     for d in search_dirs:
         if not d.exists():
             continue
         if d.name == "skills":
             for skill_md in d.rglob("SKILL.md"):
-                paths.append(skill_md)
+                try:
+                    if skill_md.stat().st_size <= MAX_FILE_SIZE:
+                        paths.append(skill_md)
+                except OSError:
+                    pass
         else:
             for md in d.glob("*.md"):
-                paths.append(md)
+                try:
+                    if md.stat().st_size <= MAX_FILE_SIZE:
+                        paths.append(md)
+                except OSError:
+                    pass
 
     # Research output — each session is a folder with report.md
     research_dir = Path("/root/research_output")
     if research_dir.exists():
         for report in research_dir.rglob("report.md"):
-            paths.append(report)
+            try:
+                if report.stat().st_size <= MAX_FILE_SIZE:
+                    paths.append(report)
+            except OSError:
+                pass
 
     return paths
 

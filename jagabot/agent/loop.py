@@ -1982,6 +1982,26 @@ class AgentLoop:
                     if self.rep_guard.is_repeat(tool_call.name, tool_call.arguments):
                         cached = self.rep_guard.get_cached(tool_call.name, tool_call.arguments)
                         logger.debug(f"RepetitionGuard: skipping repeat {tool_call.name}")
+                        # Circuit breaker: if 3+ consecutive blocked calls, break loop
+                        _consecutive_blocked = getattr(self, '_consecutive_blocked', 0) + 1
+                        self._consecutive_blocked = _consecutive_blocked
+                        if _consecutive_blocked >= 3:
+                            logger.warning(
+                                f"RepetitionGuard: {_consecutive_blocked} consecutive blocked calls "
+                                f"— breaking loop to prevent infinite retry"
+                            )
+                            final_content = (
+                                "I was unable to access the files needed to complete this task — "
+                                "they have already been read this session. "
+                                "Please try /new to start a fresh session, or ask me to use "
+                                "the information already in context."
+                            )
+                            self._consecutive_blocked = 0
+                            # Return cached result and break
+                            messages = self.context.add_tool_result(
+                                messages, tool_call.id, tool_call.name, cached,
+                            )
+                            break
                         # Return cached result instead of re-executing
                         messages = self.context.add_tool_result(
                             messages, tool_call.id, tool_call.name, cached,
@@ -2161,6 +2181,7 @@ class AgentLoop:
                         result = result + error_analysis_prompt
                     else:
                         _consecutive_failures[tool_call.name] = 0
+                        self._consecutive_blocked = 0  # reset on success
 
                     messages = self.context.add_tool_result(
                         messages, tool_call.id, tool_call.name, result,
