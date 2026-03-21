@@ -32,6 +32,7 @@ class ReadFileTool(Tool):
         Path("/tmp"),
         Path("/root/.jagabot"),
         Path("/root/nanojaga"),
+        Path("/root/memory"),  # Allow memory reads even with restrict_to_workspace
     ]
     
     def __init__(self, allowed_dir: Path | None = None, extra_read_dirs: list[Path] | None = None):
@@ -87,6 +88,7 @@ class WriteFileTool(Tool):
         Path("/tmp"),
         Path("/root/.jagabot"),
         Path("/root/nanojaga"),
+        Path("/root/memory"),  # Allow memory writes even with restrict_to_workspace
     ]
     
     def __init__(self, allowed_dir: Path | None = None, extra_write_dirs: list[Path] | None = None):
@@ -145,11 +147,12 @@ class WriteFileTool(Tool):
 
 class EditFileTool(Tool):
     """Tool to edit a file by replacing text."""
-    
+
     DEFAULT_EXTRA_WRITE = [
         Path("/tmp"),
         Path("/root/.jagabot"),
         Path("/root/nanojaga"),
+        Path("/root/memory"),  # Allow memory edits even with restrict_to_workspace
     ]
     
     def __init__(self, allowed_dir: Path | None = None, extra_write_dirs: list[Path] | None = None):
