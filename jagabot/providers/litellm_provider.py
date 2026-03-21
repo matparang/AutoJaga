@@ -239,7 +239,48 @@ class LiteLLMProvider(LLMProvider):
             
             return self._parse_response(response)
         except Exception as e:
-            # Return error as content for graceful handling
+            error_str = str(e)
+            if "RateLimitError" in error_str or "rate_limit" in error_str.lower():
+                import time
+                import re
+                wait_seconds = 5
+                # Extract wait time from error if available
+                wait_match = re.search(r'try again in (\d+)ms', error_str)
+                if wait_match:
+                    wait_seconds = max(1, int(wait_match.group(1)) / 1000 + 1)
+                logger.warning(f"Rate limit hit — waiting {wait_seconds:.1f}s then retrying...")
+                time.sleep(wait_seconds)
+                try:
+                    # One retry after backoff
+                    if self._is_openrouter:
+                        openrouter_key = os.getenv("OPENROUTER_API_KEY") or self.api_key
+                        from openai import AsyncOpenAI
+                        client = AsyncOpenAI(
+                            base_url="https://openrouter.ai/api/v1",
+                            api_key=openrouter_key,
+                            default_headers={
+                                "HTTP-Referer": "https://github.com/jagabot",
+                                "X-Title": "jagabot",
+                            }
+                        )
+                        model_name = kwargs["model"].replace("openrouter/", "").replace("openai/", "")
+                        response = await client.chat.completions.create(
+                            model=model_name,
+                            messages=kwargs["messages"],
+                            max_tokens=kwargs.get("max_tokens", 4096),
+                            temperature=kwargs.get("temperature", 0.7),
+                            tools=kwargs.get("tools"),
+                            tool_choice="auto" if kwargs.get("tools") else None,
+                        )
+                    else:
+                        response = await acompletion(**kwargs)
+                    return self._parse_response(response)
+                except Exception as retry_err:
+                    logger.error(f"Retry also failed: {retry_err}")
+                    return LLMResponse(
+                        content=f"Error calling LLM (retry failed): {str(retry_err)}",
+                        finish_reason="error",
+                    )
             logger.error(f"LLM call failed: {e}")
             return LLMResponse(
                 content=f"Error calling LLM: {str(e)}",

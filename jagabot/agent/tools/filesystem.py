@@ -68,6 +68,11 @@ class ReadFileTool(Tool):
                 return f"Error: Not a file: {path}"
             
             content = file_path.read_text(encoding="utf-8")
+            # Hard cap — prevent massive files flooding context
+            MAX_CHARS = 8000
+            if len(content) > MAX_CHARS:
+                content = content[:MAX_CHARS]
+                content += f"\n\n[FILE TRUNCATED — showing first {MAX_CHARS} chars of {path}. Use fuzzy_search to find specific sections.]"
             return content
         except PermissionError as e:
             return f"Error: {e}"
