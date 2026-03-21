@@ -138,6 +138,24 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Output contract enforcer
+        try:
+            from jagabot.core.output_contract import OutputContractEnforcer
+            self.contract_enforcer = OutputContractEnforcer()
+            logger.info("OutputContractEnforcer initialized")
+        except Exception as _oc_err:
+            logger.warning(f"OutputContractEnforcer init failed: {_oc_err}")
+            self.contract_enforcer = None
+
+        # Turn state tracker
+        try:
+            from jagabot.core.turn_state_tracker import TurnStateTracker
+            self.turn_state = TurnStateTracker()
+            logger.info("TurnStateTracker initialized")
+        except Exception as _ts_err:
+            logger.warning(f"TurnStateTracker init failed: {_ts_err}")
+            self.turn_state = None
+
         # Task decomposer — classifies tasks before answer generation
         try:
             from jagabot.core.task_decomposer import decompose as _decompose_task
@@ -888,6 +906,8 @@ class AgentLoop:
             await self._consolidate_memory(session, archive_all=True)
             session.clear()
             self.sessions.save(session)
+            if self.turn_state:
+                self.turn_state.reset()
             return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id,
                                   content="🐈 New session started. Memory consolidated.")
         if cmd == "/help":
@@ -1023,6 +1043,15 @@ class AgentLoop:
                 )
             except Exception as _td_err:
                 logger.debug(f"TaskDecomposer injection failed: {_td_err}")
+
+        # Inject turn state — prevents drift across turns
+        if self.turn_state and messages:
+            try:
+                _state_injection = self.turn_state.get_injection()
+                if _state_injection and messages[-1].get("role") == "user":
+                    messages[-1]["content"] += _state_injection
+            except Exception:
+                pass
 
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 5:
@@ -1447,6 +1476,35 @@ class AgentLoop:
                     intention_state=_intention_state,
                 )
                 self.bdi_tracker.record(_bdi)
+
+                # Output contract verification
+                if self.contract_enforcer and final_content and '_decomp' in dir():
+                    try:
+                        _contract_result = self.contract_enforcer.verify(
+                            response     = final_content,
+                            domain       = getattr(_decomp, 'domain', 'general'),
+                            task_type    = getattr(_decomp, 'task_type', 'analysis'),
+                            contract_fields = getattr(_decomp, 'output_contract', None),
+                        )
+                        if not _contract_result.passed:
+                            logger.warning(
+                                f"OutputContract: {_contract_result.score:.0%} compliance "
+                                f"— missing: {_contract_result.missing}"
+                            )
+                    except Exception:
+                        pass
+
+                # Update turn state
+                if self.turn_state and final_content:
+                    try:
+                        _ts_domain = getattr(_decomp, 'domain', 'general') if '_decomp' in dir() else 'general'
+                        self.turn_state.update(
+                            query    = msg.content,
+                            response = final_content[:500],
+                            domain   = _ts_domain,
+                        )
+                    except Exception:
+                        pass
 
                 # Record to performance tracker
                 if self.perf_tracker:
