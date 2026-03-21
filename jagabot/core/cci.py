@@ -44,6 +44,7 @@ TOOL_INDEX: list[ToolEntry] = [
     ToolEntry("T19", "k1_bayesian",       ["bayesian","prior","posterior","belief","probability"],          "MED",  "Bayesian belief update"),
     ToolEntry("T20", "challenge",         ["challenge","calibrate","quiz","test","question"],                "LOW",  "Calibration challenge"),
     ToolEntry("T21", "fuzzy_search",      ["past","previous","recall","history","search","find in memory","skill","protocol"], "LOW", "Search jagabot markdown files"),
+    ToolEntry("T22", "inference",         ["infer","logical","chain","fact","implies","causes","derive","deduce"], "MED", "Multi-hop logical inference engine"),
 ]
 
 
