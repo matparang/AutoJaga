@@ -1477,28 +1477,37 @@ class AgentLoop:
                 )
                 self.bdi_tracker.record(_bdi)
 
-                # Output contract verification — skip for tool operations
+                # Output contract verification — only for domain-specific analysis
                 if self.contract_enforcer and final_content and '_decomp' in dir():
                     try:
-                        # Skip contract check for tool operation queries
-                        _skip_contract = any(w in msg.content.lower() for w in [
-                            "add_fact", "infer_all", "inference tool",
-                            "use the inference", "use inference",
-                            "add these facts", "store this fact",
-                        ])
-                        if _skip_contract:
-                            raise Exception("skip")
-                        _contract_result = self.contract_enforcer.verify(
-                            response     = final_content,
-                            domain       = getattr(_decomp, 'domain', 'general'),
-                            task_type    = getattr(_decomp, 'task_type', 'analysis'),
-                            contract_fields = getattr(_decomp, 'output_contract', None),
+                        _decomp_domain = getattr(_decomp, 'domain', 'general')
+                        _decomp_task   = getattr(_decomp, 'task_type', 'analysis')
+                        # Only enforce contracts for financial/risk/operations analysis
+                        _apply_contract = (
+                            _decomp_domain in ('financial', 'risk', 'operations') and
+                            _decomp_task in ('analysis', 'diagnosis', 'recommendation') and
+                            _complexity_level not in ('SIMPLE', 'STANDARD') and
+                            not any(w in msg.content.lower() for w in [
+                                'add_fact', 'infer_all', 'inference', 'add fact',
+                                'search', 'find', 'recall', 'remember',
+                            ])
                         )
-                        if not _contract_result.passed:
-                            logger.warning(
-                                f"OutputContract: {_contract_result.score:.0%} compliance "
-                                f"— missing: {_contract_result.missing}"
+                        if _apply_contract:
+                            _contract_result = self.contract_enforcer.verify(
+                                response     = final_content,
+                                domain       = _decomp_domain,
+                                task_type    = _decomp_task,
+                                contract_fields = getattr(_decomp, 'output_contract', None),
                             )
+                            if not _contract_result.passed:
+                                logger.warning(
+                                    f"OutputContract: {_contract_result.score:.0%} compliance "
+                                    f"— missing: {_contract_result.missing}"
+                                )
+                            else:
+                                logger.debug(
+                                    f"OutputContract: {_contract_result.score:.0%} compliance ✅"
+                                )
                     except Exception:
                         pass
 
