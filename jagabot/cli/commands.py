@@ -556,9 +556,10 @@ def agent(
     tui: bool = typer.Option(False, "--tui", help="Start persistent TUI mode with slash commands"),
 ):
     """Interact with the agent directly."""
-    from jagabot.config.loader import load_config
+    from jagabot.config.loader import load_config, get_data_dir
     from jagabot.bus.queue import MessageBus
     from jagabot.agent.loop import AgentLoop
+    from jagabot.cron.service import CronService
     from loguru import logger
 
     config = load_config()
@@ -575,7 +576,11 @@ def agent(
     if verbose:
         import os
         os.environ["JAGABOT_VERBOSE"] = "1"
-    
+
+    # Initialize cron service
+    cron_store_path = get_data_dir() / "cron" / "jobs.json"
+    cron = CronService(cron_store_path)
+
     agent_loop = AgentLoop(
         bus=bus,
         provider=provider,
@@ -586,6 +591,7 @@ def agent(
         memory_window=config.agents.defaults.memory_window,
         brave_api_key=config.tools.web.search.api_key or None,
         exec_config=config.tools.exec,
+        cron_service=cron,
         restrict_to_workspace=config.tools.restrict_to_workspace,
     )
     
