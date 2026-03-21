@@ -490,7 +490,7 @@ class AgentLoop:
             brier_scorer=getattr(self, 'brier', None),
             belief_engine=getattr(self, 'belief_engine', None),
             curiosity=self.curiosity,  # Wire curiosity for gap enrichment
-            config=config.get('latent_reasoning', {}) if config else {},
+            config={},  # No config passed to agent() CLI command
         )
         logger.info(f"LatentReasoning initialized with curiosity={self.latent.curiosity is not None}")
 
