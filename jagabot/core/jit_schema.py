@@ -34,17 +34,21 @@ def make_stub_schema(full_schema: dict) -> dict:
     # Keep only first line of description
     short_desc = desc.split("\n")[0][:80].strip()
 
-    # Keep parameter names but strip descriptions
+    # Keep parameter names, types, enums, and required fields
+    # Strip only verbose descriptions
     fn_params = fn.get("parameters", {})
     props = fn_params.get("properties", {})
     slim_props = {}
     for param_name, param_def in props.items():
-        slim_props[param_name] = {
-            "type": param_def.get("type", "string"),
-            "enum": param_def["enum"] if "enum" in param_def else None,
-        }
-        # Remove None values
-        slim_props[param_name] = {k: v for k, v in slim_props[param_name].items() if v is not None}
+        slim = {"type": param_def.get("type", "string")}
+        # Always keep enum — critical for action-based tools
+        if "enum" in param_def:
+            slim["enum"] = param_def["enum"]
+        # Keep short descriptions (under 50 chars) — skip verbose ones
+        desc = param_def.get("description", "")
+        if desc and len(desc) <= 50:
+            slim["description"] = desc
+        slim_props[param_name] = slim
 
     return {
         "type": "function",
