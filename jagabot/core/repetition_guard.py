@@ -108,11 +108,19 @@ class RepetitionGuard:
         key = self._make_key(tool_name, tool_args)
         if key in self._session_calls:
             call = self._session_calls[key]
+            # Allow up to 3 calls before blocking (was 1)
+            # Legitimate use: read file → truncated → try different section
+            if call.call_count >= 3:
+                logger.debug(
+                    f"RepetitionGuard: {tool_name} already called "
+                    f"{call.call_count}x this session with same args — blocking"
+                )
+                return True
             logger.debug(
-                f"RepetitionGuard: {tool_name} already called "
-                f"{call.call_count}x this session with same args"
+                f"RepetitionGuard: {tool_name} called {call.call_count}x "
+                f"(max 3 before blocking)"
             )
-            return True
+            return False
 
         return False
 
