@@ -1282,6 +1282,9 @@ class AgentLoop:
                 continue
 
             # Execute each action in the plan deterministically
+            # Store results for later display
+            action_results = {}  # idx -> result_str
+            
             for idx, action in enumerate(plan_json):
                 if not isinstance(action, dict) or "tool" not in action:
                     logger.warning(f"Skipping invalid plan entry at index {idx}: {action}")
@@ -1312,6 +1315,9 @@ class AgentLoop:
                     logger.exception(err)
                     self.harness.fail(h_id, str(exc)[:200])
                     result_str = err
+
+                # Store result for later display
+                action_results[idx] = result_str
 
                 # Create a synthetic tool_call_id for history
                 tool_call_id = f"plan:{int(time.time()*1000)}:{_audit_pass}:{idx}"
@@ -1374,10 +1380,15 @@ class AgentLoop:
                     execution_results.append((tool_name, args, "read"))
                     tool_outputs.append(f"📄 Read {file_path} (see content above)")
                 elif tool_name == "exec":
-                    # For exec, show the command
+                    # For exec, show the actual output
                     cmd = args.get("command", "")[:80]
                     execution_results.append((tool_name, args, "executed"))
-                    tool_outputs.append(f"⚙️ Executed: {cmd}...")
+                    # Use actual result from action_results if available
+                    actual_result = action_results.get(idx, "")
+                    if actual_result and not actual_result.startswith("Error"):
+                        tool_outputs.append(f"⚙️ Executed: {cmd}\n\n{actual_result}")
+                    else:
+                        tool_outputs.append(f"⚙️ Executed: {cmd}...")
                 else:
                     execution_results.append((tool_name, args, "executed"))
                     tool_outputs.append(f"✅ {tool_name} completed")
