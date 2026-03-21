@@ -252,7 +252,15 @@ class LiteLLMProvider(LLMProvider):
                 time.sleep(wait_seconds)
                 try:
                     # One retry after backoff
-                    if self._is_openrouter:
+                    # Check if OpenRouter (same logic as above)
+                    model = kwargs.get("model", "")
+                    is_openrouter_retry = (
+                        "openrouter" in model.lower() or
+                        "openrouter" in (self.api_base or "").lower() or
+                        (self._gateway and "openrouter" in (self._gateway.name or "").lower()) or
+                        bool(os.getenv("OPENROUTER_API_KEY"))
+                    )
+                    if is_openrouter_retry:
                         openrouter_key = os.getenv("OPENROUTER_API_KEY") or self.api_key
                         from openai import AsyncOpenAI
                         client = AsyncOpenAI(
@@ -263,7 +271,7 @@ class LiteLLMProvider(LLMProvider):
                                 "X-Title": "jagabot",
                             }
                         )
-                        model_name = kwargs["model"].replace("openrouter/", "").replace("openai/", "")
+                        model_name = model.replace("openrouter/", "").replace("openai/", "")
                         response = await client.chat.completions.create(
                             model=model_name,
                             messages=kwargs["messages"],
