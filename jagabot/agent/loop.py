@@ -1477,9 +1477,17 @@ class AgentLoop:
                 )
                 self.bdi_tracker.record(_bdi)
 
-                # Output contract verification
+                # Output contract verification — skip for tool operations
                 if self.contract_enforcer and final_content and '_decomp' in dir():
                     try:
+                        # Skip contract check for tool operation queries
+                        _skip_contract = any(w in msg.content.lower() for w in [
+                            "add_fact", "infer_all", "inference tool",
+                            "use the inference", "use inference",
+                            "add these facts", "store this fact",
+                        ])
+                        if _skip_contract:
+                            raise Exception("skip")
                         _contract_result = self.contract_enforcer.verify(
                             response     = final_content,
                             domain       = getattr(_decomp, 'domain', 'general'),
@@ -1824,12 +1832,15 @@ class AgentLoop:
             else:
                 tools_payload = get_tools_for_query(user_query, self.tools)
 
-            # Apply complexity limit
+            # Apply complexity limit — protect critical tools
+            _protected = {"inference", "fuzzy_search"}
             if hasattr(self, '_current_complexity') and self._current_complexity:
                 max_t = self._current_complexity.max_tools
                 if len(tools_payload) > max_t:
-                    tools_payload = tools_payload[:max_t]
-                    logger.debug(f"Complexity limit: {max_t} tools max")
+                    protected = [t for t in tools_payload if t.get("function", {}).get("name") in _protected]
+                    normal    = [t for t in tools_payload if t.get("function", {}).get("name") not in _protected]
+                    tools_payload = normal[:max_t - len(protected)] + protected
+                    logger.debug(f"Complexity limit: {max_t} tools max ({len(protected)} protected)")
 
             # JIT schema — send stubs instead of full schemas
             _jit = None
