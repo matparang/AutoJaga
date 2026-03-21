@@ -688,6 +688,65 @@ class OutcomeTracker:
         except Exception:
             return []
 
+    def _load_pending_only(self) -> list[dict]:
+        """
+        Load ONLY pending items from pending_outcomes.json.
+        Skips resolved items — reduces 89KB to relevant subset.
+        """
+        if not self.pending_file.exists():
+            return []
+        try:
+            data = json.loads(self.pending_file.read_text(encoding="utf-8"))
+            # Return only pending items
+            pending = [p for p in data if not p.get("verified", False)]
+            logger.debug(
+                f"OutcomeTracker: {len(pending)} pending "
+                f"of {len(data)} total outcomes"
+            )
+            return pending
+        except Exception as e:
+            logger.debug(f"pending_outcomes load failed: {e}")
+            return []
+
+    def archive_resolved_outcomes(self) -> int:
+        """
+        Move resolved outcomes to pending_outcomes_archive.json.
+        Keeps pending_outcomes.json lean.
+        Call this weekly or when file exceeds 50KB.
+        """
+        archive_file = self.workspace / "memory" / "pending_outcomes_archive.json"
+
+        if not self.pending_file.exists():
+            return 0
+
+        data = json.loads(self.pending_file.read_text(encoding="utf-8"))
+        pending = [p for p in data if not p.get("verified", False)]
+        resolved = [p for p in data if p.get("verified", False)]
+
+        if not resolved:
+            return 0
+
+        # Append to archive
+        existing_archive = []
+        if archive_file.exists():
+            existing_archive = json.loads(archive_file.read_text(encoding="utf-8"))
+        archive_file.write_text(
+            json.dumps(existing_archive + resolved, indent=2),
+            encoding="utf-8"
+        )
+
+        # Overwrite pending_outcomes.json with only pending items
+        self.pending_file.write_text(
+            json.dumps(pending, indent=2),
+            encoding="utf-8"
+        )
+
+        logger.info(
+            f"OutcomeTracker: archived {len(resolved)} resolved "
+            f"outcomes. Pending file now: {len(pending)} items."
+        )
+        return len(resolved)
+
     def _save_pending(self, outcome: PendingOutcome) -> None:
         pending = self._load_pending()
         pending.append(outcome)

@@ -67,7 +67,29 @@ class ReadFileTool(Tool):
                 return f"Error: File not found: {path}"
             if not file_path.is_file():
                 return f"Error: Not a file: {path}"
-            
+
+            # LARGE_FILES_REDIRECT — redirect to fuzzy_search for known large files
+            LARGE_FILES_REDIRECT = {
+                "MEMORY.md": True,
+                "HISTORY.md": True,
+                "pending_outcomes.json": False,  # JSON — different handling
+            }
+            file_name = file_path.name
+            if file_name in LARGE_FILES_REDIRECT and LARGE_FILES_REDIRECT[file_name]:
+                # Check actual file size
+                if file_path.stat().st_size > 8000:
+                    # Redirect to fuzzy_search with helpful message
+                    preview = file_path.read_text(encoding="utf-8")[:2000]
+                    return (
+                        f"[read_file redirected to fuzzy_search for {file_name} "
+                        f"({file_path.stat().st_size // 1024}KB)]\n\n"
+                        f"Use fuzzy_search(query='<your search term>', scope='memory') "
+                        f"to find specific content.\n"
+                        f"Or use memory_fleet(action='retrieve', topic='<topic>') "
+                        f"for structured access.\n\n"
+                        f"Showing first section only:\n{preview}"
+                    )
+
             content = file_path.read_text(encoding="utf-8")
             # Hard cap — prevent massive files flooding context
             MAX_CHARS = 8000

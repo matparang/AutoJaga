@@ -93,7 +93,7 @@ def get_search_paths() -> list[Path]:
         Path("/root/.jagabot/memory"),
         Path("/root/nanojaga/jagabot/skills"),
     ]
-    MAX_FILE_SIZE = 50_000  # 50KB limit — skip massive files like HISTORY.md
+    MAX_FILE_SIZE = 500_000  # 500KB limit — line-by-line search means file size doesn't affect context
     for d in search_dirs:
         if not d.exists():
             continue
