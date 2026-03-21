@@ -138,6 +138,18 @@ class AgentLoop:
             logger.warning(f"BDI Scorecard init failed: {_bdi_err}")
             self.bdi_tracker = None
 
+        # Task decomposer — classifies tasks before answer generation
+        try:
+            from jagabot.core.task_decomposer import decompose as _decompose_task
+            from jagabot.core.task_decomposer import build_injection as _build_decomp_injection
+            self._decompose_task = _decompose_task
+            self._build_decomp_injection = _build_decomp_injection
+            logger.info("TaskDecomposer initialized")
+        except Exception as _td_err:
+            logger.warning(f"TaskDecomposer init failed: {_td_err}")
+            self._decompose_task = None
+            self._build_decomp_injection = None
+
         # Engine correlation monitor
         try:
             from jagabot.core.engine_monitor import EngineCorrelationMonitor
@@ -994,6 +1006,23 @@ class AgentLoop:
                     logger.info(f"StakeEscalation: {_stake.level} — injected instruction")
             except Exception as _se_err:
                 logger.debug(f"StakeEscalation failed: {_se_err}")
+
+        # Task decomposition — inject before answer generation
+        if self._decompose_task and _complexity_level not in ("SIMPLE",):
+            try:
+                _decomp = self._decompose_task(
+                    msg.content,
+                    stake_level=_stake.level if 'stake' in dir() and hasattr(_stake, 'level') else None
+                )
+                _decomp_injection = self._build_decomp_injection(_decomp)
+                if messages and messages[-1].get("role") == "user":
+                    messages[-1]["content"] += _decomp_injection
+                logger.debug(
+                    f"TaskDecomposer: {_decomp.task_type}/{_decomp.domain} "
+                    f"→ {_decomp.reasoning_mode}"
+                )
+            except Exception as _td_err:
+                logger.debug(f"TaskDecomposer injection failed: {_td_err}")
 
         # Inject compressed context summary for long sessions
         if self.context_compressor.turn_count >= 5:
