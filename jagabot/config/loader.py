@@ -130,7 +130,15 @@ def _migrate_config(data: dict) -> dict:
             "extraHeaders": None
         }
         del data["providers"]["deepseek_key"]
-    
+
+    # Environment variables take precedence over config.json
+    import os
+    if os.getenv("DEEPSEEK_API_KEY"):
+        if "deepseek" not in data.get("providers", {}):
+            data["providers"]["deepseek"] = {}
+        data["providers"]["deepseek"]["apiKey"] = os.getenv("DEEPSEEK_API_KEY")
+        print("ℹ️ Using DEEPSEEK_API_KEY from environment (overrides config.json)")
+
     # Move tools.exec.restrictToWorkspace → tools.restrictToWorkspace
     tools = data.get("tools", {})
     exec_cfg = tools.get("exec", {})
