@@ -139,6 +139,12 @@ def _migrate_config(data: dict) -> dict:
         data["providers"]["deepseek"]["apiKey"] = os.getenv("DEEPSEEK_API_KEY")
         print("ℹ️ Using DEEPSEEK_API_KEY from environment (overrides config.json)")
 
+    if os.getenv("OPENAI_API_KEY"):
+        if "openai" not in data.get("providers", {}):
+            data["providers"]["openai"] = {}
+        data["providers"]["openai"]["apiKey"] = os.getenv("OPENAI_API_KEY")
+        print("ℹ️ Using OPENAI_API_KEY from environment (overrides config.json)")
+
     # Move tools.exec.restrictToWorkspace → tools.restrictToWorkspace
     tools = data.get("tools", {})
     exec_cfg = tools.get("exec", {})
