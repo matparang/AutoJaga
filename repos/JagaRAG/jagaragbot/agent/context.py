@@ -42,9 +42,9 @@ class ContextBuilder:
         system = platform.system()
         runtime = f"{'macOS' if system == 'Darwin' else system} {platform.machine()}, Python {platform.python_version()}"
         
-        return f"""# JagaChatbot 🐈
+        return f"""# JagaRAG 🐈
 
-You are JagaChatbot, a helpful AI assistant.
+You are JagaRAG, a retrieval-augmented AI assistant.
 
 ## Current Time
 {now} ({tz})
@@ -57,7 +57,8 @@ Your workspace is at: {workspace_path}
 - Long-term memory: {workspace_path}/memory/MEMORY.md
 - History log: {workspace_path}/memory/HISTORY.md (grep-searchable)
 
-Always be helpful, accurate, and concise. Think step by step when solving problems.
+Always ground your responses in retrieved documents when available.
+Cite your sources naturally when using retrieved information.
 When remembering something important, write to {workspace_path}/memory/MEMORY.md"""
     
     def build_messages(
