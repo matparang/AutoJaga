@@ -56,6 +56,7 @@ These packages **cannot** be installed via pip on Android because they require R
 ```bash
 pkg install -y python-aiohttp
 pkg install -y python-cryptography
+pkg install -y python-tokenizers
 ```
 
 ### Step 3 — Install Ollama
@@ -98,7 +99,11 @@ pip install --upgrade pip
 ### Step 6 — Install Python dependencies
 
 ```bash
-pip install -r ~/AutoJaga/Termux_deploy/requirements-termux.txt
+# Step 1: Install litellm WITHOUT its Rust dependencies
+pip install "litellm>=1.40.0,<1.76.1" --no-deps
+
+# Step 2: Install all other pure-Python/pre-built deps
+pip install -r ~/AutoJaga/Termux_deploy/requirements-termux.txt --prefer-binary
 ```
 
 ### Step 7 — Run health check
@@ -111,14 +116,20 @@ bash ~/AutoJaga/Termux_deploy/scripts/check_health.sh
 
 ## Troubleshooting
 
-### ❌ `pip install litellm` fails with Rust/cargo errors
+### ❌ `pip install litellm` fails with Rust/cargo errors (`fastuuid`, `tokenizers`, `tiktoken`)
 
-**Fix:** Pin litellm to a version before `fastuuid` was introduced:
+**Fix:** litellm >=1.76.1 requires `fastuuid` (Rust). litellm in ALL 1.x versions also requires
+`tiktoken` and `tokenizers` (both Rust). On Termux, use `--no-deps` for litellm and install
+tokenizers via pkg:
+
 ```bash
-pip install "litellm>=1.40.0,<1.76.1"
+pkg install python-tokenizers
+pip install "litellm>=1.40.0,<1.76.1" --no-deps
+pip install -r ~/AutoJaga/Termux_deploy/requirements-termux.txt --prefer-binary
 ```
 
-`fastuuid` (a Rust-compiled package) was introduced as a hard dependency in litellm v1.76.1. All versions below 1.76.1 are safe and do not require it. See: https://github.com/BerriAI/litellm/issues/14145. Do NOT use `--no-deps` — that strips litellm's required runtime dependencies and causes import errors.
+`tiktoken` is safe to skip — jagachatbot's `compressor.py` uses a char-count approximation
+(`len(str(messages)) // 4`) and never imports tiktoken.
 
 ---
 
