@@ -22,14 +22,13 @@ litellm>=1.40.0,<1.82.7
 # ── LiteLLM's required runtime deps ──────────────────────────────────────────
 # These are what litellm actually needs at runtime for OpenAI-style routing.
 # All have pre-built aarch64/pure-Python wheels — no Rust, no C compilation.
-openai>=1.0.0                    # openai-compatible HTTP client used by litellm
+openai>=1.0.0,<1.57.0              # openai-compatible HTTP client used by litellm
 httpx>=0.25.0                    # async HTTP — pure Python (no Rust)
 pydantic>=2.0.0                  # data validation — has aarch64 binary wheels
 python-dotenv>=1.0.0             # .env loading — pure Python
 typing-extensions>=4.8.0        # typing backports — pure Python
 anyio>=4.0.0                     # async primitives — pure Python
 certifi>=2024.0.0                # TLS certs — pure Python
-jiter>=0.4.0                     # fast JSON iter (openai dep) — has aarch64 wheels
 distro>=1.8.0                    # OS detection — pure Python
 sniffio>=1.3.0                   # async sniffing (anyio dep) — pure Python
 click>=8.1.0                     # CLI (typer dep) — pure Python
@@ -45,6 +44,7 @@ anthropic>=0.20.0                # only needed if using Claude via cloud API
 # fastuuid     — Rust; only present in poisoned litellm 1.82.7/1.82.8 anyway
 # tiktoken     — Rust; NOT imported anywhere in jagachatbot source code
 #                (compressor.py uses a plain char-count approximation instead)
+# jiter        — Rust; internal JSON optimization for openai>=1.57, avoided by pinning openai<1.57
 # uvloop       — C; not supported on Android kernel
 # tokenizers   — Rust; not used by jagachatbot
 # cryptography — C; install via: pkg install python-cryptography
