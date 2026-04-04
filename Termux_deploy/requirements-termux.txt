@@ -1,40 +1,51 @@
 # ============================================
-# JagaChatbot - Termux-safe requirements
-# Android aarch64, Python 3.13, no Rust deps
+# JagaChatbot — Termux-safe requirements
+# Android aarch64, Python 3.11+, no Rust deps
 # ============================================
-
-# Install these FIRST via Termux package manager
-# (do not install via pip — pip cannot compile them on Android):
+#
+# BEFORE running pip install, install these via the Termux package manager.
+# pip CANNOT compile these on Android (C/Rust toolchain issues):
+#
 #   pkg install python-aiohttp
 #   pkg install python-cryptography
-#   pkg install python-numpy
+#
+# Then install this file normally (no --no-deps needed):
+#   pip install -r requirements-termux.txt
+#
+# ============================================
 
-# Core LLM routing — no Rust deps
-# Install with: pip install litellm --no-deps
-litellm>=1.40.0
+# ── Core LLM routing ─────────────────────────────────────────────────────────
+# Pin to <1.82.7 to avoid the fastuuid supply-chain poisoning (1.82.7/1.82.8).
+# Do NOT use --no-deps; let pip resolve deps normally within this safe range.
+litellm>=1.40.0,<1.82.7
 
-# OpenAI client (LiteLLM dependency)
-openai>=1.0.0
+# ── LiteLLM's required runtime deps ──────────────────────────────────────────
+# These are what litellm actually needs at runtime for OpenAI-style routing.
+# All have pre-built aarch64/pure-Python wheels — no Rust, no C compilation.
+openai>=1.0.0                    # openai-compatible HTTP client used by litellm
+httpx>=0.25.0                    # async HTTP — pure Python (no Rust)
+pydantic>=2.0.0                  # data validation — has aarch64 binary wheels
+python-dotenv>=1.0.0             # .env loading — pure Python
+typing-extensions>=4.8.0        # typing backports — pure Python
+anyio>=4.0.0                     # async primitives — pure Python
+certifi>=2024.0.0                # TLS certs — pure Python
+jiter>=0.4.0                     # fast JSON iter (openai dep) — has aarch64 wheels
+distro>=1.8.0                    # OS detection — pure Python
+sniffio>=1.3.0                   # async sniffing (anyio dep) — pure Python
+click>=8.1.0                     # CLI (typer dep) — pure Python
 
-# Anthropic client (optional, for cloud fallback)
-anthropic>=0.20.0
+# ── Terminal UI ───────────────────────────────────────────────────────────────
+rich>=13.0.0                     # pretty terminal output — pure Python
+typer>=0.9.0                     # CLI framework — pure Python
 
-# Terminal UI — pure Python, safe
-rich>=13.0.0
-typer>=0.9.0
+# ── Optional: Anthropic / cloud fallback ─────────────────────────────────────
+anthropic>=0.20.0                # only needed if using Claude via cloud API
 
-# HTTP client — pure Python, safe
-httpx>=0.25.0
-
-# Config and validation — has aarch64 wheels
-pydantic>=2.0.0
-python-dotenv>=1.0.0
-
-# Utilities — pure Python, safe
-typing-extensions>=4.8.0
-anyio>=4.0.0
-
-# EXCLUDED (would fail on Android aarch64):
-# fastuuid     — Rust compile fails on Termux
-# uvloop       — not supported on Android kernel
-# tokenizers   — too heavy, Rust-compiled
+# ── EXCLUDED — Rust/C compilation required, unavailable on Termux aarch64 ────
+# fastuuid     — Rust; only present in poisoned litellm 1.82.7/1.82.8 anyway
+# tiktoken     — Rust; NOT imported anywhere in jagachatbot source code
+#                (compressor.py uses a plain char-count approximation instead)
+# uvloop       — C; not supported on Android kernel
+# tokenizers   — Rust; not used by jagachatbot
+# cryptography — C; install via: pkg install python-cryptography
+# aiohttp      — C; install via: pkg install python-aiohttp

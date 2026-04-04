@@ -97,17 +97,8 @@ pip install --upgrade pip
 
 ### Step 6 — Install Python dependencies
 
-Install `litellm` without its Rust sub-dependencies first:
-
 ```bash
-pip install litellm --no-deps
-```
-
-Then install the rest:
-
-```bash
-pip install openai httpx pydantic python-dotenv \
-            typing-extensions anyio rich typer anthropic
+pip install -r ~/AutoJaga/Termux_deploy/requirements-termux.txt
 ```
 
 ### Step 7 — Run health check
@@ -122,13 +113,12 @@ bash ~/AutoJaga/Termux_deploy/scripts/check_health.sh
 
 ### ❌ `pip install litellm` fails with Rust/cargo errors
 
-**Fix:** Use `--no-deps` flag:
+**Fix:** Pin litellm to a version before `fastuuid` was introduced:
 ```bash
-pip install litellm --no-deps
-pip install openai httpx pydantic python-dotenv typing-extensions anyio
+pip install "litellm>=1.40.0,<1.82.7"
 ```
 
-`fastuuid` (a LiteLLM optional dep) requires Rust. Installing with `--no-deps` skips it. JagaChatbot does not use `fastuuid`.
+`fastuuid` only exists in the compromised litellm 1.82.7/1.82.8 releases (supply chain attack). Versions below 1.82.7 never require it. Do NOT use `--no-deps` — that strips litellm's required runtime dependencies and causes import errors.
 
 ---
 

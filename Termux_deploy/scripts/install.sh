@@ -134,20 +134,37 @@ if ! pip install --upgrade pip --quiet; then
     echo "WARNING: pip upgrade failed — continuing with existing pip version."
 fi
 
-# Fix 4: Use pip_install_safe() for every package
-# litellm always installed with --no-deps to avoid Rust dependency pulls
-echo "  Installing litellm (no-deps to avoid Rust failures)..."
-pip_install_safe litellm --no-deps
-
-pip_install_safe openai
-pip_install_safe httpx
-pip_install_safe pydantic
-pip_install_safe python-dotenv
-pip_install_safe typing-extensions
-pip_install_safe anyio
-pip_install_safe rich
-pip_install_safe typer
-pip_install_safe anthropic
+# Install all dependencies from the Termux-safe requirements file.
+# litellm is pinned to <1.82.7 to avoid the fastuuid supply-chain poisoning.
+# No --no-deps needed — the pin keeps us in a safe, Rust-free version range.
+REQUIREMENTS_FILE="$(dirname "$0")/../requirements-termux.txt"
+if [ -f "$REQUIREMENTS_FILE" ]; then
+    echo "  Installing from requirements-termux.txt..."
+    if pip install -r "$REQUIREMENTS_FILE" --only-binary=:all: --quiet 2>/dev/null; then
+        echo "  ✅ All dependencies installed (binary wheels)"
+    else
+        echo "  ⚠️  Some binary wheels unavailable, retrying with source fallback..."
+        pip install -r "$REQUIREMENTS_FILE"
+    fi
+else
+    echo "  WARNING: requirements-termux.txt not found at $REQUIREMENTS_FILE"
+    echo "  Falling back to manual installs..."
+    pip_install_safe "litellm>=1.40.0,<1.82.7"
+    pip_install_safe openai
+    pip_install_safe httpx
+    pip_install_safe pydantic
+    pip_install_safe python-dotenv
+    pip_install_safe typing-extensions
+    pip_install_safe anyio
+    pip_install_safe certifi
+    pip_install_safe jiter
+    pip_install_safe distro
+    pip_install_safe sniffio
+    pip_install_safe click
+    pip_install_safe rich
+    pip_install_safe typer
+    pip_install_safe anthropic
+fi
 
 # Fix 2 (continued): pip fallback for pkg packages that failed earlier
 if [ "$NEED_PIP_AIOHTTP" -eq 1 ]; then
