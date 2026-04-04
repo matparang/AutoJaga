@@ -56,6 +56,14 @@ else
     NEED_PIP_CRYPTOGRAPHY=1
 fi
 
+# tokenizers is a Rust package — Termux provides a prebuilt binary
+if pkg install -y python-tokenizers; then
+    echo "  python-tokenizers installed via pkg."
+else
+    echo "  WARNING: pkg install python-tokenizers failed — litellm may have issues with token counting."
+    echo "  This is non-fatal; jagachatbot does not import tokenizers directly."
+fi
+
 echo "Termux packages step complete."
 
 # ── Step 2 — Ollama check ─────────────────────────────────────────────────────
@@ -134,24 +142,32 @@ if ! pip install --upgrade pip --quiet; then
     echo "WARNING: pip upgrade failed — continuing with existing pip version."
 fi
 
-# Install all dependencies from the Termux-safe requirements file.
-# litellm is pinned to <1.76.1 to avoid fastuuid (Rust), introduced in v1.76.1.
-# No --no-deps needed — the pin keeps us in a safe, Rust-free version range.
+# Install litellm with --no-deps to skip Rust dependencies (tiktoken, tokenizers, fastuuid).
+# jagachatbot does not use tiktoken — compressor.py uses a char-count approximation instead.
+# tokenizers is installed via: pkg install python-tokenizers (done in Step 1).
+echo "  Installing litellm (--no-deps to skip Rust packages: tiktoken, tokenizers, fastuuid)..."
+if pip install "litellm>=1.40.0,<1.76.1" --no-deps --quiet; then
+    echo "    ✅ litellm installed"
+else
+    echo "    ❌ FAILED to install litellm"
+fi
+
+# Install all other dependencies from the curated requirements file.
+# Every package in requirements-termux.txt is either pure-Python or has aarch64 wheels.
 REQUIREMENTS_FILE="/data/data/com.termux/files/home/AutoJaga/Termux_deploy/requirements-termux.txt"
 if [ -f "$REQUIREMENTS_FILE" ]; then
-    echo "  Installing from requirements-termux.txt..."
+    echo "  Installing remaining dependencies from requirements-termux.txt..."
     if pip install -r "$REQUIREMENTS_FILE" --prefer-binary --quiet; then
         echo "  ✅ All dependencies installed"
     else
-        echo "  ❌ pip install failed. Check errors above."
+        echo "  ❌ Some dependencies failed. Check errors above."
         echo "  Try running manually: pip install -r $REQUIREMENTS_FILE --prefer-binary"
     fi
 else
     echo "  WARNING: requirements-termux.txt not found at $REQUIREMENTS_FILE"
     echo "  Falling back to manual installs..."
-    pip_install_safe "litellm>=1.40.0,<1.76.1"
     pip_install_safe "openai>=1.0.0,<1.57.0"
-    pip_install_safe httpx
+    pip_install_safe "httpx>=0.23.0,<0.28.0"
     pip_install_safe pydantic
     pip_install_safe python-dotenv
     pip_install_safe typing-extensions
@@ -160,6 +176,9 @@ else
     pip_install_safe distro
     pip_install_safe sniffio
     pip_install_safe click
+    pip_install_safe "importlib-metadata>=6.8.0"
+    pip_install_safe "jsonschema>=4.22.0"
+    pip_install_safe "jinja2>=3.1.2"
     pip_install_safe rich
     pip_install_safe typer
     pip_install_safe anthropic

@@ -3,36 +3,36 @@
 # Android aarch64, Python 3.11+, no Rust deps
 # ============================================
 #
-# BEFORE running pip install, install these via the Termux package manager.
-# pip CANNOT compile these on Android (C/Rust toolchain issues):
+# INSTALL ORDER MATTERS. Run these FIRST before pip install:
 #
 #   pkg install python-aiohttp
 #   pkg install python-cryptography
+#   pkg install python-tokenizers
 #
-# Then install this file normally (no --no-deps needed):
+# Then install litellm WITHOUT deps (to skip tiktoken/fastuuid):
+#   pip install "litellm>=1.40.0,<1.76.1" --no-deps
+#
+# Then install this file (all pure-Python or pre-built aarch64 wheels):
 #   pip install -r requirements-termux.txt
 #
 # ============================================
 
-# ── Core LLM routing ─────────────────────────────────────────────────────────
-# Pin to <1.76.1 — fastuuid (Rust) was introduced as a hard dep in v1.76.1.
-# See: https://github.com/BerriAI/litellm/issues/14145
-# Do NOT use --no-deps; let pip resolve deps normally within this safe range.
-litellm>=1.40.0,<1.76.1
-
-# ── LiteLLM's required runtime deps ──────────────────────────────────────────
-# These are what litellm actually needs at runtime for OpenAI-style routing.
-# All have pre-built aarch64/pure-Python wheels — no Rust, no C compilation.
-openai>=1.0.0,<1.57.0              # openai-compatible HTTP client used by litellm
-httpx>=0.25.0                    # async HTTP — pure Python (no Rust)
-pydantic>=2.0.0                  # data validation — has aarch64 binary wheels
+# ── LiteLLM runtime deps (manually curated, no Rust) ─────────────────────────
+# litellm itself is installed separately with --no-deps (see above).
+# These are everything litellm actually imports at runtime, minus Rust packages.
+openai>=1.0.0,<1.57.0           # openai HTTP client; <1.57.0 avoids hard jiter dep
+httpx>=0.23.0,<0.28.0           # async HTTP — pure Python; <0.28.0 pinned for openai<1.57.0 compat
+pydantic>=2.0.0                  # data validation — has aarch64 binary wheels on PyPI
 python-dotenv>=1.0.0             # .env loading — pure Python
 typing-extensions>=4.8.0        # typing backports — pure Python
 anyio>=4.0.0                     # async primitives — pure Python
 certifi>=2024.0.0                # TLS certs — pure Python
 distro>=1.8.0                    # OS detection — pure Python
-sniffio>=1.3.0                   # async sniffing (anyio dep) — pure Python
-click>=8.1.0                     # CLI (typer dep) — pure Python
+sniffio>=1.3.0                   # async sniffing — pure Python
+click>=8.1.0                     # CLI support — pure Python
+importlib-metadata>=6.8.0       # package metadata — pure Python
+jsonschema>=4.22.0               # JSON schema — pure Python
+jinja2>=3.1.2                    # templating — pure Python
 
 # ── Terminal UI ───────────────────────────────────────────────────────────────
 rich>=13.0.0                     # pretty terminal output — pure Python
@@ -42,11 +42,12 @@ typer>=0.9.0                     # CLI framework — pure Python
 anthropic>=0.20.0                # only needed if using Claude via cloud API
 
 # ── EXCLUDED — Rust/C compilation required, unavailable on Termux aarch64 ────
-# fastuuid     — Rust; introduced as a hard dep in litellm>=1.76.1, avoided by pinning <1.76.1
+# litellm      — installed separately via: pip install litellm --no-deps
 # tiktoken     — Rust; NOT imported anywhere in jagachatbot source code
-#                (compressor.py uses a plain char-count approximation instead)
-# jiter        — Rust; internal JSON optimization for openai>=1.57, avoided by pinning openai<1.57
-# uvloop       — C; not supported on Android kernel
-# tokenizers   — Rust; not used by jagachatbot
-# cryptography — C; install via: pkg install python-cryptography
-# aiohttp      — C; install via: pkg install python-aiohttp
+#                compressor.py uses a plain char-count approximation instead
+# tokenizers   — Rust; install via: pkg install python-tokenizers
+# fastuuid     — Rust; pulled by litellm>=1.76.1, avoided by --no-deps
+# aiohttp      — C;    install via: pkg install python-aiohttp
+# cryptography — C;    install via: pkg install python-cryptography
+# uvloop       — C;    not supported on Android kernel
+# jiter        — Rust; avoided by pinning openai<1.57.0
