@@ -336,22 +336,26 @@ class ModelSwitchboard:
         Allows agent to self-switch when outclassed.
         """
         return {
-            "type": "object",
-            "properties": {
-                "preset_id": {
-                    "type": "string",
-                    "enum": ["1", "2"],
-                    "description": (
-                        "Model preset: '1' for fast/cheap routine work, "
-                        "'2' for smart/reasoning tasks"
-                    ),
+            "name": "switch_model",
+            "description": "Switch the active model tier for this turn. Use '1' for fast/cheap routine work, '2' for smart/reasoning tasks.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "preset_id": {
+                        "type": "string",
+                        "enum": ["1", "2"],
+                        "description": (
+                            "Model preset: '1' for fast/cheap routine work, "
+                            "'2' for smart/reasoning tasks"
+                        ),
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Why switching is needed (e.g., 'complex causal analysis')"
+                    },
                 },
-                "reason": {
-                    "type": "string",
-                    "description": "Why switching is needed (e.g., 'complex causal analysis')"
-                },
+                "required": ["preset_id"],
             },
-            "required": ["preset_id"],
         }
 
     def switch_model(self, preset_id: str, reason: str = "") -> str:
@@ -413,8 +417,9 @@ class ModelSwitchboard:
 
         try:
             config = json.loads(self.config_path.read_text())
+            # NOTE: support both snake_case (canonical) and camelCase (legacy wiring guide)
             self._presets  = config.get(
-                "modelPresets", DEFAULT_PRESETS
+                "model_presets", config.get("modelPresets", DEFAULT_PRESETS)
             )
             self._current  = str(
                 config.get("current_model", "1")
