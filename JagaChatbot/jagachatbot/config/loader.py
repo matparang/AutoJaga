@@ -8,7 +8,11 @@ from jagachatbot.config.schema import Config
 
 
 def get_config_path() -> Path:
-    """Get the default configuration file path."""
+    """Get the configuration file path, respecting JAGACHATBOT_CONFIG env var override."""
+    # Termux/offline override: set JAGACHATBOT_CONFIG to point to a custom config file
+    env_path = os.getenv("JAGACHATBOT_CONFIG")
+    if env_path:
+        return Path(env_path)
     return Path.home() / ".jagachatbot" / "config.json"
 
 
