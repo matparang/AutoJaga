@@ -33,7 +33,7 @@ This folder solves all of that without touching the core code.
 > JagaChatbot was designed to route through LiteLLM, which supports dozens of providers through a unified interface. Swap the model string and the same conversation engine — the same memory system, the same context builder, the same compression logic — works whether you're calling a RM500/month cloud API or running a free local model on your phone in Termux.
 >
 > ```
-> Cloud:  "model": "openai/gpt-4o"              → RM500+/month
+> Cloud:  "model": "openai/gpt-4o"              → RM500/month
 > Phone:  "model": "ollama/deepseek-r1:1.5b"    → RM0/month, offline
 > ```
 >
