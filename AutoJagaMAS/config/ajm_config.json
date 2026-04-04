@@ -1,0 +1,30 @@
+{
+  "model_presets": {
+    "1": {
+      "model_id": "qwen2.5:3b",
+      "provider": "ollama",
+      "name": "Qwen 3B (Local)",
+      "purpose": "routine",
+      "max_tokens": 2000
+    },
+    "2": {
+      "model_id": "claude-sonnet-4-6",
+      "provider": "anthropic",
+      "name": "Claude Sonnet 4.6 (Cloud)",
+      "purpose": "reasoning",
+      "max_tokens": 4000
+    }
+  },
+  "auto_switch": true,
+  "current_model": "1",
+  "routing": {
+    "SIMPLE": "1",
+    "MAINTENANCE": "1",
+    "ACTION": "1",
+    "SAFE_DEFAULT": "1",
+    "RESEARCH": "2",
+    "VERIFICATION": "2",
+    "CALIBRATION": "2",
+    "AUTONOMOUS": "2"
+  }
+}

@@ -1,0 +1,1 @@
+"""AutoJagaMAS — root package."""
