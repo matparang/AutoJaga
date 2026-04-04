@@ -135,7 +135,7 @@ if ! pip install --upgrade pip --quiet; then
 fi
 
 # Install all dependencies from the Termux-safe requirements file.
-# litellm is pinned to <1.82.7 to avoid the fastuuid supply-chain poisoning.
+# litellm is pinned to <1.76.1 to avoid fastuuid (Rust), introduced in v1.76.1.
 # No --no-deps needed — the pin keeps us in a safe, Rust-free version range.
 REQUIREMENTS_FILE="/data/data/com.termux/files/home/AutoJaga/Termux_deploy/requirements-termux.txt"
 if [ -f "$REQUIREMENTS_FILE" ]; then
@@ -149,7 +149,7 @@ if [ -f "$REQUIREMENTS_FILE" ]; then
 else
     echo "  WARNING: requirements-termux.txt not found at $REQUIREMENTS_FILE"
     echo "  Falling back to manual installs..."
-    pip_install_safe "litellm>=1.40.0,<1.82.7"
+    pip_install_safe "litellm>=1.40.0,<1.76.1"
     pip_install_safe "openai>=1.0.0,<1.57.0"
     pip_install_safe httpx
     pip_install_safe pydantic

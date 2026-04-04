@@ -115,10 +115,10 @@ bash ~/AutoJaga/Termux_deploy/scripts/check_health.sh
 
 **Fix:** Pin litellm to a version before `fastuuid` was introduced:
 ```bash
-pip install "litellm>=1.40.0,<1.82.7"
+pip install "litellm>=1.40.0,<1.76.1"
 ```
 
-`fastuuid` only exists in the compromised litellm 1.82.7/1.82.8 releases (supply chain attack). Versions below 1.82.7 never require it. Do NOT use `--no-deps` — that strips litellm's required runtime dependencies and causes import errors.
+`fastuuid` (a Rust-compiled package) was introduced as a hard dependency in litellm v1.76.1. All versions below 1.76.1 are safe and do not require it. See: https://github.com/BerriAI/litellm/issues/14145. Do NOT use `--no-deps` — that strips litellm's required runtime dependencies and causes import errors.
 
 ---
 

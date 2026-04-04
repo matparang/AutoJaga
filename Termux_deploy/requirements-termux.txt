@@ -15,9 +15,10 @@
 # ============================================
 
 # ── Core LLM routing ─────────────────────────────────────────────────────────
-# Pin to <1.82.7 to avoid the fastuuid supply-chain poisoning (1.82.7/1.82.8).
+# Pin to <1.76.1 — fastuuid (Rust) was introduced as a hard dep in v1.76.1.
+# See: https://github.com/BerriAI/litellm/issues/14145
 # Do NOT use --no-deps; let pip resolve deps normally within this safe range.
-litellm>=1.40.0,<1.82.7
+litellm>=1.40.0,<1.76.1
 
 # ── LiteLLM's required runtime deps ──────────────────────────────────────────
 # These are what litellm actually needs at runtime for OpenAI-style routing.
@@ -41,7 +42,7 @@ typer>=0.9.0                     # CLI framework — pure Python
 anthropic>=0.20.0                # only needed if using Claude via cloud API
 
 # ── EXCLUDED — Rust/C compilation required, unavailable on Termux aarch64 ────
-# fastuuid     — Rust; only present in poisoned litellm 1.82.7/1.82.8 anyway
+# fastuuid     — Rust; introduced as a hard dep in litellm>=1.76.1, avoided by pinning <1.76.1
 # tiktoken     — Rust; NOT imported anywhere in jagachatbot source code
 #                (compressor.py uses a plain char-count approximation instead)
 # jiter        — Rust; internal JSON optimization for openai>=1.57, avoided by pinning openai<1.57
