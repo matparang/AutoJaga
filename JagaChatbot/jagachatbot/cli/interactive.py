@@ -89,8 +89,15 @@ async def run_interactive(workspace: Path | None = None) -> None:
         return
     
     # Initialize provider and chat loop
+    # For Ollama/local models, pass api_base from provider config
+    model_lower = config.defaults.model.lower()
+    api_base = None
+    if model_lower.startswith("ollama/"):
+        api_base = config.providers.ollama.api_base
+
     provider = LiteLLMProvider(
         api_key=api_key,
+        api_base=api_base,
         default_model=config.defaults.model,
     )
     

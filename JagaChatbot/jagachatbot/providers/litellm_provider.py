@@ -85,8 +85,8 @@ class LiteLLMProvider(LLMProvider):
         if self.api_key:
             kwargs["api_key"] = self.api_key
         
-        # Force api_base for DeepSeek
-        if "deepseek" in model.lower():
+        # Force api_base for DeepSeek cloud (not for local Ollama)
+        if "deepseek" in model.lower() and not model.lower().startswith("ollama/"):
             kwargs.setdefault("api_base", "https://api.deepseek.com")
         
         if self.api_base:

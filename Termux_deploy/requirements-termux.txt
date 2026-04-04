@@ -1,0 +1,40 @@
+# ============================================
+# JagaChatbot - Termux-safe requirements
+# Android aarch64, Python 3.13, no Rust deps
+# ============================================
+
+# Install these FIRST via Termux package manager
+# (do not install via pip — pip cannot compile them on Android):
+#   pkg install python-aiohttp
+#   pkg install python-cryptography
+#   pkg install python-numpy
+
+# Core LLM routing — no Rust deps
+# Install with: pip install litellm --no-deps
+litellm>=1.40.0
+
+# OpenAI client (LiteLLM dependency)
+openai>=1.0.0
+
+# Anthropic client (optional, for cloud fallback)
+anthropic>=0.20.0
+
+# Terminal UI — pure Python, safe
+rich>=13.0.0
+typer>=0.9.0
+
+# HTTP client — pure Python, safe
+httpx>=0.25.0
+
+# Config and validation — has aarch64 wheels
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# Utilities — pure Python, safe
+typing-extensions>=4.8.0
+anyio>=4.0.0
+
+# EXCLUDED (would fail on Android aarch64):
+# fastuuid     — Rust compile fails on Termux
+# uvloop       — not supported on Android kernel
+# tokenizers   — too heavy, Rust-compiled
