@@ -765,6 +765,43 @@ class AgentLoop:
                 else:
                     self.cognitive_stack.calibration_mode = False
 
+        # NOTE: activating hierarchical model routing — small→large→small
+        # CognitiveStack decides: SIMPLE → Model 1 direct, COMPLEX → Model 2 plans + Model 1 executes,
+        # CRITICAL → Model 2 handles entirely. Fallback to _run_agent_loop if CognitiveStack raises.
+        if self.cognitive_stack and package.profile not in ("MAINTENANCE",):
+            try:
+                stack_result = await self.cognitive_stack.process(
+                    query=msg.content,
+                    profile=package.profile,
+                    context=package.context,
+                    tools=package.tools,
+                    agent_runner=self,
+                )
+                if stack_result and stack_result.output:
+                    logger.info(
+                        f"CognitiveStack: {stack_result.complexity} | "
+                        f"M1={stack_result.model1_calls} M2={stack_result.model2_calls} | "
+                        f"{stack_result.elapsed_ms:.0f}ms"
+                    )
+                    return OutboundMessage(
+                        channel=msg.channel,
+                        chat_id=msg.chat_id,
+                        content=stack_result.output,
+                        metadata={
+                            **(msg.metadata or {}),
+                            "cognitive_stack": {
+                                "complexity": stack_result.complexity,
+                                "model1_calls": stack_result.model1_calls,
+                                "model2_calls": stack_result.model2_calls,
+                                "escalated": stack_result.escalated,
+                                "elapsed_ms": stack_result.elapsed_ms,
+                            },
+                        },
+                    )
+            except Exception as e:
+                logger.warning(f"CognitiveStack failed, falling back to _run_agent_loop: {e}")
+                # Fall through to existing agent loop below
+
         # Reset repetition guard for new user turn
         self.rep_guard.reset_for_new_turn()
 
